@@ -1,0 +1,78 @@
+/* Header Component */
+
+.navigation {
+  width: 100% !important;
+  height: 100% !important;
+  font-size: 1rem !important;
+  background-color: var(--dark-blue);
+
+  justify-content: space-around !important;
+}
+
+.navIcons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-decoration: none !important;
+  color: var(--pale-green);
+}
+
+.navbarIcons {
+  font-size: 2rem !important;
+  color: var(--pale-green);
+  padding: 10px;
+}
+
+.navbarIcons:hover {
+  font-size: 2rem !important;
+  color: var(--teal) !important;
+  padding: 10px;
+}
+
+.navbarBrand {
+  color: var(--pale-green) !important;
+  font-size: 100%;
+  margin-left: 1%;
+}
+
+.navLink {
+  color: var(--pale-green) !important;
+  font-size: 60%;
+  border-radius: 20px;
+  width: auto;
+}
+
+.navLink:hover {
+  background-color: var(--pale-green);
+  color: var(--dark-blue) !important;
+  border-radius: 20px;
+  width: auto;
+}
+
+.webLinkButton {
+  color: var(--pale-green) !important;
+  background-color: var(--dark-blue) !important;
+  border: solid 10px var(--dark-blue) !important;
+}
+
+.webLinkButton:hover {
+  color: var(--pale-green) !important;
+  background-color: var(--teal) !important;
+  border: solid 10px var(--teal) !important;
+}
+
+
+
+/*  Footer Component */
+
+.footer {
+  width: 100%;
+  background-color: var(--dark-blue) !important;
+  color:var(--aqua-blue);
+  font-size: 1rem !important;
+  text-align: center;
+  padding: 1rem;
+  font-family: "Caveat", cursive;
+  font-family: "Fuzzy Bubbles", cursive;
+ margin: 0;
+}

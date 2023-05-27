@@ -1,0 +1,100 @@
+#root {
+  text-align: center;
+  --dark-blue: #0388a6;
+  --dark-teal: #0396a6;
+  --teal: #04bfbf;
+  --green: #9cd9b6;
+  --pale-green: #d8f2e3;
+  --cream: #e6ddc4;
+  height: 100vh;
+  font-family: "Handlee", cursive;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  font-family: "Handlee", cursive;
+  margin: 0;
+  text-align: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Apply animation only if reduced motion is not preferred */
+  a.logo-link .abfLogo {
+    animation: spin infinite 20s linear;
+  }
+}
+
+/* Styles for the ABF logo */
+
+.abfLogo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+  border-radius: 100%;
+}
+
+/* Hover effect for the ABF logo */
+
+.abfLogo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+/* Media Queries */
+
+@media (max-width: 900px) {
+  .title {
+    width: 100%;
+    text-align: center;
+    font-size: 200%;
+    text-decoration: underline;
+    margin-bottom: 1%;
+    padding: 1rem;
+    font-style: italic;
+    color: rgb(5, 85, 146);
+  }
+
+  .text {
+    color: rgb(5, 85, 146) !important;
+    font-size: 70%;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+    padding: 1%;
+  }
+
+  .myname {
+    color: rgb(5, 85, 146) !important;
+    text-align: center;
+    font-size: 100%;
+  }
+
+  .brand {
+    text-align: center;
+    color: rgb(5, 85, 146) !important;
+    font-size: 100%;
+  }
+}
