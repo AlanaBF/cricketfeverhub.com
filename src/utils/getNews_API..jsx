@@ -1,12 +1,11 @@
 import axios from 'axios';
 
-const getPlayerImages = async (playerImage) => {
+const getNewsData = async (article) => {
   const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key;
 
   const options = {
     method: 'GET',
-    url: `https://cricbuzz-cricket.p.rapidapi.com/img/v1/i1/c${playerImage}/i.jpg`,
-    params: {p: 'de'},
+    url: 'https://cricbuzz-cricket.p.rapidapi.com/news/v1/index',
     headers: {
       'X-RapidAPI-Key': VITE_RapidAPI_Key,
       'X-RapidAPI-Host': 'cricbuzz-cricket.p.rapidapi.com'
@@ -15,11 +14,12 @@ const getPlayerImages = async (playerImage) => {
 
   try {
     const response = await axios.request(options);
+    console.log(response.data);
     return response.data;
   } catch (error) {
-    console.error('Error:', error);
+    console.error(error);
     throw error;
   }
 };
 
-export default getPlayerImages;
+export default getNewsData;

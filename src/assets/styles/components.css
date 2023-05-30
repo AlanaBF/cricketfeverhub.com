@@ -14,53 +14,131 @@
   justify-content: space-around;
   align-items: center;
   text-decoration: none !important;
-  color: var(--pale-green);
+  color: var(--cream);
 }
 
 .navbarIcons {
   font-size: 2rem !important;
-  color: var(--pale-green);
+  color: var(--cream) !important;
   padding: 10px;
 }
 
 .navbarIcons:hover {
   font-size: 2rem !important;
-  color: var(--teal) !important;
+  color: var(--pink) !important;
   padding: 10px;
 }
 
 .navbarBrand {
-  color: var(--pale-green) !important;
+  color: var(--cream) !important;
   font-size: 100%;
   margin-left: 1%;
 }
 
 .navLink {
-  color: var(--pale-green) !important;
+  color: var(--cream) !important;
   font-size: 60%;
   border-radius: 20px;
   width: auto;
 }
 
 .navLink:hover {
-  background-color: var(--pale-green);
+  background-color: var(--cream);
   color: var(--dark-blue) !important;
   border-radius: 20px;
   width: auto;
 }
 
 .webLinkButton {
-  color: var(--pale-green) !important;
+  color: var(--cream) !important;
   background-color: var(--dark-blue) !important;
   border: solid 10px var(--dark-blue) !important;
 }
 
 .webLinkButton:hover {
-  color: var(--pale-green) !important;
-  background-color: var(--teal) !important;
-  border: solid 10px var(--teal) !important;
+  color: var(--cream) !important;
+  background-color: var(--pink) !important;
+  border: solid 10px var(--pink) !important;
 }
 
+/* Player Data Component */
+
+.playerCard{
+margin: 30px auto;
+justify-content: center;
+align-items: center;
+width: 400px;
+border: solid 10px var(--pink) !important;
+} 
+
+.playerCardButton {
+background-color: var(--pink) !important;
+border: solid 10px var(--pink) !important;
+margin: 10px;
+}
+
+/* News Component */
+
+.news-section {
+  width: 90%;
+  margin: 0 auto;
+  padding: 40px 0px;
+  color: aliceblue;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  width: 30px !important;
+  height: 30px !important;
+  margin: auto 0;
+  opacity: 0.8;
+}
+
+.carousel .slide {
+  height: auto;
+  background: #19194B;
+  border-radius: 20px;
+}
+
+.carousel-inner {
+  height: 100%;
+  color: aliceblue;
+  padding: 10px 30px;
+}
+
+.new {
+  min-height: 300px;
+  height: 300px !important;
+  margin: auto 0;
+  padding: 20px 40px;
+  display: flex;
+  gap: 30px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.new-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.new-content h3 {
+  font-size: 1.5rem;
+}
+
+.new-content a {
+  align-self: flex-end;
+}
+
+.carousel-item img {
+  height: 170px;
+  border-radius: 10px;
+}
+
+.carousel-caption {
+  left: 0px;
+}
 
 
 /*  Footer Component */
@@ -68,7 +146,7 @@
 .footer {
   width: 100%;
   background-color: var(--dark-blue) !important;
-  color:var(--aqua-blue);
+  color:var(--cream);
   font-size: 1rem !important;
   text-align: center;
   padding: 1rem;

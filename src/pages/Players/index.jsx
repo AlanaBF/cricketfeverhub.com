@@ -1,9 +1,8 @@
-import PlayerDataComponent from '../../components/Players';
+import PlayerDataComponent from "../../components/Players/index";
 
 const PlayersPage = () => {
   return (
     <div className="pageBackground">
-      {/* Other components */}
       <PlayerDataComponent />
     </div>
   );

@@ -1,10 +1,10 @@
 #root {
   text-align: center;
-  --dark-blue: #0388a6;
-  --dark-teal: #0396a6;
-  --teal: #04bfbf;
-  --green: #9cd9b6;
-  --pale-green: #d8f2e3;
+  --dark-blue: #066873;
+  --blue: #0CDBF2;
+  --blue-grey: #739FD9;
+  --purple: #A173BF;
+  --pink: #F22797;
   --cream: #e6ddc4;
   height: 100vh;
   font-family: "Handlee", cursive;

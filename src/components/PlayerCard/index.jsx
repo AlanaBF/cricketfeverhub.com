@@ -1,17 +1,15 @@
 import { useEffect } from "react";
 import { Button, Card } from "react-bootstrap";
 import getPlayerImages from "../../utils/getImage_API";
-import PropTypes from "prop-types";
+import '../../assets/styles/components.css'
 
 function PlayerCard({ id,  name, teamName, faceImageId }) {
-  console.log(faceImageId);
-  //const [playerImage, setPlayerImage] = useState(null);
-const imageURL = `https://cricbuzz-cricket.p.rapidapi.com/img/v1/i1/c${faceImageId}/i.jpg`;
+ 
+const imageURL = `https://cricbuzz-cricket.p.rapidapi.com/img/v1/i1/c${faceImageId}/i.jpg?p=de`;
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await getPlayerImages(faceImageId);
-        //setPlayerImage(data);
         console.log(data);
       } catch (error) {
         console.error("Error:", error);
@@ -21,23 +19,16 @@ const imageURL = `https://cricbuzz-cricket.p.rapidapi.com/img/v1/i1/c${faceImage
   }, [faceImageId]);
 
   return (
-    <Card key={id} style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={imageURL} alt="Player" />
-      <Card.Body>
-        <Card.Title>Player Name: {name}</Card.Title>
-        <Card.Text>Team Name: {teamName}</Card.Text>
+    <Card key={id} className="playerCard">
+      <Card.Img className="playerCardImage" variant="top" src={imageURL} alt="Player" />
+      <Card.Body className="playerCardBody">
+        <Card.Title className="playerCardTitle">Player Name: {name}</Card.Title>
+        <Card.Text className="playerCardText">Team Name: {teamName}</Card.Text>
       </Card.Body>
-      <Button variant="primary">Go somewhere</Button>
+      <Button className="playerCardButton" variant="primary">Go somewhere</Button>
     </Card>
   );
 }
-
-PlayerCard.propTypes = {
-  id: PropTypes.string.isRequired,
-  faceImageId: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  teamName: PropTypes.string.isRequired,
-};
 
 export default PlayerCard;
 

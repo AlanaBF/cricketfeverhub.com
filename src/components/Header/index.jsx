@@ -28,6 +28,9 @@ function Header() {
             <LinkContainer to="/">
               <Nav.Link className="navLink">Players</Nav.Link>
             </LinkContainer>
+            <LinkContainer to="/News">
+              <Nav.Link className="navLink">News</Nav.Link>
+            </LinkContainer>
           </Nav>
 
           <Nav className="nav navbar-nav flex-row justify-content-md-center justify-content-start flex-nowrap">

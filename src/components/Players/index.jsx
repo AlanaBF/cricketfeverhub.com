@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import getPlayersData from "../../utils/getPlayers_API";
 import getPlayerImages from "../../utils/getImage_API";
 import "../../assets/styles/pages.css";
@@ -10,10 +10,8 @@ const PlayerDataComponent = () => {
   const [playerImage, setPlayerImage] = useState(null);
 
   const fetchData = async () => {
-    let playerData;
     try {
       const data = await getPlayersData(playerName);
-      playerData = data;
       setPlayerData(data);
     } catch (error) {
       console.error("Error:", error);
@@ -38,7 +36,7 @@ const PlayerDataComponent = () => {
   };
 console.log(playerData)
   return (
-    <div className="player-data-component">
+    <div className="playerDataComponent">
       <input
         type="text"
         value={playerName}

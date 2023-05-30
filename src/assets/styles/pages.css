@@ -1,7 +1,7 @@
 /* General Page Layout */
 .pageBackground {
-  background-color: var(--pale-green);
-  color: var(--dark-blue);
+  background-color: var(--blue);
+  color: var(--cream);
   min-height: 87vh;
   text-align: center;
   padding: 1%;
@@ -12,36 +12,12 @@
 
 
 
-
-
-.buttonGroup {
-  color: var(--dark-blue);
-  margin-top: 1%;
-  margin-bottom: 10%;
-}
-
-.fa {
-  font-size: 6rem;
-  font-weight: bold;
-  color: var(--dark-blue);
-}
-
-.fa:hover {
-  font-size: 5rem;
-}
-
-span {
-  display: flex;
-  justify-content: space-around;
-  margin: 0% 20% 0% 20%;
-  align-items: center;
-}
   
 /* Page Not Found */
 
 .notFoundPageContainer {
     width: 100%;
-    background-color: var(--navy-blue);
+    background-color: var(--blue);
     height: 85vh;
   }
   
@@ -56,11 +32,11 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 20px solid var(--dark-blue);
+    border: 20px solid var(--blue);
     border-radius: 20px;
     width: 80%;
-    background-color: var(--navy-blue);
-    color: var(--light-blue);
+    background-color: var(--);
+    color: var(--pink);
   }
   
   .notFoundPageContent div {
@@ -87,7 +63,7 @@ span {
   }
   
   .notFoundPageContent a {
-    color: var(--light-blue);
+    color: var(--pink);
   }
   
   .notFoundPageContent img {
