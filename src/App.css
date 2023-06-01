@@ -1,11 +1,13 @@
 #root {
   text-align: center;
-  --dark-blue: #066873;
-  --blue: #0CDBF2;
-  --blue-grey: #739FD9;
-  --purple: #A173BF;
-  --pink: #F22797;
-  --cream: #e6ddc4;
+  --light-blue: #4ccded;
+  --blue: #0084c7;
+  --green: #006a4d;
+  --grey: #343d51;
+  --black: #000000;
+  --pink: #fb0483;
+  --navy: #19194B;
+  --cream: #c7c8b3;
   height: 100vh;
   font-family: "Handlee", cursive;
 }
@@ -19,6 +21,7 @@ p {
   font-family: "Handlee", cursive;
   margin: 0;
   text-align: center;
+  color: var(--light-blue);
 }
 
 * {

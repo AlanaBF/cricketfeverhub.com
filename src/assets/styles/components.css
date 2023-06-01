@@ -4,8 +4,7 @@
   width: 100% !important;
   height: 100% !important;
   font-size: 1rem !important;
-  background-color: var(--dark-blue);
-
+  background-color: var(--navy);
   justify-content: space-around !important;
 }
 
@@ -25,7 +24,7 @@
 
 .navbarIcons:hover {
   font-size: 2rem !important;
-  color: var(--pink) !important;
+  color: var(--light-blue) !important;
   padding: 10px;
 }
 
@@ -43,16 +42,16 @@
 }
 
 .navLink:hover {
-  background-color: var(--cream);
-  color: var(--dark-blue) !important;
+  background-color: var(--light-blue);
+  color: var(--navy) !important;
   border-radius: 20px;
   width: auto;
 }
 
 .webLinkButton {
   color: var(--cream) !important;
-  background-color: var(--dark-blue) !important;
-  border: solid 10px var(--dark-blue) !important;
+  background-color: var(--navy) !important;
+  border: solid 10px var(--navy) !important;
 }
 
 .webLinkButton:hover {
@@ -96,7 +95,7 @@ margin: 10px;
 
 .carousel .slide {
   height: auto;
-  background: #19194B;
+  background: var(--navy);
   border-radius: 20px;
 }
 
@@ -121,6 +120,7 @@ margin: 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  color: var(--cream);
 }
 
 .new-content h3 {
@@ -145,12 +145,11 @@ margin: 10px;
 
 .footer {
   width: 100%;
-  background-color: var(--dark-blue) !important;
+  background-color: var(--navy) !important;
   color:var(--cream);
   font-size: 1rem !important;
   text-align: center;
   padding: 1rem;
-  font-family: "Caveat", cursive;
-  font-family: "Fuzzy Bubbles", cursive;
+ 
  margin: 0;
 }

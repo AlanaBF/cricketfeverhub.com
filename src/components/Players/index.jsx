@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import getPlayersData from "../../utils/getPlayers_API";
-import getPlayerImages from "../../utils/getImage_API";
 import "../../assets/styles/pages.css";
 
 import PlayerCard from "../PlayerCard";
 const PlayerDataComponent = () => {
   const [playerName, setPlayerName] = useState("");
   const [playerData, setPlayerData] = useState(null);
-  const [playerImage, setPlayerImage] = useState(null);
+  const [getImageId, setImageID] = useState(null);
 
   const fetchData = async () => {
     try {
@@ -17,11 +16,11 @@ const PlayerDataComponent = () => {
       console.error("Error:", error);
     }
     console.log(playerData);
-    if (playerData && playerImage) {
+    if (playerData && getImageId) {
       console.log("data");
       try {
         const data = await getPlayerImages(playerData.player?.faceImageId);
-        setPlayerImage(data);
+        setImageID(data);
         console.log(data);
       } catch (error) {
         console.error("Error:", error);

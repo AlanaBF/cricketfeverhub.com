@@ -26,10 +26,10 @@ function Header() {
         <Navbar.Collapse className="navbar-collapse collapse justify-content-between align-items-center w-100">
           <Nav className="me-auto navbar-nav mx-auto text-md-center text-left">
             <LinkContainer to="/">
-              <Nav.Link className="navLink">Players</Nav.Link>
+              <Nav.Link className="navLink">Home</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/News">
-              <Nav.Link className="navLink">News</Nav.Link>
+            <LinkContainer to="/MatchSchedule">
+              <Nav.Link className="navLink">Match Schedule</Nav.Link>
             </LinkContainer>
           </Nav>
 
