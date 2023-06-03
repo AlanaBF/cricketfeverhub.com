@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import getNewsData from '../../utils/getNews_API.';
+import getNewsData from '../../utils/getNews_API';
 import Carousel from 'react-bootstrap/Carousel';
 import '../../assets/styles/components.css';
 
@@ -49,3 +49,4 @@ const CricketNewsComponent = () => {
 };
 
 export default CricketNewsComponent;
+

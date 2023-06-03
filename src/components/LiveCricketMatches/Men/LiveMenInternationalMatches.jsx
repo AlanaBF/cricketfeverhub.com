@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import getLiveMatchesData from "../../../utils/getLiveMatches_API";
 import "../LiveMatches.css";
 import ScoreTableRow from "../../ScoreTableRow/ScoreTableRow";
+import MatchComms from "../../Comms/index";
 
 const LiveMenInternationalMatches = () => {
   const [matches, setMatches] = useState([]);
@@ -46,55 +47,61 @@ const LiveMenInternationalMatches = () => {
   return (
     <div className="live-matches">
       <h1>Live Men's International Matches</h1>
-      {filteredMatches.map((matchType, index) => (
-        <div key={index} className="match-type-container">
-          <h2>{matchType.matchType}</h2>
-          {matchType.seriesMatches.map((seriesMatch, seriesIndex) => (
-            <div key={seriesIndex} className="series-match-container">
-              {seriesMatch.seriesAdWrapper?.matchFormat && (
-                <h3>{seriesMatch.seriesAdWrapper.matchFormat}</h3>
-              )}
-              {seriesMatch.seriesAdWrapper?.matches
-                .filter(
-                  ({ matchInfo }) =>
-                    matchInfo?.team1?.teamName === "England" ||
-                    matchInfo?.team2?.teamName === "England"
-                )
-                .map((match, matchIndex) => (
-                  <div key={matchIndex} className="match-container">
-                    <p>
-                      {match.matchInfo?.team1?.teamName} vs{" "}
-                      {match.matchInfo?.team2?.teamName}
-                    </p>
-                    <table className="score-table">
-                      <thead>
-                        <tr>
-                          <th>Innings</th>
-                          <th>{match.matchInfo?.team1?.teamName}</th>
-                          <th>{match.matchInfo?.team2?.teamName}</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <ScoreTableRow
-                          label="1"
-                          team1Score={match.matchScore?.team1Score?.inngs1}
-                          team2Score={match.matchScore?.team2Score?.inngs1}
-                        />
-                        <ScoreTableRow
-                          label="2"
-                          team1Score={match.matchScore?.team1Score?.inngs2}
-                          team2Score={match.matchScore?.team2Score?.inngs2}
-                        />
-                      </tbody>
-                    </table>
-                  </div>
-                ))}
-            </div>
-          ))}
-        </div>
-      ))}
+      {filteredMatches.length > 0 ? (
+        filteredMatches.map((matchType, index) => (
+          <div key={index} className="match-type-container">
+            <h2>{matchType.matchType}</h2>
+            {matchType.seriesMatches.map((seriesMatch, seriesIndex) => (
+              <div key={seriesIndex} className="series-match-container">
+                {seriesMatch.seriesAdWrapper?.matchFormat && (
+                  <h3>{seriesMatch.seriesAdWrapper.matchFormat}</h3>
+                )}
+                {seriesMatch.seriesAdWrapper?.matches
+                  .filter(
+                    ({ matchInfo }) =>
+                      matchInfo?.team1?.teamName === "England" ||
+                      matchInfo?.team2?.teamName === "England"
+                  )
+                  .map((match, matchIndex) => (
+                    <div key={matchIndex} className="match-container">
+                      <p>
+                        {match.matchInfo?.team1?.teamName} vs{" "}
+                        {match.matchInfo?.team2?.teamName}
+                      </p>
+                      <table className="score-table">
+                        <thead>
+                          <tr>
+                            <th>Innings</th>
+                            <th>{match.matchInfo?.team1?.teamName}</th>
+                            <th>{match.matchInfo?.team2?.teamName}</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <ScoreTableRow
+                            label="1"
+                            team1Score={match.matchScore?.team1Score?.inngs1}
+                            team2Score={match.matchScore?.team2Score?.inngs1}
+                          />
+                          <ScoreTableRow
+                            label="2"
+                            team1Score={match.matchScore?.team1Score?.inngs2}
+                            team2Score={match.matchScore?.team2Score?.inngs2}
+                          />
+                        </tbody>
+                      </table>
+                      <MatchComms matchId={match.matchId} />
+                    </div>
+                  ))}
+              </div>
+            ))}
+          </div>
+        ))
+      ) : (
+        <p>No live International Men's matches available.</p>
+      )}
     </div>
   );
 };
 
 export default LiveMenInternationalMatches;
+

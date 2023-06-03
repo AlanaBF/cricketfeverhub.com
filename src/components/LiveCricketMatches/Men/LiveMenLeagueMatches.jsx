@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import getLiveMatchesData from "../../../utils/getLiveMatches_API";
 import "../LiveMatches.css";
 import ScoreTableRow from "../../ScoreTableRow/ScoreTableRow";
+import MatchComms from "../../Comms/index";
 
 const LiveMenLeagueMatches = () => {
   const [matches, setMatches] = useState([]);
@@ -75,6 +76,7 @@ const LiveMenLeagueMatches = () => {
                           />
                         </tbody>
                       </table>
+                      <MatchComms matchId={match.matchId} />
                     </div>
                   ))}
               </div>
@@ -89,3 +91,4 @@ const LiveMenLeagueMatches = () => {
 };
 
 export default LiveMenLeagueMatches;
+
