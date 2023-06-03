@@ -1,13 +1,13 @@
 import axios from 'axios';
 
 const getUpcomingMatchesData = async () => {
-  const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key;
+  const VITE_RapidAPI_Key5 = import.meta.env.VITE_RapidAPI_Key;
 
   const options = {
     method: 'GET',
     url: 'https://cricbuzz-cricket.p.rapidapi.com/matches/v1/upcoming',
     headers: {
-      'x-rapidapi-key': VITE_RapidAPI_Key,
+      'x-rapidapi-key': VITE_RapidAPI_Key5,
       'x-rapidapi-host': 'cricbuzz-cricket.p.rapidapi.com'
     }
   };

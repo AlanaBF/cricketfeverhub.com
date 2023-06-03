@@ -1,72 +1,101 @@
-/* General Page Layout */
+/* Home Page */
 .pageBackground {
-  background-color: var(--blue);
-  color: var(--cream);
+  background-color: var(--light-blue);
+  padding: 20px;
+  color: var(--navy);
   min-height: 87vh;
   text-align: center;
-  padding: 1%;
   margin: 0;
 }
 
-/* Players Page */
+.pageContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
+.pageTitle {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
 
+.pageDescription {
+  font-size: 18px;
+  color: var(--pink);
+  margin-bottom: 30px;
+}
 
-  
+.newsContainer {
+  margin-bottom: 30px;
+}
+
+.playerSearch {
+  margin-bottom: 50px;
+}
+
+.playerSearchDescription {
+  font-size: 16px;
+  color:var(--pink);
+  margin-bottom: 10px;
+}
+
+/* Additional styles for PlayerDataComponent and News components can be added here */
+
 /* Page Not Found */
 
 .notFoundPageContainer {
-    width: 100%;
-    background-color: var(--blue);
-    height: 85vh;
-  }
-  
-  .notFoundPageInner {
-    min-height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .notFoundPageContent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 20px solid var(--blue);
-    border-radius: 20px;
-    width: 80%;
-    background-color: var(--navy);
-    color: var(--pink);
-  }
-  
-  .notFoundPageContent div {
-    width: 100%;
-    height: 100%;
-    min-height: 400px;
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .notFoundPageContent div:nth-child(1) {
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .notFoundPageContent p {
-    font-size: 1rem;
-  }
-  
-  .notFoundPageContent span {
-    font-size: 2rem;
-  }
-  
-  .notFoundPageContent a {
-    color: var(--pink);
-  }
-  
-  .notFoundPageContent img {
-    display: flex;
-    width: 200%;
-  }
+  width: 100%;
+  background-color: var(--blue);
+  height: 85vh;
+}
+
+.notFoundPageInner {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notFoundPageContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 20px solid var(--blue);
+  border-radius: 20px;
+  width: 80%;
+  background-color: var(--navy);
+  color: var(--pink);
+}
+
+.notFoundPageContent div {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.notFoundPageContent div:nth-child(1) {
+  justify-content: center;
+  align-items: center;
+}
+
+.notFoundPageContent p {
+  font-size: 1rem;
+}
+
+.notFoundPageContent span {
+  font-size: 2rem;
+}
+
+.notFoundPageContent a {
+  color: var(--pink);
+}
+
+.notFoundPageContent img {
+  display: flex;
+  width: 200%;
+}

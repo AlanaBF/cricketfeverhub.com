@@ -1,12 +1,40 @@
 import { useEffect, useState } from "react";
 import getPlayersData from "../../utils/getPlayers_API";
+import getPlayerImages from "../../utils/getImage_API";
+import { Button, Card } from "react-bootstrap";
+import "../../assets/styles/components.css";
 import "../../assets/styles/pages.css";
 
-import PlayerCard from "../PlayerCard";
+const PlayerCard = ({ id, name, teamName, faceImageId, fetchData }) => {
+  const imageURL = `https://cricbuzz-cricket.p.rapidapi.com/img/v1/i1/c${faceImageId}/i.jpg?p=de`;
+
+  useEffect(() => {
+    const fetchPlayerImage = async () => {
+      try {
+        const data = await getPlayerImages(faceImageId);
+        console.log(data);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+    fetchPlayerImage();
+  }, [faceImageId]);
+
+  return (
+    <Card key={id} className="playerCard">
+      <Card.Img className="playerCardImage" variant="top" src={imageURL} alt="Player" />
+      <Card.Body className="playerCardBody">
+        <Card.Title className="playerCardTitle">Player Name: {name}</Card.Title>
+        <Card.Text className="playerCardText">Team Name: {teamName}</Card.Text>
+      </Card.Body>
+      <Button className="playerCardButton" variant="primary">Go somewhere</Button>
+    </Card>
+  );
+};
+
 const PlayerDataComponent = () => {
   const [playerName, setPlayerName] = useState("");
   const [playerData, setPlayerData] = useState(null);
-  const [getImageId, setImageID] = useState(null);
 
   const fetchData = async () => {
     try {
@@ -15,16 +43,16 @@ const PlayerDataComponent = () => {
     } catch (error) {
       console.error("Error:", error);
     }
-    console.log(playerData);
-    if (playerData && getImageId) {
-      console.log("data");
-      try {
-        const data = await getPlayerImages(playerData.player?.faceImageId);
-        setImageID(data);
-        console.log(data);
-      } catch (error) {
-        console.error("Error:", error);
-      }
+
+    if (playerData) {
+      playerData.player.forEach(async (player) => {
+        try {
+          const data = await getPlayerImages(player.faceImageId);
+          console.log(data);
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      });
     }
   };
 
@@ -33,7 +61,7 @@ const PlayerDataComponent = () => {
       fetchData();
     }
   };
-console.log(playerData)
+
   return (
     <div className="playerDataComponent">
       <input
@@ -47,13 +75,13 @@ console.log(playerData)
       {playerData ? (
         <div>
           {playerData.player.map((player) => (
-            
             <PlayerCard
               key={player.id}
-              id={player?.id}
-              faceImageId={player?.faceImageId}
-              name={player?.name}
-              teamName={player?.teamName}
+              id={player.id}
+              faceImageId={player.faceImageId}
+              name={player.name}
+              teamName={player.teamName}
+              fetchData={fetchData}
             />
           ))}
         </div>

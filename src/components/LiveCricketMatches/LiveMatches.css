@@ -1,0 +1,50 @@
+.live-cricket-matches {
+  font-family: Arial, sans-serif;
+}
+
+.match-type-container {
+  margin-bottom: 20px;
+}
+
+.series-match-container {
+  margin-bottom: 10px;
+}
+
+.match-container {
+  background-color: var(--navy);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.match-container p {
+  font-weight: bold;
+}
+
+.score-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.score-table th,
+.score-table td {
+  padding: 5px;
+  text-align: center;
+}
+
+.score-table th {
+  background-color: var(--light-blue);
+}
+
+.score-table td {
+  border: 1px solid var(--pink);
+}
+
+.score-table p {
+  margin: 0;
+}
+
+.score-table td p {
+  margin-bottom: 5px;
+}

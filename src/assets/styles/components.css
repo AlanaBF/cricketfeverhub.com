@@ -2,10 +2,13 @@
 
 .navigation {
   width: 100% !important;
-  height: 100% !important;
   font-size: 1rem !important;
   background-color: var(--navy);
   justify-content: space-around !important;
+}
+
+.fa-bars {
+  color: var(--cream);
 }
 
 .navIcons {
@@ -34,14 +37,16 @@
   margin-left: 1%;
 }
 
-.navLink {
+.navLink,
+#matches-dropdown {
   color: var(--cream) !important;
-  font-size: 60%;
+  font-size: 1em;
   border-radius: 20px;
   width: auto;
 }
 
-.navLink:hover {
+.navLink:hover,
+#matches-dropdown:hover {
   background-color: var(--light-blue);
   color: var(--navy) !important;
   border-radius: 20px;
@@ -62,18 +67,18 @@
 
 /* Player Data Component */
 
-.playerCard{
-margin: 30px auto;
-justify-content: center;
-align-items: center;
-width: 400px;
-border: solid 10px var(--pink) !important;
-} 
+.playerCard {
+  margin: 30px auto;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  border: solid 10px var(--pink) !important;
+}
 
 .playerCardButton {
-background-color: var(--pink) !important;
-border: solid 10px var(--pink) !important;
-margin: 10px;
+  background-color: var(--pink) !important;
+  border: solid 10px var(--pink) !important;
+  margin: 10px;
 }
 
 /* News Component */
@@ -95,7 +100,7 @@ margin: 10px;
 
 .carousel .slide {
   height: auto;
-  background: var(--navy);
+  background: var(--navy) !important;
   border-radius: 20px;
 }
 
@@ -140,16 +145,14 @@ margin: 10px;
   left: 0px;
 }
 
-
-/*  Footer Component */
+/* Footer Component */
 
 .footer {
   width: 100%;
   background-color: var(--navy) !important;
-  color:var(--cream);
+  color: var(--cream);
   font-size: 1rem !important;
   text-align: center;
   padding: 1rem;
- 
- margin: 0;
+  margin: 0;
 }

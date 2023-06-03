@@ -1,14 +1,14 @@
 import axios from 'axios';
 
 const getPlayerImages = async (playerImage) => {
-  const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key;
+  const VITE_RapidAPI_Key1 = import.meta.env.VITE_RapidAPI_Key;
 
   const options = {
     method: 'GET',
     url: `https://cricbuzz-cricket.p.rapidapi.com/img/v1/i1/c${playerImage}/i.jpg`,
     params: {p: 'de'},
     headers: {
-      'X-RapidAPI-Key': VITE_RapidAPI_Key,
+      'X-RapidAPI-Key': VITE_RapidAPI_Key1,
       'X-RapidAPI-Host': 'cricbuzz-cricket.p.rapidapi.com'
     }
   };

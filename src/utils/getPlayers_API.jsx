@@ -1,14 +1,14 @@
 import axios from 'axios';
 
 const getPlayersData = async (playerName) => {
-  const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key;
+  const VITE_RapidAPI_Key4 = import.meta.env.VITE_RapidAPI_Key;
 
   const options = {
     method: 'GET',
     url: 'https://cricbuzz-cricket.p.rapidapi.com/stats/v1/player/search',
     params: { plrN: playerName },
     headers: {
-      'X-RapidAPI-Key': VITE_RapidAPI_Key,
+      'X-RapidAPI-Key': VITE_RapidAPI_Key4,
       'X-RapidAPI-Host': 'cricbuzz-cricket.p.rapidapi.com'
     }
   };

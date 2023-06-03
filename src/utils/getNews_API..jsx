@@ -1,13 +1,13 @@
 import axios from 'axios';
 
 const getNewsData = async () => {
-  const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key;
+  const VITE_RapidAPI_Key3 = import.meta.env.VITE_RapidAPI_Key;
 
   const options = {
     method: 'GET',
     url: 'https://cricbuzz-cricket.p.rapidapi.com/news/v1/index',
     headers: {
-      'X-RapidAPI-Key': VITE_RapidAPI_Key,
+      'X-RapidAPI-Key': VITE_RapidAPI_Key3,
       'X-RapidAPI-Host': 'cricbuzz-cricket.p.rapidapi.com'
     }
   };
@@ -23,3 +23,4 @@ const getNewsData = async () => {
 };
 
 export default getNewsData;
+
