@@ -82,12 +82,18 @@
 }
 
 /* News Component */
+/* .carousel {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+}
 
 .news-section {
   width: 90%;
   margin: 0 auto;
   padding: 40px 0px;
-  color: var(--pink) !important;
+  color: var(--light-blue) !important;
 }
 
 .carousel-control-next,
@@ -100,13 +106,13 @@
 
 .carousel .slide {
   height: auto;
-  background: var(--navy) !important;
+  background: var(--pink) !important;
   border-radius: 20px;
 }
 
 .carousel-inner {
   height: 100%;
-  color: aliceblue;
+  color: var(--navy) !important;
   padding: 10px 30px;
 }
 
@@ -143,6 +149,102 @@
 
 .carousel-caption {
   left: 0px;
+} */
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  min-height: 50vh;
+}
+
+.carousel-inner {
+  height: auto;
+}
+
+.carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.carousel-item img {
+  height: auto;
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carousel-caption {
+  background-color: var(--pink);
+  border-radius: 20px;
+  padding: 20px;
+  color: var(--navy);
+}
+
+.carousel-caption h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.carousel-caption p {
+  margin-bottom: 5px;
+}
+
+/* Live match component */
+
+.live-cricket-matches {
+  font-family: Arial, sans-serif;
+}
+
+.match-type-container {
+  margin-bottom: 20px;
+}
+
+.series-match-container {
+  margin-bottom: 10px;
+}
+
+.match-container {
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.match-container p {
+  font-weight: bold;
+}
+
+.score-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.score-table th,
+.score-table td {
+  padding: 5px;
+  text-align: center;
+}
+
+.score-table th {
+  background-color: #e0e0e0;
+}
+
+.score-table td {
+  border: 1px solid #ccc;
+}
+
+.score-table p {
+  margin: 0;
+}
+
+.score-table td p {
+  margin-bottom: 5px;
 }
 
 /* Footer Component */

@@ -1,4 +1,3 @@
-import React from 'react'
 import '../../assets/styles/pages.css'
 import LiveMenInternationalMatches from '../../components/LiveCricketMatches/Men/LiveMenInternationalMatches'
 import LiveMenDomesticMatches from '../../components/LiveCricketMatches/Men/LiveMenDomesticMatches'

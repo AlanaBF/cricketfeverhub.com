@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import getLiveMatchesData from "../../../utils/getLiveMatches_API";
 import ScoreTableRow from "../../ScoreTableRow/ScoreTableRow";
 import "../LiveMatches.css"; // Import CSS file for styling
-import MatchComms from "../../Comms/index";
+import MatchComms from "../../Comms/MatchComms";
 
 const LiveWomenMatches = () => {
   const [matches, setMatches] = useState([]);
@@ -95,4 +95,3 @@ const LiveWomenMatches = () => {
 };
 
 export default LiveWomenMatches;
-

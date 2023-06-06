@@ -1,4 +1,5 @@
 /* Home Page */
+
 .pageBackground {
   background-color: var(--light-blue);
   padding: 20px;
@@ -6,11 +7,6 @@
   min-height: 87vh;
   text-align: center;
   margin: 0;
-}
-
-.pageContent {
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 .pageTitle {
@@ -26,19 +22,21 @@
   margin-bottom: 30px;
 }
 
-.newsContainer {
-  margin-bottom: 30px;
+.newsPage {
+ padding: 50px;
 }
 
 .playerSearch {
-  margin-bottom: 50px;
+  margin: 50px;
+  padding: 50px;
 }
 
 .playerSearchDescription {
   font-size: 16px;
-  color:var(--pink);
+  color: var(--pink);
   margin-bottom: 10px;
 }
+
 
 /* Additional styles for PlayerDataComponent and News components can be added here */
 

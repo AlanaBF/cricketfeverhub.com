@@ -1,0 +1,331 @@
+{
+    "typeMatches": [
+      {
+        "matchType": "International",
+        "seriesMatches": [
+          {
+            "seriesAdWrapper": {
+              "seriesId": 6255,
+              "seriesName": "West Indies tour of UAE, 2023",
+              "matches": [
+                {
+                  "matchInfo": {
+                    "matchId": 69934,
+                    "seriesId": 6255,
+                    "seriesName": "West Indies tour of UAE, 2023",
+                    "matchDesc": "2nd ODI",
+                    "matchFormat": "ODI",
+                    "startDate": "1686054600000",
+                    "endDate": "1686083400000",
+                    "state": "Complete",
+                    "status": "West Indies won by 78 runs",
+                    "team1": {
+                      "teamId": 10,
+                      "teamName": "West Indies",
+                      "teamSName": "WI",
+                      "imageId": 172124
+                    },
+                    "team2": {
+                      "teamId": 7,
+                      "teamName": "United Arab Emirates",
+                      "teamSName": "UAE",
+                      "imageId": 172121
+                    },
+                    "venueInfo": {
+                      "id": 140,
+                      "ground": "Sharjah Cricket Stadium",
+                      "city": "Sharjah",
+                      "timezone": "+04:00",
+                      "latitude": "25.33095",
+                      "longitude": "55.420902"
+                    },
+                    "currBatTeamId": 10,
+                    "seriesStartDt": "1685836800000",
+                    "seriesEndDt": "1686441600000",
+                    "isTimeAnnounced": true,
+                    "stateTitle": "WI Won",
+                    "isFantasyEnabled": true
+                  },
+                  "matchScore": {
+                    "team1Score": {
+                      "inngs1": {
+                        "inningsId": 1,
+                        "runs": 306,
+                        "wickets": 10,
+                        "overs": 49.5
+                      }
+                    },
+                    "team2Score": {
+                      "inngs1": {
+                        "inningsId": 2,
+                        "runs": 228,
+                        "wickets": 7,
+                        "overs": 49.6
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "adDetail": {
+              "name": "native_matches",
+              "layout": "native_large",
+              "position": 1
+            }
+          }
+        ]
+      },
+      {
+        "matchType": "League",
+        "seriesMatches": [
+          {
+            "seriesAdWrapper": {
+              "seriesId": 5246,
+              "seriesName": "T20 Blast 2023",
+              "matches": [
+                {
+                  "matchInfo": {
+                    "matchId": 67926,
+                    "seriesId": 5246,
+                    "seriesName": "T20 Blast 2023",
+                    "matchDesc": "South Group",
+                    "matchFormat": "T20",
+                    "startDate": "1686074400000",
+                    "endDate": "1686087000000",
+                    "state": "Complete",
+                    "status": "Essex won by 5 wkts",
+                    "team1": {
+                      "teamId": 41,
+                      "teamName": "Sussex",
+                      "teamSName": "SUS",
+                      "imageId": 172148
+                    },
+                    "team2": {
+                      "teamId": 152,
+                      "teamName": "Essex",
+                      "teamSName": "ESS",
+                      "imageId": 172219
+                    },
+                    "venueInfo": {
+                      "id": 118,
+                      "ground": "County Ground",
+                      "city": "Chelmsford",
+                      "timezone": "+01:00",
+                      "latitude": "51.731580",
+                      "longitude": "0.469004"
+                    },
+                    "currBatTeamId": 152,
+                    "seriesStartDt": "1684540800000",
+                    "seriesEndDt": "1689552000000",
+                    "isTimeAnnounced": true,
+                    "stateTitle": "Complete"
+                  },
+                  "matchScore": {
+                    "team1Score": {
+                      "inngs1": {
+                        "inningsId": 1,
+                        "runs": 147,
+                        "wickets": 10,
+                        "overs": 19.3
+                      }
+                    },
+                    "team2Score": {
+                      "inngs1": {
+                        "inningsId": 2,
+                        "runs": 149,
+                        "wickets": 5,
+                        "overs": 14.5
+                      }
+                    }
+                  }
+                },
+                {
+                  "matchInfo": {
+                    "matchId": 67919,
+                    "seriesId": 5246,
+                    "seriesName": "T20 Blast 2023",
+                    "matchDesc": "North Group",
+                    "matchFormat": "T20",
+                    "startDate": "1686072600000",
+                    "endDate": "1686085200000",
+                    "state": "Complete",
+                    "status": "Durham won by 4 wkts",
+                    "team1": {
+                      "teamId": 142,
+                      "teamName": "Northamptonshire",
+                      "teamSName": "NHNTS",
+                      "imageId": 172209
+                    },
+                    "team2": {
+                      "teamId": 141,
+                      "teamName": "Durham",
+                      "teamSName": "DUR",
+                      "imageId": 172208
+                    },
+                    "venueInfo": {
+                      "id": 60,
+                      "ground": "Riverside Ground",
+                      "city": "Chester-le-Street",
+                      "timezone": "+01:00",
+                      "latitude": "54.849531",
+                      "longitude": "-1.56103"
+                    },
+                    "currBatTeamId": 141,
+                    "seriesStartDt": "1684540800000",
+                    "seriesEndDt": "1689552000000",
+                    "isTimeAnnounced": true,
+                    "stateTitle": "DUR Won"
+                  },
+                  "matchScore": {
+                    "team1Score": {
+                      "inngs1": {
+                        "inningsId": 1,
+                        "runs": 161,
+                        "wickets": 7,
+                        "overs": 19.6
+                      }
+                    },
+                    "team2Score": {
+                      "inngs1": {
+                        "inningsId": 2,
+                        "runs": 162,
+                        "wickets": 6,
+                        "overs": 18.5
+                      }
+                    }
+                  }
+                },
+                {
+                  "matchInfo": {
+                    "matchId": 67923,
+                    "seriesId": 5246,
+                    "seriesName": "T20 Blast 2023",
+                    "matchDesc": "North Group",
+                    "matchFormat": "T20",
+                    "startDate": "1686072600000",
+                    "endDate": "1686085200000",
+                    "state": "Complete",
+                    "status": "Yorkshire won by 30 runs",
+                    "team1": {
+                      "teamId": 146,
+                      "teamName": "Yorkshire",
+                      "teamSName": "YORKS",
+                      "imageId": 172213
+                    },
+                    "team2": {
+                      "teamId": 145,
+                      "teamName": "Leicestershire",
+                      "teamSName": "LEIC",
+                      "imageId": 172212
+                    },
+                    "venueInfo": {
+                      "id": 222,
+                      "ground": "Grace Road",
+                      "city": "Leicester",
+                      "timezone": "+01:00",
+                      "latitude": "52.607861",
+                      "longitude": "-1.142709"
+                    },
+                    "currBatTeamId": 146,
+                    "seriesStartDt": "1684540800000",
+                    "seriesEndDt": "1689552000000",
+                    "isTimeAnnounced": true,
+                    "stateTitle": "YORKS Won"
+                  },
+                  "matchScore": {
+                    "team1Score": {
+                      "inngs1": {
+                        "inningsId": 1,
+                        "runs": 156,
+                        "wickets": 7,
+                        "overs": 19.6
+                      }
+                    },
+                    "team2Score": {
+                      "inngs1": {
+                        "inningsId": 2,
+                        "runs": 126,
+                        "wickets": 10,
+                        "overs": 19.3
+                      }
+                    }
+                  }
+                },
+                {
+                  "matchInfo": {
+                    "matchId": 67905,
+                    "seriesId": 5246,
+                    "seriesName": "T20 Blast 2023",
+                    "matchDesc": "South Group",
+                    "matchFormat": "T20",
+                    "startDate": "1686065400000",
+                    "endDate": "1686078000000",
+                    "state": "Complete",
+                    "status": "Hampshire won by 5 runs",
+                    "team1": {
+                      "teamId": 153,
+                      "teamName": "Hampshire",
+                      "teamSName": "HAM",
+                      "imageId": 172220
+                    },
+                    "team2": {
+                      "teamId": 74,
+                      "teamName": "Middlesex",
+                      "teamSName": "MDX",
+                      "imageId": 172170
+                    },
+                    "venueInfo": {
+                      "id": 356,
+                      "ground": "Radlett Cricket Club",
+                      "city": "Radlett",
+                      "timezone": "+01:00",
+                      "latitude": "51.676346",
+                      "longitude": "-0.309069"
+                    },
+                    "currBatTeamId": 153,
+                    "seriesStartDt": "1684540800000",
+                    "seriesEndDt": "1689552000000",
+                    "isTimeAnnounced": true,
+                    "stateTitle": "HAM Won"
+                  },
+                  "matchScore": {
+                    "team1Score": {
+                      "inngs1": {
+                        "inningsId": 1,
+                        "runs": 164,
+                        "wickets": 6,
+                        "overs": 19.6
+                      }
+                    },
+                    "team2Score": {
+                      "inngs1": {
+                        "inningsId": 2,
+                        "runs": 159,
+                        "wickets": 7,
+                        "overs": 19.6
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "filters": {
+      "matchType": [
+        "International",
+        "League",
+        "Domestic",
+        "Women"
+      ]
+    },
+    "appIndex": {
+      "seoTitle": "Live Cricket Score - Scorecard and Match Results",
+      "webURL": "www.cricbuzz.com/live-cricket-scores/"
+    },
+    "responseLastUpdated": "1686087743"
+  }

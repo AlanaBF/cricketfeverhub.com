@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import getLiveMatchesData from "../../../utils/getLiveMatches_API";
 import "../LiveMatches.css";
 import ScoreTableRow from "../../ScoreTableRow/ScoreTableRow";
-import MatchComms from "../../Comms/index";
+import MatchComms from "../../Comms/MatchComms";
 
 const LiveMenInternationalMatches = () => {
   const [matches, setMatches] = useState([]);
