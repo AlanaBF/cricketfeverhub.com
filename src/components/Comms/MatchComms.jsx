@@ -1,42 +1,37 @@
-import React, { useEffect, useState } from "react";
-import getComms from "../../utils/getComms_API";
-import "../../assets/styles/components.css";
+import React from 'react';
 
-const MatchComms = ({ matchId }) => {
-  const [comms, setComms] = useState([]);
-
-  useEffect(() => {
-    const fetchComms = async () => {
-      try {
-        const data = await getComms(matchId);
-        const matchComms = data.commentaryList.filter((item) => item.commText);
-        setComms(matchComms);
-      } catch (error) {
-        console.error("Error fetching cricket commentary data:", error);
-      }
-    };
-
-    fetchComms();
-  }, [matchId]);
-
+const MatchComms = ({ matchData }) => {
+  const { typeMatches } = matchData;
+  
   return (
     <div>
-      {comms.map((item) => {
-        // Convert timestamp to Date object
-        const timestamp = new Date(item.timeStamp);
-  
-        // Format the timestamp as desired (e.g., using toLocaleString)
-        const formattedTimestamp = timestamp.toLocaleString();
-  
-        return (
-          <div key={item.timeStamp}>
-            <div>{formattedTimestamp}</div>
-            <div>{item.commText}</div>
-            <div>{item.author}</div>
-            {/* Add more details as needed */}
-          </div>
-        );
-      })}
+      {typeMatches.map((typeMatch, index) => (
+        <div key={index}>
+          <h3>{typeMatch.matchType}</h3>
+          {typeMatch.seriesMatches.map((seriesMatch, index) => (
+            <div key={index}>
+              {seriesMatch.seriesAdWrapper && (
+                <div>
+                  <h4>{seriesMatch.seriesAdWrapper.seriesName}</h4>
+                  {seriesMatch.seriesAdWrapper.matches.map((match, index) => (
+                    <div key={index}>
+                      <h5>{match.matchInfo.matchDesc}</h5>
+                      <p>Status: {match.matchInfo.status}</p>
+                      {/* Display other match details */}
+                    </div>
+                  ))}
+                </div>
+              )}
+              {seriesMatch.adDetail && (
+                <div>
+                  <h4>{seriesMatch.adDetail.name}</h4>
+                  {/* Display ad details */}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 };

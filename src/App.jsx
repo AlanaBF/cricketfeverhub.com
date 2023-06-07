@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
-import LiveMatches from "./pages/LiveMatches/LiveMatches";
+import LiveMatchesPage from "./pages/LiveMatches/LiveMatchesPage";
 import UpcomingMatchesPage from "./pages/UpcomingMatches/UpcomingMatchesPage";
 import NotFound from "./pages/NotFound/NotFound";
+import MatchInfo from "./pages/MatchInfo/MatchInfo";
 
 const App = () => {
   return (
@@ -17,8 +17,9 @@ const App = () => {
       {/* Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/LiveMatches" element={<LiveMatches />} />
+        <Route path="/LiveMatchesPage" element={<LiveMatchesPage />} />
         <Route path="/UpcomingMatchesPage" element={<UpcomingMatchesPage />} />
+        <Route path="/match/:matchId" element={<MatchInfo />} /> {/* Route for MatchInfo page */}
         <Route path="*" element={<NotFound />} />
       </Routes>
 
@@ -29,3 +30,5 @@ const App = () => {
 };
 
 export default App;
+
+

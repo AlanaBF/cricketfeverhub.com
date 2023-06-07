@@ -32,7 +32,7 @@ function Header() {
             </LinkContainer>
 
             <NavDropdown title="Matches" id="matches-dropdown">
-              <LinkContainer to="/LiveMatches">
+              <LinkContainer to="/LiveMatchesPage">
                 <NavDropdown.Item className="navLink">Live Matches</NavDropdown.Item>
               </LinkContainer>
               <LinkContainer to="/UpcomingMatchesPage">

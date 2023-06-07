@@ -23,3 +23,4 @@ const getComms = async (matchId) => {
 };
 
 export default getComms;
+
