@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import MatchComms from '../../components/Comms/MatchComms';
+import MatchCommentary from '../../components/Comms/MatchComms';
 import MatchScorecard from '../../components/Scorecard/MatchScorecard';
 import getLiveMatchesData from '../../utils/getLiveMatches_API';
 import '../../assets/styles/pages.css';
 
-function MatchInfo() {
-  const { matchId } = useParams();
+function MatchInfo({matchId}) {
   const [matchData, setMatchData] = useState(null);
 
   useEffect(() => {
@@ -26,9 +24,10 @@ function MatchInfo() {
     <div className="pageBackground">
       <h1 className="pageTitle">Match Info</h1>
       <MatchScorecard matchId={matchId} />
-      {matchData && <MatchComms matchData={matchData} />}
+      {matchData && <MatchCommentary matchData={matchData} />}
     </div>
   );
 }
 
 export default MatchInfo;
+
