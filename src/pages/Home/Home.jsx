@@ -1,7 +1,8 @@
 import React from "react";
 import PlayerDataComponent from "../../components/PlayerData/PlayerDataComponent";
-import CricketCarousel from "../../components/News/CricketCarousel";
+import CricketCardLayout from "../../components/News/CricketCardLayout";
 import "../../assets/styles/pages.css";
+
 
 function Home() {
   return (
@@ -14,7 +15,7 @@ function Home() {
         latest news and commentary.
       </h3>
       <div className="newsContainer">
-        <CricketCarousel />
+        <CricketCardLayout />
       </div>
       <div className="playerSearch">
         <p>

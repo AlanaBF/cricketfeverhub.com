@@ -1,0 +1,110 @@
+{
+    "id": 122025,
+    "context": "A new role",
+    "headline": "Abdur Razzak to serve short coaching stint at High Performance Unit",
+    "publishTime": "1650854243199",
+    "coverImage": {
+      "id": "232022",
+      "caption": "Razzak (black top) will serve as a temporary spin consultant at HP camp.",
+      "source": "Cricbuzz"
+    },
+    "content": [
+      {
+        "content": {
+          "contentType": "text",
+          "contentValue": "Abdur Razzak, member of Bangladesh's selection panel, will have a short stint with the High Performance Unit as spin consultant during their upcoming camp, scheduled to start from May 14."
+        }
+      },
+      {
+        "content": {
+          "contentType": "text",
+          "contentValue": "The experienced left-arm spinner joined the @L0$ on June 27 last year after retiring from all forms of cricket but this will be his stint in a coaching capacity.",
+          "hasFormat": true
+        }
+      },
+      {
+        "content": {
+          "contentType": "text",
+          "contentValue": "\"Yes, I will be joining the HP camp if everything goes according to plan,\" Razzak told Cricbuzz on Monday. \"It is not that I am shifting my focus on coaching at the moment but what I feel is that I have got lot of experience that I can share with the young boys and if they benefit by it that will be extremely satisfying. I think it will be an exciting experience for me as well,\" he added."
+        }
+      },
+      {
+        "content": {
+          "contentType": "text",
+          "contentValue": "Naimur Rahman, Bangladesh Cricket Board's High Performance Unit chairman, told Cricbuzz that they have approached Razzak as they are unable to rope any foreign spin consultant at the moment. \"We are yet to get any good spin coach or consultant for our High Performance Unit and so we are eyeing to include Razzak in the HP camp as we are all aware he can share the experience with our boys,\" said Naimur."
+        }
+      },
+      {
+        "content": {
+          "contentType": "text",
+          "contentValue": "\"I am sure if he can manage his time he will do a great job and his guidance will certainly help the boys develop their skill.\""
+        }
+      },
+      {
+        "ad": {
+          "name": "news_mpu",
+          "position": 5
+        }
+      },
+      {
+        "content": {
+          "contentType": "text",
+          "contentValue": "Cricbuzz understands that BCB is also planning to use national team's batting coach Jamie Siddons in the HP camp if he is available. HP Unit head coach Toby Radford, who is expected to arrive in Dhaka on June 1, will be overseeing the development of the batsmen while Champaka Ramanayke will be at helm of the pace bowling unit."
+        }
+      },
+      {
+        "ad": {
+          "name": "news_mpu",
+          "position": 5
+        }
+      }
+    ],
+    "format": [
+      {
+        "type": "urls",
+        "value": [
+          {
+            "id": "@L0$",
+            "value": "cricbuzz://news?id=115960&name=abdur-razzak-appointed-as-bangladesh-selector-cricbuzzcom"
+          }
+        ]
+      },
+      {
+        "type": "links",
+        "value": [
+          {
+            "id": "@L0$",
+            "value": "national selection panel"
+          }
+        ]
+      }
+    ],
+    "authors": [
+      {
+        "id": 197,
+        "name": "Atif Azam",
+        "imageId": 286790,
+        "twitterHandle": "https://twitter.com/a_atifazam"
+      }
+    ],
+    "tags": [
+      {
+        "itemName": "Bangladesh",
+        "itemType": "team",
+        "itemId": "6"
+      },
+      {
+        "itemName": "Abdur Razzak",
+        "itemType": "player",
+        "itemId": "127"
+      }
+    ],
+    "appIndex": {
+      "seoTitle": "Abdur Razzak to serve short coaching stint at High Performance Unit  | Cricbuzz.com",
+      "webURL": "http://www.cricbuzz.com/cricket-news/122025/abdur-razzak-to-serve-short-coaching-stint-at-high-performance-unit"
+    },
+    "storyType": "News",
+    "lastUpdatedTime": "1650854243199",
+    "intro": "BCB are yet to find a foreign spin consultant for their high performance unit",
+    "source": "Cricbuzz"
+  }

@@ -123,8 +123,9 @@ const LiveMatches = () => {
 </table>
 
 <Link to={`/match/${match.matchInfo.matchId}`}>
-            <button>Go to Match Info</button>
-          </Link>
+  <button>Go to Match Info</button>
+</Link>
+
           </div>
         ))
       ) : (

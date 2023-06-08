@@ -7,6 +7,7 @@ import LiveMatchesPage from "./pages/LiveMatches/LiveMatchesPage";
 import UpcomingMatchesPage from "./pages/UpcomingMatches/UpcomingMatchesPage";
 import NotFound from "./pages/NotFound/NotFound";
 import MatchInfo from "./pages/MatchInfo/MatchInfo";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
@@ -19,7 +20,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/LiveMatchesPage" element={<LiveMatchesPage />} />
         <Route path="/UpcomingMatchesPage" element={<UpcomingMatchesPage />} />
-        <Route path="/match/:matchId" element={<MatchInfo />} /> {/* Route for MatchInfo page */}
+        <Route path="/match/:matchId" element={<MatchInfo/>} /> {/* Route for MatchInfo page */}
         <Route path="*" element={<NotFound />} />
       </Routes>
 
