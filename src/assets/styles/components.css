@@ -82,7 +82,6 @@
 }
 
 /* News Cards */
-/* News Cards */
 
 .card-layout {
   margin: auto;
@@ -99,7 +98,7 @@
   width: 28rem;
   margin-bottom: 20px;
   background-color: var(--pink) !important;
-  color: var(--navy);
+  color: var(--light-blue);
   border: var(--navy) solid 10px !important;
 }
 
