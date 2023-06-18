@@ -18,7 +18,7 @@
 
 .pageDescription {
   font-size: 18px;
-  color: var(--pink);
+  color: var(--navy);
   margin-bottom: 30px;
 }
 
@@ -33,7 +33,7 @@
 
 .playerSearchDescription {
   font-size: 16px;
-  color: var(--pink);
+  color: var(--navy);
   margin-bottom: 10px;
 }
 

@@ -1,331 +1,339 @@
 {
-    "typeMatches": [
-      {
-        "matchType": "International",
-        "seriesMatches": [
-          {
-            "seriesAdWrapper": {
-              "seriesId": 6255,
-              "seriesName": "West Indies tour of UAE, 2023",
-              "matches": [
-                {
-                  "matchInfo": {
-                    "matchId": 69934,
-                    "seriesId": 6255,
-                    "seriesName": "West Indies tour of UAE, 2023",
-                    "matchDesc": "2nd ODI",
-                    "matchFormat": "ODI",
-                    "startDate": "1686054600000",
-                    "endDate": "1686083400000",
-                    "state": "Complete",
-                    "status": "West Indies won by 78 runs",
-                    "team1": {
-                      "teamId": 10,
-                      "teamName": "West Indies",
-                      "teamSName": "WI",
-                      "imageId": 172124
-                    },
-                    "team2": {
-                      "teamId": 7,
-                      "teamName": "United Arab Emirates",
-                      "teamSName": "UAE",
-                      "imageId": 172121
-                    },
-                    "venueInfo": {
-                      "id": 140,
-                      "ground": "Sharjah Cricket Stadium",
-                      "city": "Sharjah",
-                      "timezone": "+04:00",
-                      "latitude": "25.33095",
-                      "longitude": "55.420902"
-                    },
-                    "currBatTeamId": 10,
-                    "seriesStartDt": "1685836800000",
-                    "seriesEndDt": "1686441600000",
-                    "isTimeAnnounced": true,
-                    "stateTitle": "WI Won",
-                    "isFantasyEnabled": true
+  "typeMatches": [
+    {
+      "matchType": "International",
+      "seriesMatches": [
+        {
+          "seriesAdWrapper": {
+            "seriesId": 4777,
+            "seriesName": "The Ashes, 2023",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 53350,
+                  "seriesId": 4777,
+                  "seriesName": "The Ashes, 2023",
+                  "matchDesc": "1st Test",
+                  "matchFormat": "TEST",
+                  "startDate": "1686909600000",
+                  "endDate": "1687280400000",
+                  "state": "In Progress",
+                  "status": "Day 2: 2nd Session - Australia trail by 245 runs",
+                  "team1": {
+                    "teamId": 9,
+                    "teamName": "England",
+                    "teamSName": "ENG",
+                    "imageId": 172123
                   },
-                  "matchScore": {
-                    "team1Score": {
-                      "inngs1": {
-                        "inningsId": 1,
-                        "runs": 306,
-                        "wickets": 10,
-                        "overs": 49.5
-                      }
-                    },
-                    "team2Score": {
-                      "inngs1": {
-                        "inningsId": 2,
-                        "runs": 228,
-                        "wickets": 7,
-                        "overs": 49.6
-                      }
+                  "team2": {
+                    "teamId": 4,
+                    "teamName": "Australia",
+                    "teamSName": "AUS",
+                    "imageId": 172117
+                  },
+                  "venueInfo": {
+                    "id": 20,
+                    "ground": "Edgbaston",
+                    "city": "Birmingham",
+                    "timezone": "+01:00",
+                    "latitude": "52.455774",
+                    "longitude": "-1.902624"
+                  },
+                  "currBatTeamId": 4,
+                  "seriesStartDt": "1686873600000",
+                  "seriesEndDt": "1690934400000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "In Progress",
+                  "isFantasyEnabled": true
+                },
+                "matchScore": {
+                  "team1Score": {
+                    "inngs1": {
+                      "inningsId": 1,
+                      "runs": 393,
+                      "wickets": 8,
+                      "overs": 77.6,
+                      "isDeclared": true
+                    }
+                  },
+                  "team2Score": {
+                    "inngs1": {
+                      "inningsId": 2,
+                      "runs": 148,
+                      "wickets": 4,
+                      "overs": 46.1
                     }
                   }
                 }
-              ]
-            }
-          },
-          {
-            "adDetail": {
-              "name": "native_matches",
-              "layout": "native_large",
-              "position": 1
-            }
+              }
+            ]
           }
-        ]
-      },
-      {
-        "matchType": "League",
-        "seriesMatches": [
-          {
-            "seriesAdWrapper": {
-              "seriesId": 5246,
-              "seriesName": "T20 Blast 2023",
-              "matches": [
-                {
-                  "matchInfo": {
-                    "matchId": 67926,
-                    "seriesId": 5246,
-                    "seriesName": "T20 Blast 2023",
-                    "matchDesc": "South Group",
-                    "matchFormat": "T20",
-                    "startDate": "1686074400000",
-                    "endDate": "1686087000000",
-                    "state": "Complete",
-                    "status": "Essex won by 5 wkts",
-                    "team1": {
-                      "teamId": 41,
-                      "teamName": "Sussex",
-                      "teamSName": "SUS",
-                      "imageId": 172148
-                    },
-                    "team2": {
-                      "teamId": 152,
-                      "teamName": "Essex",
-                      "teamSName": "ESS",
-                      "imageId": 172219
-                    },
-                    "venueInfo": {
-                      "id": 118,
-                      "ground": "County Ground",
-                      "city": "Chelmsford",
-                      "timezone": "+01:00",
-                      "latitude": "51.731580",
-                      "longitude": "0.469004"
-                    },
-                    "currBatTeamId": 152,
-                    "seriesStartDt": "1684540800000",
-                    "seriesEndDt": "1689552000000",
-                    "isTimeAnnounced": true,
-                    "stateTitle": "Complete"
+        },
+        {
+          "adDetail": {
+            "name": "native_matches",
+            "layout": "native_large",
+            "position": 1
+          }
+        },
+        {
+          "seriesAdWrapper": {
+            "seriesId": 6589,
+            "seriesName": "Africa Continental Cup 2023",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 72924,
+                  "seriesId": 6589,
+                  "seriesName": "Africa Continental Cup 2023",
+                  "matchDesc": "14th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1686999600000",
+                  "endDate": "1687012200000",
+                  "state": "Complete",
+                  "status": "Kenya won by 7 wkts",
+                  "team1": {
+                    "teamId": 569,
+                    "teamName": "Rwanda",
+                    "teamSName": "RWA",
+                    "imageId": 172621
                   },
-                  "matchScore": {
-                    "team1Score": {
-                      "inngs1": {
-                        "inningsId": 1,
-                        "runs": 147,
-                        "wickets": 10,
-                        "overs": 19.3
-                      }
-                    },
-                    "team2Score": {
-                      "inngs1": {
-                        "inningsId": 2,
-                        "runs": 149,
-                        "wickets": 5,
-                        "overs": 14.5
-                      }
-                    }
-                  }
+                  "team2": {
+                    "teamId": 14,
+                    "teamName": "Kenya",
+                    "teamSName": "KEN",
+                    "imageId": 172129
+                  },
+                  "venueInfo": {
+                    "id": 97,
+                    "ground": "Gymkhana Club Ground",
+                    "city": "Nairobi",
+                    "timezone": "+03:00",
+                    "latitude": "-1.269828",
+                    "longitude": "36.827494"
+                  },
+                  "currBatTeamId": 14,
+                  "seriesStartDt": "1686268800000",
+                  "seriesEndDt": "1687478400000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Complete"
                 },
-                {
-                  "matchInfo": {
-                    "matchId": 67919,
-                    "seriesId": 5246,
-                    "seriesName": "T20 Blast 2023",
-                    "matchDesc": "North Group",
-                    "matchFormat": "T20",
-                    "startDate": "1686072600000",
-                    "endDate": "1686085200000",
-                    "state": "Complete",
-                    "status": "Durham won by 4 wkts",
-                    "team1": {
-                      "teamId": 142,
-                      "teamName": "Northamptonshire",
-                      "teamSName": "NHNTS",
-                      "imageId": 172209
-                    },
-                    "team2": {
-                      "teamId": 141,
-                      "teamName": "Durham",
-                      "teamSName": "DUR",
-                      "imageId": 172208
-                    },
-                    "venueInfo": {
-                      "id": 60,
-                      "ground": "Riverside Ground",
-                      "city": "Chester-le-Street",
-                      "timezone": "+01:00",
-                      "latitude": "54.849531",
-                      "longitude": "-1.56103"
-                    },
-                    "currBatTeamId": 141,
-                    "seriesStartDt": "1684540800000",
-                    "seriesEndDt": "1689552000000",
-                    "isTimeAnnounced": true,
-                    "stateTitle": "DUR Won"
-                  },
-                  "matchScore": {
-                    "team1Score": {
-                      "inngs1": {
-                        "inningsId": 1,
-                        "runs": 161,
-                        "wickets": 7,
-                        "overs": 19.6
-                      }
-                    },
-                    "team2Score": {
-                      "inngs1": {
-                        "inningsId": 2,
-                        "runs": 162,
-                        "wickets": 6,
-                        "overs": 18.5
-                      }
+                "matchScore": {
+                  "team1Score": {
+                    "inngs1": {
+                      "inningsId": 1,
+                      "runs": 99,
+                      "wickets": 10,
+                      "overs": 19.6
                     }
-                  }
-                },
-                {
-                  "matchInfo": {
-                    "matchId": 67923,
-                    "seriesId": 5246,
-                    "seriesName": "T20 Blast 2023",
-                    "matchDesc": "North Group",
-                    "matchFormat": "T20",
-                    "startDate": "1686072600000",
-                    "endDate": "1686085200000",
-                    "state": "Complete",
-                    "status": "Yorkshire won by 30 runs",
-                    "team1": {
-                      "teamId": 146,
-                      "teamName": "Yorkshire",
-                      "teamSName": "YORKS",
-                      "imageId": 172213
-                    },
-                    "team2": {
-                      "teamId": 145,
-                      "teamName": "Leicestershire",
-                      "teamSName": "LEIC",
-                      "imageId": 172212
-                    },
-                    "venueInfo": {
-                      "id": 222,
-                      "ground": "Grace Road",
-                      "city": "Leicester",
-                      "timezone": "+01:00",
-                      "latitude": "52.607861",
-                      "longitude": "-1.142709"
-                    },
-                    "currBatTeamId": 146,
-                    "seriesStartDt": "1684540800000",
-                    "seriesEndDt": "1689552000000",
-                    "isTimeAnnounced": true,
-                    "stateTitle": "YORKS Won"
                   },
-                  "matchScore": {
-                    "team1Score": {
-                      "inngs1": {
-                        "inningsId": 1,
-                        "runs": 156,
-                        "wickets": 7,
-                        "overs": 19.6
-                      }
-                    },
-                    "team2Score": {
-                      "inngs1": {
-                        "inningsId": 2,
-                        "runs": 126,
-                        "wickets": 10,
-                        "overs": 19.3
-                      }
-                    }
-                  }
-                },
-                {
-                  "matchInfo": {
-                    "matchId": 67905,
-                    "seriesId": 5246,
-                    "seriesName": "T20 Blast 2023",
-                    "matchDesc": "South Group",
-                    "matchFormat": "T20",
-                    "startDate": "1686065400000",
-                    "endDate": "1686078000000",
-                    "state": "Complete",
-                    "status": "Hampshire won by 5 runs",
-                    "team1": {
-                      "teamId": 153,
-                      "teamName": "Hampshire",
-                      "teamSName": "HAM",
-                      "imageId": 172220
-                    },
-                    "team2": {
-                      "teamId": 74,
-                      "teamName": "Middlesex",
-                      "teamSName": "MDX",
-                      "imageId": 172170
-                    },
-                    "venueInfo": {
-                      "id": 356,
-                      "ground": "Radlett Cricket Club",
-                      "city": "Radlett",
-                      "timezone": "+01:00",
-                      "latitude": "51.676346",
-                      "longitude": "-0.309069"
-                    },
-                    "currBatTeamId": 153,
-                    "seriesStartDt": "1684540800000",
-                    "seriesEndDt": "1689552000000",
-                    "isTimeAnnounced": true,
-                    "stateTitle": "HAM Won"
-                  },
-                  "matchScore": {
-                    "team1Score": {
-                      "inngs1": {
-                        "inningsId": 1,
-                        "runs": 164,
-                        "wickets": 6,
-                        "overs": 19.6
-                      }
-                    },
-                    "team2Score": {
-                      "inngs1": {
-                        "inningsId": 2,
-                        "runs": 159,
-                        "wickets": 7,
-                        "overs": 19.6
-                      }
+                  "team2Score": {
+                    "inngs1": {
+                      "inningsId": 2,
+                      "runs": 100,
+                      "wickets": 3,
+                      "overs": 17.2
                     }
                   }
                 }
-              ]
-            }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 72921,
+                  "seriesId": 6589,
+                  "seriesName": "Africa Continental Cup 2023",
+                  "matchDesc": "13th Match",
+                  "matchFormat": "T20",
+                  "startDate": "1686983400000",
+                  "endDate": "1686996000000",
+                  "state": "Complete",
+                  "status": "Uganda won by 7 wkts",
+                  "team1": {
+                    "teamId": 529,
+                    "teamName": "Botswana",
+                    "teamSName": "BW",
+                    "imageId": 172579
+                  },
+                  "team2": {
+                    "teamId": 44,
+                    "teamName": "Uganda",
+                    "teamSName": "UGA",
+                    "imageId": 172151
+                  },
+                  "venueInfo": {
+                    "id": 97,
+                    "ground": "Gymkhana Club Ground",
+                    "city": "Nairobi",
+                    "timezone": "+03:00",
+                    "latitude": "-1.269828",
+                    "longitude": "36.827494"
+                  },
+                  "currBatTeamId": 44,
+                  "seriesStartDt": "1686268800000",
+                  "seriesEndDt": "1687478400000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "UGA Won"
+                },
+                "matchScore": {
+                  "team1Score": {
+                    "inngs1": {
+                      "inningsId": 1,
+                      "runs": 64,
+                      "wickets": 10,
+                      "overs": 18.1
+                    }
+                  },
+                  "team2Score": {
+                    "inngs1": {
+                      "inningsId": 2,
+                      "runs": 65,
+                      "wickets": 3,
+                      "overs": 7.2
+                    }
+                  }
+                }
+              }
+            ]
           }
-        ]
-      }
-    ],
-    "filters": {
-      "matchType": [
-        "International",
-        "League",
-        "Domestic",
-        "Women"
+        }
       ]
     },
-    "appIndex": {
-      "seoTitle": "Live Cricket Score - Scorecard and Match Results",
-      "webURL": "www.cricbuzz.com/live-cricket-scores/"
-    },
-    "responseLastUpdated": "1686087743"
-  }
+    {
+      "matchType": "Women",
+      "seriesMatches": [
+        {
+          "seriesAdWrapper": {
+            "seriesId": 6592,
+            "seriesName": "Kwibuka Womens T20I Tournament 2023",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 73064,
+                  "seriesId": 6592,
+                  "seriesName": "Kwibuka Womens T20I Tournament 2023",
+                  "matchDesc": "Final",
+                  "matchFormat": "T20",
+                  "startDate": "1687002300000",
+                  "endDate": "1687014900000",
+                  "state": "In Progress",
+                  "status": "Rwanda Women need 41 runs in 91 balls",
+                  "team1": {
+                    "teamId": 448,
+                    "teamName": "Uganda Women",
+                    "teamSName": "UGAW",
+                    "imageId": 172496
+                  },
+                  "team2": {
+                    "teamId": 720,
+                    "teamName": "Rwanda Women",
+                    "teamSName": "RWAW",
+                    "imageId": 248448
+                  },
+                  "venueInfo": {
+                    "id": 818,
+                    "ground": "Gahanga International Cricket Stadium",
+                    "city": "Kigali City",
+                    "timezone": "+02:00",
+                    "latitude": "-1.950851",
+                    "longitude": "30.061507"
+                  },
+                  "currBatTeamId": 720,
+                  "seriesStartDt": "1686355200000",
+                  "seriesEndDt": "1687132800000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "In Progress"
+                },
+                "matchScore": {
+                  "team1Score": {
+                    "inngs1": {
+                      "inningsId": 1,
+                      "runs": 65,
+                      "wickets": 10,
+                      "overs": 19.6
+                    }
+                  },
+                  "team2Score": {
+                    "inngs1": {
+                      "inningsId": 2,
+                      "runs": 25,
+                      "overs": 4.5
+                    }
+                  }
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 73057,
+                  "seriesId": 6592,
+                  "seriesName": "Kwibuka Womens T20I Tournament 2023",
+                  "matchDesc": "3rd Place play-off",
+                  "matchFormat": "T20",
+                  "startDate": "1686987900000",
+                  "endDate": "1687000500000",
+                  "state": "Complete",
+                  "status": "Kenya Women won by 48 runs",
+                  "team1": {
+                    "teamId": 501,
+                    "teamName": "Kenya Women",
+                    "teamSName": "KENW",
+                    "imageId": 172550
+                  },
+                  "team2": {
+                    "teamId": 1482,
+                    "teamName": "Nigeria Women",
+                    "teamSName": "NGAW",
+                    "imageId": 273957
+                  },
+                  "venueInfo": {
+                    "id": 818,
+                    "ground": "Gahanga International Cricket Stadium",
+                    "city": "Kigali City",
+                    "timezone": "+02:00",
+                    "latitude": "-1.950851",
+                    "longitude": "30.061507"
+                  },
+                  "currBatTeamId": 501,
+                  "seriesStartDt": "1686355200000",
+                  "seriesEndDt": "1687132800000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "KENW Won"
+                },
+                "matchScore": {
+                  "team1Score": {
+                    "inngs1": {
+                      "inningsId": 1,
+                      "runs": 99,
+                      "wickets": 3,
+                      "overs": 19.6
+                    }
+                  },
+                  "team2Score": {
+                    "inngs1": {
+                      "inningsId": 2,
+                      "runs": 51,
+                      "wickets": 10,
+                      "overs": 17.6
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "filters": {
+    "matchType": [
+      "International",
+      "League",
+      "Domestic",
+      "Women"
+    ]
+  },
+  "appIndex": {
+    "seoTitle": "Live Cricket Score - Scorecard and Match Results",
+    "webURL": "www.cricbuzz.com/live-cricket-scores/"
+  },
+  "responseLastUpdated": "1687009718"
+}

@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import LiveMatchesPage from "./pages/LiveMatches/LiveMatchesPage";
 import UpcomingMatchesPage from "./pages/UpcomingMatches/UpcomingMatchesPage";
+import ScorecardPage from "./pages/ScorecardPage";
 import NotFound from "./pages/NotFound/NotFound";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -18,6 +19,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/LiveMatchesPage" element={<LiveMatchesPage />} />
+        <Route path="/ScorecardPage/:matchId" element={<ScorecardPage />} />
         <Route path="/UpcomingMatchesPage" element={<UpcomingMatchesPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
@@ -29,5 +31,6 @@ const App = () => {
 };
 
 export default App;
+
 
 

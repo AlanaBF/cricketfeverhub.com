@@ -13,7 +13,8 @@ const getScorecard = async (matchId) => {
 
   try {
     const response = await axios.request(options);
-    return response.data;
+    console.log(response.data)
+    return response;
   } catch (error) {
     console.error(error);
     throw error;

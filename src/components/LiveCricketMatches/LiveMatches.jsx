@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from "react";
 import getLiveMatchesData from "../../utils/getLiveMatches_API";
 import "./LiveMatches.css";
+import getScorecard from "../../utils/getScorecard_API";
+import MatchScorecard from "../Scorecard/MatchScorecard";
+import { Modal, Button } from "react-bootstrap";
+
 
 const LiveMatches = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const [matches, setMatches] = useState([]);
   const [filteredMatches, setFilteredMatches] = useState([]);
+  const [selectedMatch, setSelectedMatch] = useState(null);
+  const [scorecardData, setScorecardData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,12 +33,30 @@ const LiveMatches = () => {
   }, []);
 
   useEffect(() => {
-    // Filter live matches
     const filteredData = matches.flatMap(
       (seriesMatch) => seriesMatch.seriesAdWrapper.matches
     );
     setFilteredMatches(filteredData);
   }, [matches]);
+
+  const convertTimestampToDate = (timestamp) => {
+    const date = new Date(parseInt(timestamp));
+    return date.toLocaleDateString();
+  };
+
+  const handleViewScorecard = async (matchId) => {
+    try {
+      const response = await getScorecard(matchId);
+      setScorecardData(response.data);
+      setIsModalOpen(true); // Open the modal
+    } catch (error) {
+      console.error("Error fetching scorecard data:", error);
+    }
+  };
+  
+  const handleCloseModal = () => {
+    setIsModalOpen(false); // Close the modal
+  };
 
   return (
     <div className="live-matches">
@@ -44,6 +70,16 @@ const LiveMatches = () => {
             </p>
             <p>{match.matchInfo.seriesName}</p>
             <p>Match Format: {match.matchInfo.matchFormat}</p>
+            <p>
+              Start Date: {convertTimestampToDate(match.matchInfo.startDate)}
+            </p>
+            <p>End Date: {convertTimestampToDate(match.matchInfo.endDate)}</p>
+            <p>Status: {match.matchInfo.status}</p>
+            <p>MatchId: {match.matchInfo.matchId}</p>
+            <p>
+              Venue: {match.matchInfo.venueInfo.ground},{" "}
+              {match.matchInfo.venueInfo.city}
+            </p>
             <table className="score-table">
               <thead>
                 <tr>
@@ -120,11 +156,39 @@ const LiveMatches = () => {
                 )}
               </tbody>
             </table>
+            <button
+              onClick={() => handleViewScorecard(match.matchInfo.matchId)}
+            >
+              View Scorecard
+            </button>
           </div>
         ))
       ) : (
         <p>No live matches available.</p>
       )}
+      {scorecardData && (
+      <Modal show={isModalOpen} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Scorecard</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+  {scorecardData && (
+    <MatchScorecard
+      scoreCard={scorecardData.scoreCard}
+      matchHeader={scorecardData.matchHeader}
+    />
+  )}
+</Modal.Body>
+
+
+
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    )}
     </div>
   );
 };

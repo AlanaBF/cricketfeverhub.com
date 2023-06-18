@@ -47,7 +47,7 @@
 
 .navLink:hover,
 #matches-dropdown:hover {
-  background-color: var(--light-blue);
+  background-color: var(--light-blue) !important;
   color: var(--navy) !important;
   border-radius: 20px;
   width: auto;
@@ -97,9 +97,9 @@
   border-radius: 10px;
   width: 28rem;
   margin-bottom: 20px;
-  background-color: var(--pink) !important;
-  color: var(--light-blue);
-  border: var(--navy) solid 10px !important;
+  background-color: var(--blue) !important;
+  color: var(--navy);
+  border: var(--blue) solid 10px !important;
 }
 
 .card-image {
@@ -135,9 +135,7 @@
 
 /* Live match component */
 
-.live-cricket-matches {
-  font-family: Arial, sans-serif;
-}
+
 
 .match-type-container {
   margin-bottom: 20px;
@@ -145,10 +143,11 @@
 
 .series-match-container {
   margin-bottom: 10px;
+  border: solid 10px var(--navy) !important;
 }
 
 .match-container {
-  background-color: #f2f2f2;
+  background-color: var(--cream);
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -158,33 +157,8 @@
   font-weight: bold;
 }
 
-.score-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
 
-.score-table th,
-.score-table td {
-  padding: 5px;
-  text-align: center;
-}
 
-.score-table th {
-  background-color: #e0e0e0;
-}
-
-.score-table td {
-  border: 1px solid #ccc;
-}
-
-.score-table p {
-  margin: 0;
-}
-
-.score-table td p {
-  margin-bottom: 5px;
-}
 
 /* Footer Component */
 
