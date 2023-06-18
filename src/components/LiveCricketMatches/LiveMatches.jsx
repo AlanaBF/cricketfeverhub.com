@@ -5,14 +5,12 @@ import getScorecard from "../../utils/getScorecard_API";
 import MatchScorecard from "../Scorecard/MatchScorecard";
 import { Modal, Button } from "react-bootstrap";
 
-
 const LiveMatches = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   const [matches, setMatches] = useState([]);
   const [filteredMatches, setFilteredMatches] = useState([]);
   const [selectedMatch, setSelectedMatch] = useState(null);
   const [scorecardData, setScorecardData] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -48,14 +46,15 @@ const LiveMatches = () => {
     try {
       const response = await getScorecard(matchId);
       setScorecardData(response.data);
-      setIsModalOpen(true); // Open the modal
+      setIsModalOpen(true);
     } catch (error) {
       console.error("Error fetching scorecard data:", error);
     }
   };
-  
+
   const handleCloseModal = () => {
-    setIsModalOpen(false); // Close the modal
+    setIsModalOpen(false);
+    setScorecardData(null);
   };
 
   return (
@@ -156,39 +155,31 @@ const LiveMatches = () => {
                 )}
               </tbody>
             </table>
-            <button
-              onClick={() => handleViewScorecard(match.matchInfo.matchId)}
-            >
-              View Scorecard
-            </button>
+            <Button onClick={() => handleViewScorecard(match.matchInfo.matchId)}>View Scorecard</Button>
           </div>
         ))
       ) : (
         <p>No live matches available.</p>
       )}
-      {scorecardData && (
-      <Modal show={isModalOpen} onHide={handleCloseModal}>
+
+      <Modal show={isModalOpen} onHide={handleCloseModal} dialogClassName="custom-modal">
         <Modal.Header closeButton>
           <Modal.Title>Scorecard</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-  {scorecardData && (
-    <MatchScorecard
-      scoreCard={scorecardData.scoreCard}
-      matchHeader={scorecardData.matchHeader}
-    />
-  )}
-</Modal.Body>
-
-
-
+          {scorecardData && (
+            <MatchScorecard
+              scoreCard={scorecardData.scoreCard}
+              matchHeader={scorecardData.matchHeader}
+            />
+          )}
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseModal}>
             Close
           </Button>
         </Modal.Footer>
       </Modal>
-    )}
     </div>
   );
 };
