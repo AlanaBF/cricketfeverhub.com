@@ -35,9 +35,6 @@ function Header() {
               <LinkContainer to="/LiveMatchesPage">
                 <NavDropdown.Item className="navLink">Live Matches</NavDropdown.Item>
               </LinkContainer>
-              <LinkContainer to="/ScorecardPage/">
-              <Nav.Link className="navLink">Scorecard</Nav.Link>
-            </LinkContainer>
               <LinkContainer to="/UpcomingMatchesPage">
                 <NavDropdown.Item className="navLink">Upcoming Matches</NavDropdown.Item>
               </LinkContainer>
