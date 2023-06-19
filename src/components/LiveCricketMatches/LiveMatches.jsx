@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { Button, Modal } from "react-bootstrap";
+import { useParams, useNavigate } from "react-router-dom";
 import getLiveMatchesData from "../../utils/getLiveMatches_API";
-import "./LiveMatches.css";
 import getScorecard from "../../utils/getScorecard_API";
 import MatchScorecard from "../Scorecard/MatchScorecard";
-import { Modal, Button } from "react-bootstrap";
+import "../../assets/styles/components.css";
 
 const LiveMatches = () => {
   const [matches, setMatches] = useState([]);
@@ -11,6 +12,7 @@ const LiveMatches = () => {
   const [selectedMatch, setSelectedMatch] = useState(null);
   const [scorecardData, setScorecardData] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -155,18 +157,26 @@ const LiveMatches = () => {
                 )}
               </tbody>
             </table>
-            <Button onClick={() => handleViewScorecard(match.matchInfo.matchId)}>View Scorecard</Button>
+            <Button
+              onClick={() => navigate(`/scorecard/${match.matchInfo.matchId}`)}
+            >
+              View Scorecard
+            </Button>
           </div>
         ))
       ) : (
         <p>No live matches available.</p>
       )}
 
-      <Modal show={isModalOpen} onHide={handleCloseModal} dialogClassName="custom-modal">
-        <Modal.Header closeButton>
-          <Modal.Title>Scorecard</Modal.Title>
+      <Modal
+        show={isModalOpen}
+        onHide={handleCloseModal}
+        dialogClassName="custom-modal"
+      >
+        <Modal.Header closeButton className="modal-header">
+          <Modal.Title className="modal-title">Scorecard</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="modal-body">
           {scorecardData && (
             <MatchScorecard
               scoreCard={scorecardData.scoreCard}
@@ -174,7 +184,7 @@ const LiveMatches = () => {
             />
           )}
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer className="modal-footer">
           <Button variant="secondary" onClick={handleCloseModal}>
             Close
           </Button>

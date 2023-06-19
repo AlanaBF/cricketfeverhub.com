@@ -26,7 +26,7 @@ const CricketCardLayout = ({ imageId }) => {
   };
 
   return (
-    <div className="card-layout">
+    <div className="news-card-layout">
       {news.map((item) => {
         if (item.story) {
           const { id, hline, intro, source, pubTime, imageCaption } = item.story;
@@ -35,13 +35,13 @@ const CricketCardLayout = ({ imageId }) => {
             : null;
 
           return (
-            <Card key={id} className="card">
+            <Card key={id} className="news-card">
               {imageUrl && (
                 <Card.Img
                   variant="top"
                   src={imageUrl}
                   alt={hline}
-                  className="card-image"
+                  className="news-card-image"
                 />
               )}
               <Card.Body>

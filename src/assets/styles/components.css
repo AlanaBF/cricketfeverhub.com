@@ -83,26 +83,26 @@
 
 /* News Cards */
 
-.card-layout {
+.news-card-layout {
   margin: auto;
   padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
 }
 
-.card {
+.news-card {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  width: 28rem;
   margin-bottom: 20px;
   background-color: var(--blue) !important;
   color: var(--navy);
   border: var(--blue) solid 10px !important;
+  width: 100%;
 }
 
-.card-image {
+.news-card-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -122,62 +122,245 @@
 }
 
 @media (max-width: 768px) {
-  .card-layout {
-    flex-direction: column;
-    align-items: center;
+  .news-card-layout {
+    grid-template-columns: 1fr; /* Display one column on smaller screens */
+    grid-gap: 20px;
   }
-  
-  .card {
+
+  .news-card {
     width: 100%;
     margin: 0 auto 20px;
   }
 }
 
+
 /* Live match component */
 
-
-
-.match-type-container {
-  margin-bottom: 20px;
-}
-
-.series-match-container {
-  margin-bottom: 10px;
-  border: solid 10px var(--navy) !important;
-}
-
 .match-container {
-  background-color: var(--cream);
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;
+  background-color: var(--light-blue) !important;
+  border: 10px solid var(--navy);
+  border-radius: 40px !important;
 }
 
-.match-container p {
-  font-weight: bold;
-}
-/* scorecard */
-.table-container {
-  width: 100%;
-  overflow-x: auto;
-}
-
-table {
+.score-table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 10px;
 }
 
-th,
-td {
+.score-table th,
+.score-table td {
+  padding: 5px;
+  text-align: center;
+}
+
+.score-table th {
+  background-color: var(--light-blue) !important;
+}
+
+.score-table td {
+  background-color: var(--pink) !important;
+  color: white;
+}
+
+
+/* Scorecard */
+.scorecard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+}
+
+.intro-description {
+  text-align: center;
+}
+
+.teams-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Separate Team 1 and Team 2 */
+  margin: 10px;
+}
+
+.team-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.scorecard-section {
+  display: grid;
+  grid-template-columns: (2, 1fr);
+  gap: 10px; /* Adjust the gap between cards */
+  text-align: center;
+}
+
+.scorecard-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+}
+
+.batsmen-data-container {
+  display: flex;
+  justify-content: center;
+}
+
+.chart-container {
+  margin: auto; /* Adjust spacing as needed */
+}
+
+
+.batsmen-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.batsmen-table th,
+.batsmen-table td {
   padding: 8px;
-  text-align: left;
-  border: 1px solid #ddd;
+  text-align: center;
+  border: 1px solid #ccc;
 }
 
-th {
+.batsmen-table th {
   background-color: #f2f2f2;
 }
 
+.batsmen-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.partnerships-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  border: solid 5px var(--navy);
+}
+
+.partnerships-table th,
+.partnerships-table td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.partnerships-table th {
+  background-color: #f2f2f2;
+}
+
+.partnership-row:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.batsman-info {
+  display: flex;
+  align-items: center;
+}
+
+.batsman-name {
+  font-weight: bold;
+  margin-right: 10px;
+  text-align: left;
+}
+
+.batsman-stats {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+  text-align: right;
+}
+
+.batsman-stats p {
+  margin: 0;
+  margin-left: 10px;
+}
+
+.wickets-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wicket-card {
+  background-color: var(--pink);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px var(--navy);
+  padding: 20px;
+  margin: 10px;
+  width: 250px;
+  transition: transform 0.3s ease-in-out;
+  margin: auto;
+}
+
+.wicket-card:hover {
+  transform: translateY(-5px);
+}
+
+.wicket-card h4 {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.wicket-card p {
+  margin-bottom: 10px;
+  color: white;
+}
+.bowlers-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.bowlers-table th,
+.bowlers-table td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.bowlers-table th {
+  background-color: #f2f2f2;
+}
+
+.bowler-row:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.extras-data-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.extras-heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.extras-data-container .recharts-surface {
+  margin: auto;
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .teams-container {
+    flex-direction: column;
+  }
+  
+  .scorecard-section {
+    flex-direction: column; /* Display cards in a single column on smaller screens */
+  }
+}
 
 
 /* Footer Component */

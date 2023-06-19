@@ -1,4 +1,4 @@
-.live-cricket-matches {
+/* .live-cricket-matches {
   font-family: Arial, sans-serif;
 }
 
@@ -48,4 +48,9 @@
 .score-table td p {
   margin-bottom: 5px;
 }
+
+.table-row {
+  color: var(--pink);
+  font-weight: bold;
+} */
 
