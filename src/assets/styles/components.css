@@ -133,7 +133,6 @@
   }
 }
 
-
 /* Live match component */
 
 .match-container {
@@ -166,24 +165,23 @@
   color: white;
 }
 
-
 /* Scorecard */
+
 .scorecard-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 100%;
+  flex-direction: column; /* Displays the scorecards in a column */
+  align-items: center; /* Centers the scorecards horizontally */
 }
 
 .intro-description {
   text-align: center;
+  margin: 10px; /* Adds some spacing between the descriptions */
 }
 
 .teams-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* Separate Team 1 and Team 2 */
-  margin: 10px;
+  width: 100%;
 }
 
 .team-container {
@@ -191,34 +189,76 @@
   flex-direction: column;
   align-items: center;
   margin: 10px;
+  width: 100%;
 }
 
 .scorecard-section {
-  display: grid;
-  grid-template-columns: (2, 1fr);
-  gap: 10px; /* Adjust the gap between cards */
+  display: block;
   text-align: center;
+  width: 100%;
 }
 
 .scorecard-card {
   border: 1px solid #ccc;
-  padding: 10px;
-  width: 100%;
+  overflow-x: auto;
+  max-width: 100%; /* Use max-width instead of width */
+  box-sizing: border-box; /* Include padding in the width calculation */
 }
+
+.scorecard {
+  flex: 1 0 50%; /* Occupies 50% of the container width */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .scorecard {
+    flex: 1 0 100%; /* Occupies 100% of the container width on mobile */
+  }
+}
+
+/* Extras Data */
+
+.extras-data-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Center align the text */
+}
+
+.extras-heading {
+  margin-top: 10px; /* Add some spacing between the heading and the chart */
+}
+
+.PieChart {
+  margin: auto; /* Center align the chart horizontally */
+}
+
+/* Batting Data */
 
 .batsmen-data-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .chart-container {
-  margin: auto; /* Adjust spacing as needed */
+  display: flex;
+  margin: auto; /* Centers the chart horizontally */
 }
 
+@media (max-width: 826px) {
+  .chart-container {
+    max-width: 300px; /* Adjust the maximum width for smaller screens */
+  }
+  .batsmen-data-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 .batsmen-table {
   width: 100%;
-  border-collapse: collapse;
+  max-width: 100%;
   margin-top: 10px;
 }
 
@@ -236,51 +276,45 @@
 .batsmen-table tbody tr:nth-child(even) {
   background-color: #f2f2f2;
 }
+/* Partnerships Data */
+
+.table-responsive {
+  overflow-x: auto;
+  /* Set a maximum width to prevent horizontal scrolling on small screens */
+  max-width: 100%;
+}
 
 .partnerships-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
-  border: solid 5px var(--navy);
 }
 
 .partnerships-table th,
 .partnerships-table td {
   padding: 8px;
-  text-align: center;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
 }
 
-.partnerships-table th {
-  background-color: #f2f2f2;
-}
-
-.partnership-row:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-.batsman-info {
+.partnership-row .batsman-info {
   display: flex;
-  align-items: center;
-}
-
-.batsman-name {
-  font-weight: bold;
-  margin-right: 10px;
-  text-align: left;
-}
-
-.batsman-stats {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-grow: 1;
-  text-align: right;
+  flex-direction: column;
 }
 
 .batsman-stats p {
   margin: 0;
-  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .table-responsive {
+    overflow-x: initial;
+  }
+
+  .partnerships-table th,
+  .partnerships-table td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 .wickets-container {
@@ -313,6 +347,7 @@
   margin-bottom: 10px;
   color: white;
 }
+
 .bowlers-table {
   width: 100%;
   border-collapse: collapse;
@@ -330,38 +365,9 @@
   background-color: #f2f2f2;
 }
 
-.bowler-row:nth-child(even) {
+.bowlers-table tbody tr:nth-child(even) {
   background-color: #f2f2f2;
 }
-
-.extras-data-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.extras-heading {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.extras-data-container .recharts-surface {
-  margin: auto;
-}
-
-
-/* Media Queries */
-@media (max-width: 768px) {
-  .teams-container {
-    flex-direction: column;
-  }
-  
-  .scorecard-section {
-    flex-direction: column; /* Display cards in a single column on smaller screens */
-  }
-}
-
 
 /* Footer Component */
 
