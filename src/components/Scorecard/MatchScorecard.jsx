@@ -52,17 +52,17 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
 
     return (
       <Card className="scorecard-card">
-      <Card.Header>Batsmen Data</Card.Header>
-      <Card.Body>
-        <div className="batsmen-data-container">
-          <div className="chart-container">
-            <BarChart width={300} height={200} data={data}>
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Bar dataKey="runs" fill="navy" />
-            </BarChart>
+        <Card.Header>Batsmen Data</Card.Header>
+        <Card.Body>
+          <div className="batsmen-data-container">
+            <div className="chart-container">
+              <BarChart width={300} height={200} data={data}>
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="runs" fill="navy" />
+              </BarChart>
             </div>
             <table className="batsmen-table">
               <thead>
@@ -192,45 +192,45 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
       <Card className="scorecard-card">
         <Card.Header>Partnerships Data</Card.Header>
         <Card.Body>
-        <div className="table-responsive">
-          <table className="partnerships-table">
-            <thead>
-              <tr>
-                <th>Batsman 1</th>
-                <th>Batsman 2</th>
-                <th>Total Runs</th>
-                <th>Total Balls</th>
-              </tr>
-            </thead>
-            <tbody>
-              {sortedPartnerships.map((partnership, index) => (
-                <tr key={index} className="partnership-row">
-                  <td>
-                    <div className="batsman-info">
-                      <p className="batsman-name">{partnership.bat1Name}: </p>
-                      <div className="batsman-stats">
-                        <p>Runs: {partnership.bat1Runs}</p>
-                        <p>Fours: {partnership.bat1fours}</p>
-                        <p>Sixes: {partnership.bat1sixes}</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div className="batsman-info">
-                      <p className="batsman-name">{partnership.bat2Name}: </p>
-                      <div className="batsman-stats">
-                        <p>Runs: {partnership.bat2Runs}</p>
-                        <p>Fours: {partnership.bat2fours}</p>
-                        <p>Sixes: {partnership.bat2sixes}</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>{partnership.totalRuns}</td>
-                  <td>{partnership.totalBalls}</td>
+          <div className="table-responsive">
+            <table className="partnerships-table">
+              <thead>
+                <tr>
+                  <th>Batsman 1</th>
+                  <th>Batsman 2</th>
+                  <th>Total Runs</th>
+                  <th>Total Balls</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {sortedPartnerships.map((partnership, index) => (
+                  <tr key={index} className="partnership-row">
+                    <td>
+                      <div className="batsman-info">
+                        <p className="batsman-name">{partnership.bat1Name}: </p>
+                        <div className="batsman-stats">
+                          <p>Runs: {partnership.bat1Runs}</p>
+                          <p>Fours: {partnership.bat1fours}</p>
+                          <p>Sixes: {partnership.bat1sixes}</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div className="batsman-info">
+                        <p className="batsman-name">{partnership.bat2Name}: </p>
+                        <div className="batsman-stats">
+                          <p>Runs: {partnership.bat2Runs}</p>
+                          <p>Fours: {partnership.bat2fours}</p>
+                          <p>Sixes: {partnership.bat2sixes}</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>{partnership.totalRuns}</td>
+                    <td>{partnership.totalBalls}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </Card.Body>
       </Card>
@@ -238,8 +238,8 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
   };
 
   const renderScoreDetails = (scoreDetails) => {
-    if (!scoreDetails || !scoreDetails.ballNbr) {
-      return null;
+    if (!scoreDetails) {
+      return <div>Loading ...</div>;
     }
 
     return (
@@ -353,26 +353,30 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
       <div className="team-container">
         <h2>{team2.name}</h2>
         <p>1st Innings</p>
-        <div className="scorecard-section">
-          <div className="scorecard-column">
-            {renderScoreDetails(scoreCard[1].scoreDetails)}
+        {scoreCard[1] ? (
+          <div className="scorecard-section">
+            <div className="scorecard-column">
+              {renderScoreDetails(scoreCard[1].scoreDetails)}
+            </div>
+            <div className="scorecard-column">
+              {renderBatsmenData(scoreCard[1].batTeamDetails?.batsmenData)}
+            </div>
+            <div className="scorecard-column">
+              {renderBowlersData(scoreCard[1].bowlTeamDetails?.bowlersData)}
+            </div>
+            <div className="scorecard-column">
+              {renderExtrasData(scoreCard[1].extrasData)}
+            </div>
+            <div className="scorecard-column">
+              {renderPartnershipsData(scoreCard[1].partnershipsData)}
+            </div>
+            <div className="scorecard-column">
+              {renderWicketsData(scoreCard[1].wicketsData)}
+            </div>
           </div>
-          <div className="scorecard-column">
-            {renderBatsmenData(scoreCard[1].batTeamDetails?.batsmenData)}
-          </div>
-          <div className="scorecard-column">
-            {renderBowlersData(scoreCard[1].bowlTeamDetails?.bowlersData)}
-          </div>
-          <div className="scorecard-column">
-            {renderExtrasData(scoreCard[1].extrasData)}
-          </div>
-          <div className="scorecard-column">
-            {renderPartnershipsData(scoreCard[1].partnershipsData)}
-          </div>
-          <div className="scorecard-column">
-            {renderWicketsData(scoreCard[1].wicketsData)}
-          </div>
-        </div>
+        ) : (
+          <div>No data available for innings</div>
+        )}
       </div>
 
       {/* 2nd Innings */}
@@ -381,51 +385,60 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
         <div className="team-container">
           <h2>{team1.name}</h2>
           <p>2nd Innings</p>
-          <div className="scorecard-section">
-            <div className="scorecard-column">
-              {renderScoreDetails(scoreCard[2].scoreDetails)}
+          {scoreCard[2] ? (
+            <div className="scorecard-section">
+              <div className="scorecard-column">
+                {renderScoreDetails(scoreCard[2].scoreDetails)}
+              </div>
+              <div className="scorecard-column">
+                {renderBatsmenData(scoreCard[2].batTeamDetails?.batsmenData)}
+              </div>
+              <div className="scorecard-column">
+                {renderBowlersData(scoreCard[2].bowlTeamDetails?.bowlersData)}
+              </div>
+              <div className="scorecard-column">
+                {renderExtrasData(scoreCard[2].extrasData)}
+              </div>
+              <div className="scorecard-column">
+                {renderPartnershipsData(scoreCard[2].partnershipsData)}
+              </div>
+              <div className="scorecard-column">
+                {renderWicketsData(scoreCard[2].wicketsData)}
+              </div>
             </div>
-            <div className="scorecard-column">
-              {renderBatsmenData(scoreCard[2].batTeamDetails?.batsmenData)}
-            </div>
-            <div className="scorecard-column">
-              {renderBowlersData(scoreCard[2].bowlTeamDetails?.bowlersData)}
-            </div>
-            <div className="scorecard-column">
-              {renderExtrasData(scoreCard[2].extrasData)}
-            </div>
-            <div className="scorecard-column">
-              {renderPartnershipsData(scoreCard[2].partnershipsData)}
-            </div>
-            <div className="scorecard-column">
-              {renderWicketsData(scoreCard[2].wicketsData)}
-            </div>
-          </div>
+          ) : (
+            <div>No data available for innings</div>
+          )}
         </div>
       </div>
+
       <div className="team-container">
         <h2>{team2.name}</h2>
         <p>2nd Innings</p>
-        <div className="scorecard-section">
-          <div className="scorecard-column">
-            {renderScoreDetails(scoreCard[3].scoreDetails)}
+        {scoreCard[3] ? (
+          <div className="scorecard-section">
+            <div className="scorecard-column">
+              {renderScoreDetails(scoreCard[3].scoreDetails)}
+            </div>
+            <div className="scorecard-column">
+              {renderBatsmenData(scoreCard[3].batTeamDetails?.batsmenData)}
+            </div>
+            <div className="scorecard-column">
+              {renderBowlersData(scoreCard[3].bowlTeamDetails?.bowlersData)}
+            </div>
+            <div className="scorecard-column">
+              {renderExtrasData(scoreCard[3].extrasData)}
+            </div>
+            <div className="scorecard-column">
+              {renderPartnershipsData(scoreCard[3].partnershipsData)}
+            </div>
+            <div className="scorecard-column">
+              {renderWicketsData(scoreCard[3].wicketsData)}
+            </div>
           </div>
-          <div className="scorecard-column">
-            {renderBatsmenData(scoreCard[3].batTeamDetails?.batsmenData)}
-          </div>
-          <div className="scorecard-column">
-            {renderBowlersData(scoreCard[3].bowlTeamDetails?.bowlersData)}
-          </div>
-          <div className="scorecard-column">
-            {renderExtrasData(scoreCard[3].extrasData)}
-          </div>
-          <div className="scorecard-column">
-            {renderPartnershipsData(scoreCard[3].partnershipsData)}
-          </div>
-          <div className="scorecard-column">
-            {renderWicketsData(scoreCard[3].wicketsData)}
-          </div>
-        </div>
+        ) : (
+          <div>No data available for innings</div>
+        )}
       </div>
     </div>
   );
