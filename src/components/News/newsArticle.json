@@ -1,0 +1,191 @@
+{
+    "id": 126919,
+    "context": "T20 Blast 2023",
+    "headline": "All-round Somerset put Glamorgan's QF aspirations in jeopardy",
+    "publishTime": "1687400237612",
+    "coverImage": {
+      "id": "333830",
+      "caption": "Will Smeed smashed a 36-ball 66* in Somerset's comfortable win.",
+      "source": "Getty"
+    },
+    "content": [
+      {
+        "content": {
+          "contentType": "text",
+          "contentValue": "@B0$",
+          "hasFormat": true
+        }
+      },
+      {
+        "content": {
+          "contentType": "text",
+          "contentValue": "@B1$",
+          "hasFormat": true
+        }
+      },
+      {
+        "content": {
+          "contentType": "text",
+          "contentValue": "Leus du Plooy's fiery, unbeaten 40 off 23 balls in chase helped Derbyshire pull off a successful run chase and dent Northamptonshire's quarters bid. Heading into the fixture, Northamptonshire had 10 points in 11 games and had the opportunity to join the dog fight in the middle with three other teams on 12 but Derbyshire stopped them in their tracks."
+        }
+      },
+      {
+        "content": {
+          "contentType": "text",
+          "contentValue": "Though Northamptonshire started poorly and had a middle-order wobble, Emilio Gay (47 off 34) and Chris Lynn (33 off 23) provided the base for the team to post in excess of 150. Though that didn't seem sufficient, their bowlers took out opener Luis Reece and Haider Ali cheaply in the PowerPlay to retain hopes of getting to 12 points. However, du Plooy came out swinging and joined forces with Harry Came and Wayne Madsen for match-turning partnerships. The chase came down to Derbyshire needing 20 off the last two overs when Du Plooy and Brooke Guest launched into Ben Sanderson, taking 16 off the 19th. In the final over, Tom Taylor conceded five wides and brought an end to the chase."
+        }
+      },
+      {
+        "content": {
+          "contentType": "text",
+          "contentValue": "@B2$Northamptonshire 156/8 in 20 overs (Emilio Gay 47, Chris Lynn 33; Zaman Khan 3-26) lost to Derbyshire 160/4 in 19.1 overs (Harry Came 43, Leus du Plooy 40*, Wayne Madsen 35; David Willey 2-33) by 6 wickets",
+          "hasFormat": true
+        }
+      },
+      {
+        "ad": {
+          "name": "news_mpu",
+          "position": 5
+        }
+      },
+      {
+        "content": {
+          "contentType": "text",
+          "contentValue": "@B3$",
+          "hasFormat": true
+        }
+      },
+      {
+        "content": {
+          "contentType": "text",
+          "contentValue": "@B4$",
+          "hasFormat": true
+        }
+      },
+      {
+        "content": {
+          "contentType": "text",
+          "contentValue": "Somerset showed why they sit comfortably atop the points table as they secured their ninth win in 11 outings with a complete performance with bat and ball to put a spanner in the works of yet another top-four aspirant. Glamorgan started the game on 10 points from as many games and had the chance to go level with fourth-placed Hampshire but were thoroughly outclassed by the best team of South Group."
+        }
+      },
+      {
+        "content": {
+          "contentType": "text",
+          "contentValue": "The flexing of the form muscles from Somerset began with the ball as the fast bowling pair of Craig Overton and Jack Brooks picked six wickets between them and ran through the top-order. Five of the top-six batters returned single-digit scores (including two ducks) as the batting side was down to 53 for 5 by the seventh over. A 91-run stand between opener Kiran Carlson - who survived the early wreckage - and Timm van der Gugten revived the innings as they got those runs in just 52 deliveries. Just when the batting side was set up for some late flourish, Josh Davey took out both the set batters in the same over (16th). From 146 for 7, Glamorgan were pushed to 171 courtesy small contributions from Andy Gorvin and Peter Hatzoglou."
+        }
+      },
+      {
+        "content": {
+          "contentType": "text",
+          "contentValue": "Tom Banton's fourth-over exit was the only real blemish in an otherwise perfect run-chase from Somerset as Will Smeed (66 off 36; 8 fours, 3 sixes) and Tom Kohler-Cadmore (62* off 42; 5 fours, 2 sixes) added 84 off 47 balls to put their side well on their way. The partnership was broken in the 12th over but that didn't matter as Tom Abell joined Kohler-Cadmore to complete the formalities by the 18th over."
+        }
+      },
+      {
+        "content": {
+          "contentType": "text",
+          "contentValue": "@B5$ Glamorgan 171 in 19.3 overs (Kiran Carlson 71, Tim van der Gugten 48; Craig Overton 3-21, Jack Brooks 3-35, Josh Davey 2-26, Ben Green 2-45) lost to Somerset 172/2 in 17.1 overs (Will Smeed 66, Tom Kohler-Cadmore 62; Ruaidhri Smith 2-47) by 8 wickets",
+          "hasFormat": true
+        }
+      },
+      {
+        "ad": {
+          "name": "news_mpu",
+          "position": 5
+        }
+      }
+    ],
+    "format": [
+      {
+        "type": "bold",
+        "value": [
+          {
+            "id": "@B0$",
+            "value": "North Group"
+          },
+          {
+            "id": "@B1$",
+            "value": "@L0$"
+          },
+          {
+            "id": "@B2$",
+            "value": "Brief Scores:"
+          },
+          {
+            "id": "@B3$",
+            "value": "South Group"
+          },
+          {
+            "id": "@B4$",
+            "value": "@L1$"
+          },
+          {
+            "id": "@B5$",
+            "value": "Brief Scores:"
+          }
+        ]
+      },
+      {
+        "type": "urls",
+        "value": [
+          {
+            "id": "@L0$",
+            "value": "cricbuzz://match?id=68175&name=NOR VS DERBY NORTH GROUP&tab=scorecard"
+          },
+          {
+            "id": "@L1$",
+            "value": "cricbuzz://match?id=68168&name=GLAM VS SOM SOUTH GROUP&tab=scorecard"
+          }
+        ]
+      },
+      {
+        "type": "links",
+        "value": [
+          {
+            "id": "@L0$",
+            "value": "Northamptonshire vs Derbyshire"
+          },
+          {
+            "id": "@L1$",
+            "value": "Somerset vs Glamorgan"
+          }
+        ]
+      }
+    ],
+    "authors": [
+      {
+        "id": 1,
+        "name": "Cricbuzz Staff",
+        "imageId": 295740
+      }
+    ],
+    "tags": [
+      {
+        "itemName": "Somerset",
+        "itemType": "team",
+        "itemId": "119"
+      },
+      {
+        "itemName": "Derbyshire",
+        "itemType": "team",
+        "itemId": "144"
+      },
+      {
+        "itemName": "Will Smeed",
+        "itemType": "player",
+        "itemId": "18429"
+      },
+      {
+        "itemName": "T20 Blast 2023",
+        "itemType": "series",
+        "itemId": "5246"
+      }
+    ],
+    "appIndex": {
+      "seoTitle": "All-round Somerset put Glamorgan's QF aspirations in jeopardy  | Cricbuzz.com",
+      "webURL": "http://www.cricbuzz.com/cricket-news/126919/all-round-somerset-put-glamorgans-qf-aspirations-in-jeopardy"
+    },
+    "storyType": "Reports",
+    "lastUpdatedTime": "1687400237612",
+    "intro": "Northamptonshire's hopes of making it to the last-eight too, took a beating",
+    "source": "Cricbuzz"
+  }

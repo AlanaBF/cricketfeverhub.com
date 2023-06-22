@@ -328,6 +328,7 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
         <div className="team-container">
           <h2>{team1.name}</h2>
           <p>1st Innings</p>
+          {scoreCard[0] ? (
           <div className="scorecard-section">
             <div className="scorecard-column">
               {renderScoreDetails(scoreCard[0].scoreDetails)}
@@ -348,6 +349,9 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
               {renderWicketsData(scoreCard[0].wicketsData)}
             </div>
           </div>
+          ) : (
+          <div>No data available for innings</div>
+        )}
         </div>
       </div>
       <div className="team-container">

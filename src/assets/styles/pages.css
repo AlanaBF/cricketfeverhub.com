@@ -6,7 +6,6 @@
   color: var(--navy);
   min-height: 87vh;
   text-align: center;
-  margin: 0;
   overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
