@@ -8,7 +8,7 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
   if (!scoreCard || !matchHeader) {
     return <div>Loading...</div>;
   }
-
+  const reversedScoreCard = [...scoreCard].reverse();
   const {
     matchId,
     dayNumber,

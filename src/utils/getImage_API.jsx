@@ -15,8 +15,7 @@ const getImages = async (ImageId) => {
 
   try {
     const response = await axios.request(options);
-    console.log(response);
-    return response;
+    return response.data;
   } catch (error) {
     console.error(error);
     throw error;

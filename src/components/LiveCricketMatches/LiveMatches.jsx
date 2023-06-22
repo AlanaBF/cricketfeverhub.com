@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Card, Button, Modal } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
 import getLiveMatchesData from "../../utils/getLiveMatches_API";
 import getScorecard from "../../utils/getScorecard_API";
+import getComms from "../../utils/getComms_API";
 import MatchScorecard from "../Scorecard/MatchScorecard";
 import "../../assets/styles/components.css";
+import MatchCommentary from "../Comms/MatchComms";
 
 const LiveMatches = () => {
   const [matches, setMatches] = useState([]);
   const [filteredMatches, setFilteredMatches] = useState([]);
   const [selectedMatch, setSelectedMatch] = useState(null);
   const [scorecardData, setScorecardData] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [matchComments, setMatchComments] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -48,15 +52,23 @@ const LiveMatches = () => {
     try {
       const response = await getScorecard(matchId);
       setScorecardData(response.data);
-      setIsModalOpen(true);
+      setShowModal(true);
     } catch (error) {
       console.error("Error fetching scorecard data:", error);
     }
   };
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setScorecardData(null);
+  const handleViewMatchComments = async (matchId) => {
+    try {
+        setSelectedMatch(matchId);
+        setShowModal(true);
+    } catch (error) {
+      console.error("Error fetching match comments:", error);
+    }
+  };
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
   };
 
   return (
@@ -162,34 +174,31 @@ const LiveMatches = () => {
             >
               View Scorecard
             </Button>
+            <Button
+              variant="primary"
+              onClick={() => handleViewMatchComments(match.matchInfo.matchId)}
+            >
+              Show Match Comments
+            </Button>
+
+            <Modal show={showModal} onHide={toggleModal}>
+              <Modal.Header closeButton>
+                <Modal.Title>Match Comments</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <MatchCommentary matchId={selectedMatch} />
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={toggleModal}>
+                  Close
+                </Button>
+              </Modal.Footer>
+            </Modal>
           </div>
         ))
       ) : (
         <p>No live matches available.</p>
       )}
-
-      <Modal
-        show={isModalOpen}
-        onHide={handleCloseModal}
-        dialogClassName="custom-modal"
-      >
-        <Modal.Header closeButton className="modal-header">
-          <Modal.Title className="modal-title">Scorecard</Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="modal-body">
-          {scorecardData && (
-            <MatchScorecard
-              scoreCard={scorecardData.scoreCard}
-              matchHeader={scorecardData.matchHeader}
-            />
-          )}
-        </Modal.Body>
-        <Modal.Footer className="modal-footer">
-          <Button variant="secondary" onClick={handleCloseModal}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
     </div>
   );
 };

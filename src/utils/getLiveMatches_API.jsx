@@ -13,7 +13,6 @@ const getLiveMatchesData = async () => {
 
   try {
     const response = await axios.request(options);
-    console.log('API response:', response.data); // Log the response data
     return response.data;
   } catch (error) {
     console.error('API error:', error);

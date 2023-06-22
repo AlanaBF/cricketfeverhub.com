@@ -15,7 +15,6 @@ const getPlayersData = async (playerName) => {
 
   try {
     const response = await axios.request(options);
-    console.log(response.data);
     return response.data; // Return the response data if needed for further processing
   } catch (error) {
     console.error('Error:', error);
