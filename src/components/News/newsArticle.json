@@ -1,191 +1,140 @@
 {
-    "id": 126919,
-    "context": "T20 Blast 2023",
-    "headline": "All-round Somerset put Glamorgan's QF aspirations in jeopardy",
-    "publishTime": "1687400237612",
-    "coverImage": {
-      "id": "333830",
-      "caption": "Will Smeed smashed a 36-ball 66* in Somerset's comfortable win.",
-      "source": "Getty"
+  "id": 122034,
+  "context": "Axed",
+  "headline": "Abu Jayed expresses disappointment after Test exclusion",
+  "publishTime": "1650936490314",
+  "coverImage": {
+    "id": "232088",
+    "caption": "Jayed didn't get an opportunity in New Zealand and South Africa as well.",
+    "source": "Getty"
+  },
+  "content": [
+    {
+      "content": {
+        "contentType": "text",
+        "contentValue": "Abu Jayed, Bangladesh's out of favour Test pacer, feels that his exclusion from the 16-member squad for the @L0$ home series is against Sri Lanka, has got nothing to do with his form.",
+        "hasFormat": true
+      }
     },
-    "content": [
-      {
-        "content": {
-          "contentType": "text",
-          "contentValue": "@B0$",
-          "hasFormat": true
-        }
-      },
-      {
-        "content": {
-          "contentType": "text",
-          "contentValue": "@B1$",
-          "hasFormat": true
-        }
-      },
-      {
-        "content": {
-          "contentType": "text",
-          "contentValue": "Leus du Plooy's fiery, unbeaten 40 off 23 balls in chase helped Derbyshire pull off a successful run chase and dent Northamptonshire's quarters bid. Heading into the fixture, Northamptonshire had 10 points in 11 games and had the opportunity to join the dog fight in the middle with three other teams on 12 but Derbyshire stopped them in their tracks."
-        }
-      },
-      {
-        "content": {
-          "contentType": "text",
-          "contentValue": "Though Northamptonshire started poorly and had a middle-order wobble, Emilio Gay (47 off 34) and Chris Lynn (33 off 23) provided the base for the team to post in excess of 150. Though that didn't seem sufficient, their bowlers took out opener Luis Reece and Haider Ali cheaply in the PowerPlay to retain hopes of getting to 12 points. However, du Plooy came out swinging and joined forces with Harry Came and Wayne Madsen for match-turning partnerships. The chase came down to Derbyshire needing 20 off the last two overs when Du Plooy and Brooke Guest launched into Ben Sanderson, taking 16 off the 19th. In the final over, Tom Taylor conceded five wides and brought an end to the chase."
-        }
-      },
-      {
-        "content": {
-          "contentType": "text",
-          "contentValue": "@B2$Northamptonshire 156/8 in 20 overs (Emilio Gay 47, Chris Lynn 33; Zaman Khan 3-26) lost to Derbyshire 160/4 in 19.1 overs (Harry Came 43, Leus du Plooy 40*, Wayne Madsen 35; David Willey 2-33) by 6 wickets",
-          "hasFormat": true
-        }
-      },
-      {
-        "ad": {
-          "name": "news_mpu",
-          "position": 5
-        }
-      },
-      {
-        "content": {
-          "contentType": "text",
-          "contentValue": "@B3$",
-          "hasFormat": true
-        }
-      },
-      {
-        "content": {
-          "contentType": "text",
-          "contentValue": "@B4$",
-          "hasFormat": true
-        }
-      },
-      {
-        "content": {
-          "contentType": "text",
-          "contentValue": "Somerset showed why they sit comfortably atop the points table as they secured their ninth win in 11 outings with a complete performance with bat and ball to put a spanner in the works of yet another top-four aspirant. Glamorgan started the game on 10 points from as many games and had the chance to go level with fourth-placed Hampshire but were thoroughly outclassed by the best team of South Group."
-        }
-      },
-      {
-        "content": {
-          "contentType": "text",
-          "contentValue": "The flexing of the form muscles from Somerset began with the ball as the fast bowling pair of Craig Overton and Jack Brooks picked six wickets between them and ran through the top-order. Five of the top-six batters returned single-digit scores (including two ducks) as the batting side was down to 53 for 5 by the seventh over. A 91-run stand between opener Kiran Carlson - who survived the early wreckage - and Timm van der Gugten revived the innings as they got those runs in just 52 deliveries. Just when the batting side was set up for some late flourish, Josh Davey took out both the set batters in the same over (16th). From 146 for 7, Glamorgan were pushed to 171 courtesy small contributions from Andy Gorvin and Peter Hatzoglou."
-        }
-      },
-      {
-        "content": {
-          "contentType": "text",
-          "contentValue": "Tom Banton's fourth-over exit was the only real blemish in an otherwise perfect run-chase from Somerset as Will Smeed (66 off 36; 8 fours, 3 sixes) and Tom Kohler-Cadmore (62* off 42; 5 fours, 2 sixes) added 84 off 47 balls to put their side well on their way. The partnership was broken in the 12th over but that didn't matter as Tom Abell joined Kohler-Cadmore to complete the formalities by the 18th over."
-        }
-      },
-      {
-        "content": {
-          "contentType": "text",
-          "contentValue": "@B5$ Glamorgan 171 in 19.3 overs (Kiran Carlson 71, Tim van der Gugten 48; Craig Overton 3-21, Jack Brooks 3-35, Josh Davey 2-26, Ben Green 2-45) lost to Somerset 172/2 in 17.1 overs (Will Smeed 66, Tom Kohler-Cadmore 62; Ruaidhri Smith 2-47) by 8 wickets",
-          "hasFormat": true
-        }
-      },
-      {
-        "ad": {
-          "name": "news_mpu",
-          "position": 5
-        }
+    {
+      "content": {
+        "contentType": "text",
+        "contentValue": "Members of the national selection panel claimed that they wanted to pick bowlers with raw pace instead of medium fast bowlers as they feel the need for an injection of pace in their setup in order to thrive at both home and away."
       }
-    ],
-    "format": [
-      {
-        "type": "bold",
-        "value": [
-          {
-            "id": "@B0$",
-            "value": "North Group"
-          },
-          {
-            "id": "@B1$",
-            "value": "@L0$"
-          },
-          {
-            "id": "@B2$",
-            "value": "Brief Scores:"
-          },
-          {
-            "id": "@B3$",
-            "value": "South Group"
-          },
-          {
-            "id": "@B4$",
-            "value": "@L1$"
-          },
-          {
-            "id": "@B5$",
-            "value": "Brief Scores:"
-          }
-        ]
-      },
-      {
-        "type": "urls",
-        "value": [
-          {
-            "id": "@L0$",
-            "value": "cricbuzz://match?id=68175&name=NOR VS DERBY NORTH GROUP&tab=scorecard"
-          },
-          {
-            "id": "@L1$",
-            "value": "cricbuzz://match?id=68168&name=GLAM VS SOM SOUTH GROUP&tab=scorecard"
-          }
-        ]
-      },
-      {
-        "type": "links",
-        "value": [
-          {
-            "id": "@L0$",
-            "value": "Northamptonshire vs Derbyshire"
-          },
-          {
-            "id": "@L1$",
-            "value": "Somerset vs Glamorgan"
-          }
-        ]
-      }
-    ],
-    "authors": [
-      {
-        "id": 1,
-        "name": "Cricbuzz Staff",
-        "imageId": 295740
-      }
-    ],
-    "tags": [
-      {
-        "itemName": "Somerset",
-        "itemType": "team",
-        "itemId": "119"
-      },
-      {
-        "itemName": "Derbyshire",
-        "itemType": "team",
-        "itemId": "144"
-      },
-      {
-        "itemName": "Will Smeed",
-        "itemType": "player",
-        "itemId": "18429"
-      },
-      {
-        "itemName": "T20 Blast 2023",
-        "itemType": "series",
-        "itemId": "5246"
-      }
-    ],
-    "appIndex": {
-      "seoTitle": "All-round Somerset put Glamorgan's QF aspirations in jeopardy  | Cricbuzz.com",
-      "webURL": "http://www.cricbuzz.com/cricket-news/126919/all-round-somerset-put-glamorgans-qf-aspirations-in-jeopardy"
     },
-    "storyType": "Reports",
-    "lastUpdatedTime": "1687400237612",
-    "intro": "Northamptonshire's hopes of making it to the last-eight too, took a beating",
-    "source": "Cricbuzz"
-  }
+    {
+      "content": {
+        "contentType": "text",
+        "contentValue": "Jayed turned out to be a familiar name in the Bangladesh Test squad over the last few years with his swing prowess but that hardly worked for him in recent past and as a result he failed to make the cut for the Sri Lanka series at home with the selectors opting for uncapped Rejaur Rahman."
+      }
+    },
+    {
+      "content": {
+        "contentType": "text",
+        "contentValue": "Jayed also didn't get an opportunity to play in New Zealand and South Africa despite getting picked in both the squads. Bangladesh's decision to include pace bowler Khaled Ahmed instead of the experienced Jayed in the opening Test match against South Africa gave the impression that time is running out for the seasoned campaigner even though Shoriful Islam was ruled out of the game. Even Taskin Ahmed's injury ahead of the second game didn't land him an opportunity."
+      }
+    },
+    {
+      "ad": {
+        "name": "news_mpu",
+        "position": 4
+      }
+    },
+    {
+      "content": {
+        "contentType": "text",
+        "contentValue": "\"I've taken 10 wickets in the last two Tests in Mirpur with this pace. I don't think pace bowling is the issue here. There can be another story in this matter,\" a frustrated Jayed told Cricbuzz on Monday."
+      }
+    },
+    {
+      "content": {
+        "contentType": "text",
+        "contentValue": "\"I've taken 34 (30) wickets in 13 matches with this pace. I don't understand from where this realization has suddenly appeared,\" he said. \"Only pace can't work nowadays, swing is also needed. During our stint at the Gary Kirsten Cricket Academy (in Cape Town), one of the pace bowling coaches told us that I don't need to bowl fast. If I can swing the ball and bowl at 130 kmph speed, it can be as good as 140 kmph,'' he added."
+      }
+    },
+    {
+      "content": {
+        "contentType": "text",
+        "contentValue": "Habibul Bashar, member of Bangladesh's national selection panel, clarified their position to Cricbuzz when his attention was drawn regarding the exclusion of Jayed from the Test set-up. Habibul insisted that they have shifted their focus towards express pace as they prepare to form their bowling unit in the longer format."
+      }
+    },
+    {
+      "content": {
+        "contentType": "text",
+        "contentValue": "\"We're eyeing to start a new trend (of promoting genuine fast bowlers). Earlier we couldn't dare because we didn't have them but now that's not the case. I think we need to have that raw pace to do well at the international level,\" said Habibul."
+      }
+    },
+    {
+      "content": {
+        "contentType": "text",
+        "contentValue": "''We're playing Test matches for a long time and we previously didn't have such kind of pace bowlers in our hand who could bowl really fast so we played with them (slow pacers) because we didn't have many options in our hand. But we realized that if we want to do well here we need bowlers who can bowl over 135 to 140 kmph,\" he said."
+      }
+    },
+    {
+      "content": {
+        "contentType": "text",
+        "contentValue": "\"Look we've bowled out South Africa twice and what I feel is that our pace bowlers dominated in South Africa despite Taijul picking up six wickets. In the ODI series, our three pace bowlers bowled over 140 kmph. It was a pleasure seeing our fast bowlers literally terrorizing their opponents in South Africa and that is what we're looking for,'' he said."
+      }
+    },
+    {
+      "content": {
+        "contentType": "text",
+        "contentValue": "\"We always knew that we needed to have fast bowlers but we didn't have that in our possession. I don't feel we can attack with bowlers who bowl 125 or 130 kmph. We've picked Raja (for the opening Test squad against Sri Lanka) as he's quite quick,'' he concluded."
+      }
+    },
+    {
+      "ad": {
+        "name": "news_mpu",
+        "position": 4
+      }
+    }
+  ],
+  "format": [
+    {
+      "type": "urls",
+      "value": [
+        {
+          "id": "@L0$",
+          "value": "cricbuzz://news?id=122030&name=mehidy-ruled-out-of-opening-test-against-sri-lanka-due-to-finger-injury"
+        }
+      ]
+    },
+    {
+      "type": "links",
+      "value": [
+        {
+          "id": "@L0$",
+          "value": "upcoming"
+        }
+      ]
+    }
+  ],
+  "authors": [
+    {
+      "id": 197,
+      "name": "Atif Azam",
+      "imageId": 286790,
+      "twitterHandle": "https://twitter.com/a_atifazam"
+    }
+  ],
+  "tags": [
+    {
+      "itemName": "Bangladesh",
+      "itemType": "team",
+      "itemId": "6"
+    },
+    {
+      "itemName": "Sri Lanka tour of Bangladesh, 2022",
+      "itemType": "series",
+      "itemId": "4100"
+    }
+  ],
+  "appIndex": {
+    "seoTitle": "Abu Jayed expresses disappointment after Test exclusion  | Cricbuzz.com",
+    "webURL": "http://www.cricbuzz.com/cricket-news/122034/abu-jayed-expresses-disappointment-after-test-exclusion"
+  },
+  "storyType": "News",
+  "lastUpdatedTime": "1650936490314",
+  "intro": "The seamer has been dropped since the BCB selectors opted to pick fast bowlers with more pace on offer ",
+  "source": "Cricbuzz"
+}
