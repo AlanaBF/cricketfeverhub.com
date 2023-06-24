@@ -28,12 +28,11 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
   } = matchHeader;
 
   const Team1 =
-    (scoreCard[0]?.batTeamDetails?.batsmenData,
-    scoreCard[0]?.batTeamDetails?.batTeamName);
+  tossResults.tossWinnerName === team1.name ? team1.name : team2.name;
 
-  const Team2 =
-    (scoreCard[1]?.batTeamDetails?.batsmenData,
-    scoreCard[1]?.batTeamDetails?.batTeamName);
+const Team2 =
+  tossResults.tossWinnerName === team1.name ? team2.name : team1.name;
+
 
   const convertTimestampToDate = (timestamp) => {
     const date = new Date(parseInt(timestamp));
@@ -326,7 +325,7 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
 
       <div className="teams-container">
         <div className="team-container">
-          <h2>{team1.name}</h2>
+          <h2>{Team1}</h2>
           <p>1st Innings</p>
           {scoreCard[0] ? (
           <div className="scorecard-section">
@@ -355,7 +354,7 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
         </div>
       </div>
       <div className="team-container">
-        <h2>{team2.name}</h2>
+        <h2>{Team2}</h2>
         <p>1st Innings</p>
         {scoreCard[1] ? (
           <div className="scorecard-section">
@@ -387,7 +386,7 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
 
       <div className="teams-container">
         <div className="team-container">
-          <h2>{team1.name}</h2>
+         <h2>{Team1}</h2>
           <p>2nd Innings</p>
           {scoreCard[2] ? (
             <div className="scorecard-section">
@@ -417,7 +416,7 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
       </div>
 
       <div className="team-container">
-        <h2>{team2.name}</h2>
+        <h2>{Team2}</h2>
         <p>2nd Innings</p>
         {scoreCard[3] ? (
           <div className="scorecard-section">
