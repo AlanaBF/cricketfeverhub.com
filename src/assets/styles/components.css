@@ -200,6 +200,15 @@
   flex: 1 0 50%; /* Occupies 50% of the container width */
 }
 
+.partnerships-button, .wickets-button, .extras-button, .innings-button {
+background-color: var(--pink);
+border: solid 10px var(--pink);
+color: white;
+padding: 20px;
+border-radius: 20px;
+margin: 20px;
+}
+
 /* Media query for mobile devices */
 @media (max-width: 768px) {
   .scorecard {
