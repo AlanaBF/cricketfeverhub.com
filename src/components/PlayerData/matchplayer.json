@@ -1,0 +1,40 @@
+{
+    "id": "9537",
+    "bat": "Left Handed Bat",
+    "bowl": "Left-arm orthodox",
+    "name": "Jess Jonassen",
+    "nickName": "Jonassen",
+    "role": "Bowler",
+    "birthPlace": "Emerald, Queensland",
+    "intlTeam": "Australia",
+    "teams": "Australia Women, Brisbane Heat Women, Lancashire Thunder, Delhi Capitals Women",
+    "DoB": "November 05, 1992 (30 years)",
+    "image": "http://i.cricketcb.com/stats/img/faceImages/9537.jpg",
+    "bio": "Jess Jonassen (born 5 November 1992) is a left-arm spinner from Queensland, Australia. Jess Jonassen showed great potential from an early age, captaining Queensland’s Under-15 girls’ team to the national title for the first time in 2006-07, while also claiming the Player-of the-Tournament award. Hailing from Rockhampton, Jonassen has collected impressive bowling figures for the Queensland Fire at domestic level and, at just 18 years of age, the spinner won Queensland Fire’s Player of the Year award.  <br/><br/> She continued her strong international showing at the ICC Women’s World Twenty20 in Sri Lanka. After a solid tournament of economical bowling, she claimed career-best T20 figures in the final, taking 3-25 in the Australians’ victory over England. Named women's domestic player of the year after an outstanding 2014-15 season, Jonassen attracted attention around the cricket world when she scored 99 on Test debut in the women's Ashes in mid-2015 and was named player of the match.",
+    "rankings": {
+      "bat": [
+        {
+          "testBestRank": "0",
+          "odiBestRank": "35",
+          "t20BestRank": "29"
+        }
+      ],
+      "bowl": [
+        {
+          "odiRank": "2",
+          "testBestRank": "0",
+          "odiBestRank": "1",
+          "t20BestRank": "4"
+        }
+      ],
+      "all": [
+        {}
+      ]
+    },
+    "appIndex": {
+      "seoTitle": "Jess Jonassen Profile - Cricbuzz | Cricbuzz.com",
+      "webURL": "http://www.cricbuzz.com/profiles/9537/jess-jonassen"
+    },
+    "DoBFormat": "November 05, 1992",
+    "faceImageId": "255019"
+  }

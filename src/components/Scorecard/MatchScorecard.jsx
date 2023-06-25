@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Modal } from "react-bootstrap";
 import PartnershipDataComponent from "./PartnershipsData";
 import WicketsDataComponent from "./WicketsData";
 import ExtrasDataComponent from "./ExtrasData";
 import "../../assets/styles/components.css";
+import getPlayerProfile from "../../utils/getPlayerProfile";
+import PlayerProfileCard from "./MatchPlayerData";
 
 const MatchScorecard = ({ scoreCard, matchHeader }) => {
   const [inningsDataVisible, setInningsDataVisible] = useState(
@@ -37,6 +39,25 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
     return date.toLocaleDateString();
   };
 
+  const [selectedPlayerId, setSelectedPlayerId] = useState(null);
+  const [selectedPlayerInfo, setSelectedPlayerInfo] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleClickPlayerProfile = (batId) => {
+    getPlayerProfile(batId)
+      .then((playerData) => {
+        setSelectedPlayerId(playerData.batId); // Update to batId
+        setSelectedPlayerInfo({
+          ...playerData,
+          id: playerData.batId, // Update to batId
+        });
+        setShowModal(true);
+      })
+      .catch((error) => {
+        console.error("Error fetching player profile:", error);
+      });
+  };
+
   const renderBatsmenData = (batsmenData) => {
     if (!batsmenData) {
       return null;
@@ -55,6 +76,7 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
                   <th>Runs</th>
                   <th>Strike Rate</th>
                   <th>Out</th>
+                  <th>Player Info</th>
                 </tr>
               </thead>
               <tbody>
@@ -65,12 +87,20 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
                     <td>{batsman.runs}</td>
                     <td>{batsman.strikeRate}</td>
                     <td>{batsman.outDesc}</td>
+                    <td>
+                      <Button
+                        onClick={() => handleClickPlayerProfile(batsman.batId)}
+                      >
+                        Player Profile
+                      </Button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
         </Card.Body>
+      
       </Card>
     );
   };
@@ -334,6 +364,21 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
           )}
         </div>
       </div>
+      <Modal show={showModal} onHide={() => setShowModal(false)}>
+          <Modal.Header closeButton>
+            <Modal.Title>Player Profile</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            {selectedPlayerInfo && (
+              <PlayerProfileCard playerInfo={selectedPlayerInfo} />
+            )}
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={() => setShowModal(false)}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
     </div>
   );
 };
