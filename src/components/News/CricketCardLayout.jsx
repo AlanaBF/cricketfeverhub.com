@@ -11,6 +11,7 @@ const CricketCardLayout = () => {
   const [selectedArticle, setSelectedArticle] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [articleContent, setArticleContent] = useState("");
+  const [imageURL, setImageURL] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,14 +32,14 @@ const CricketCardLayout = () => {
     return date.toLocaleString(); // Adjust the format as per your requirements
   };
 
-  const handleOpenModal = async (article) => {
-    setSelectedArticle(article);
+  const handleOpenModal = async (item) => {
+    setSelectedArticle(item);
     setShowModal(true);
 
     const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key;
     try {
       const response = await axios.get(
-        `https://cricbuzz-cricket.p.rapidapi.com/news/v1/detail/${article.id}`,
+        `https://cricbuzz-cricket.p.rapidapi.com/news/v1/detail/${item.id}`,
         {
           headers: {
             "x-rapidapi-host": "cricbuzz-cricket.p.rapidapi.com",
@@ -47,9 +48,22 @@ const CricketCardLayout = () => {
         }
       );
       const data = response.data;
-      console.log("Article content data:", data); // Check the data structure
 
       setArticleContent(data.content);
+      const coverImage = data.coverImage?.id;
+      if (coverImage) {
+        try {
+          const coverImageData = 
+            `https://cricbuzz-cricket.p.rapidapi.com/img/v1/i1/c${coverImage}/i.jpg?p=de`
+        
+          setImageURL(coverImageData);
+        } catch (error) {
+          console.error("Error fetching cover image:", error);
+          setImageURL("");
+        }
+      } else {
+        setImageURL("");
+      }
     } catch (error) {
       console.error("Error fetching article content:", error);
     }
@@ -58,6 +72,7 @@ const CricketCardLayout = () => {
   const handleCloseModal = () => {
     setShowModal(false);
     setArticleContent("");
+    setImageURL("");
   };
 
   return (
@@ -82,38 +97,36 @@ const CricketCardLayout = () => {
             </Card>
           );
         } else {
-          return null; // Ignore items without story object
+          return null; // Ignore items without a story object
         }
       })}
 
       {selectedArticle && (
-  <Modal show={showModal} onHide={handleCloseModal}>
-    <Modal.Header closeButton>
-      <Modal.Title>{selectedArticle.headline}</Modal.Title>
-    </Modal.Header>
-    <Modal.Body>
-      {articleContent && articleContent.length > 0 ? (
-        articleContent.map((item, index) => (
-          <p key={index}>
-            {item.content &&
-              item.content.contentValue &&
-              item.content.contentValue}
-          </p>
-        ))
-      ) : (
-        <p>No article content available.</p>
+        <Modal show={showModal} onHide={handleCloseModal}>
+          <Modal.Header closeButton>
+            <Modal.Title>{selectedArticle.headline}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            {imageURL && <Card.Img variant="top" src={imageURL} alt="Cover Image" />}
+            {articleContent && articleContent.length > 0 ? (
+              articleContent.map((item, index) => (
+                <p key={index}>
+                  {item.content &&
+                    item.content.contentValue &&
+                    item.content.contentValue}
+                </p>
+              ))
+            ) : (
+              <p>No article content available.</p>
+            )}
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleCloseModal}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
       )}
-    </Modal.Body>
-    <Modal.Footer>
-      <Button variant="secondary" onClick={handleCloseModal}>
-        Close
-      </Button>
-    </Modal.Footer>
-  </Modal>
-)}
-
-
-
     </div>
   );
 };

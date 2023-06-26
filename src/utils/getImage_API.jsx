@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-const getImages = async (ImageId) => {
+const getImages = async (coverImage) => {
   const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key;
 
   const options = {
     method: 'GET',
-    url: `https://cricbuzz-cricket.p.rapidapi.com/img/v1/c${ImageId}/i.jpg`,
+    url: `https://cricbuzz-cricket.p.rapidapi.com/img/v1/i1/c${coverImage}/i.jpg`,
     params: { p: 'de' },
     headers: {
       'X-RapidAPI-Key': VITE_RapidAPI_Key,

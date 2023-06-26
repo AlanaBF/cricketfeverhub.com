@@ -17,13 +17,13 @@ function Home() {
       <div className="newsContainer">
         <CricketCardLayout />
       </div>
-      <div className="playerSearch">
+      {/* <div className="playerSearch">
         <p>
           Search for a player by name to view their profile card with detailed
           information about them.
         </p>
         <PlayerDataComponent />
-      </div>
+      </div> */}
     </div>
   );
 }
