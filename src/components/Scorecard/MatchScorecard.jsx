@@ -64,6 +64,7 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
     }
 
     return (
+      <div>
       <Card className="scorecard-card">
         <Card.Header>Batsmen Data</Card.Header>
         <Card.Body>
@@ -102,6 +103,7 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
         </Card.Body>
       
       </Card>
+      </div>
     );
   };
 
@@ -111,6 +113,7 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
     }
 
     return (
+      <div>
       <Card className="scorecard-card">
         <Card.Header>Bowlers Data</Card.Header>
         <Card.Body>
@@ -138,6 +141,7 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
           </table>
         </Card.Body>
       </Card>
+      </div>
     );
   };
 
@@ -147,6 +151,7 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
     }
 
     return (
+      <div>
       <Card className="scorecard-card">
         <Card.Header>Innings Summary</Card.Header>
         <Card.Body>
@@ -164,6 +169,7 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
           </p>
         </Card.Body>
       </Card>
+      </div>
     );
   };
 

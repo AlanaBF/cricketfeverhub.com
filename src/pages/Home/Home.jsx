@@ -1,5 +1,4 @@
 import React from "react";
-import PlayerDataComponent from "../../components/PlayerData/PlayerDataComponent";
 import CricketCardLayout from "../../components/News/CricketCardLayout";
 import "../../assets/styles/pages.css";
 
@@ -17,13 +16,6 @@ function Home() {
       <div className="newsContainer">
         <CricketCardLayout />
       </div>
-      {/* <div className="playerSearch">
-        <p>
-          Search for a player by name to view their profile card with detailed
-          information about them.
-        </p>
-        <PlayerDataComponent />
-      </div> */}
     </div>
   );
 }

@@ -10,16 +10,20 @@ const UpcomingMatches = () => {
   const isDesiredSeriesMatch = (seriesMatch) => {
     const seriesName = seriesMatch.seriesAdWrapper?.seriesName;
     const matchType = seriesMatch.matchInfo?.matchType;
-
+  
     if (selectedSeries === "All") {
       return true; // Return true for all matches
+    } else if (selectedSeries === "The Ashes, 2023") {
+      return (
+        seriesName === "The Ashes, 2023" || seriesName === "Womens Ashes, 2023"
+      );
     } else {
       return (
-        (seriesName && seriesName.includes(selectedSeries)) ||
-        (seriesName && seriesName.includes("Women"))
+        (seriesName && seriesName.includes(selectedSeries))
       );
     }
   };
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,30 +44,38 @@ const UpcomingMatches = () => {
   
     if (selectedSeries === "All") {
       filteredData = matches.reduce((filtered, typeMatch) => {
-        const seriesMatches = typeMatch.seriesMatches;
+        const seriesMatches = typeMatch.seriesMatches || [];
         const filteredSeriesMatches = seriesMatches.reduce((filteredSeries, seriesMatch) => {
-          return [...filteredSeries, ...seriesMatch.seriesAdWrapper.matches];
+          const seriesAdWrapper = seriesMatch.seriesAdWrapper;
+          if (seriesAdWrapper && seriesAdWrapper.matches) {
+            return [...filteredSeries, ...seriesAdWrapper.matches];
+          }
+          return filteredSeries;
         }, []);
         return [...filtered, ...filteredSeriesMatches];
       }, []);
     } else {
       filteredData = matches.reduce((filtered, typeMatch) => {
-        const seriesMatches = typeMatch.seriesMatches;
+        const seriesMatches = typeMatch.seriesMatches || [];
         const filteredSeriesMatches = seriesMatches.reduce((filteredSeries, seriesMatch) => {
-          if (isDesiredSeriesMatch(seriesMatch)) {
-            return [...filteredSeries, ...seriesMatch.seriesAdWrapper.matches];
+          const seriesAdWrapper = seriesMatch.seriesAdWrapper;
+          if (isDesiredSeriesMatch(seriesMatch) && seriesAdWrapper && seriesAdWrapper.matches) {
+            return [...filteredSeries, ...seriesAdWrapper.matches];
           }
           return filteredSeries;
         }, []);
         return [...filtered, ...filteredSeriesMatches];
       }, []);
     }
+    
   
     // Sort matches by start date
     const sortedData = filteredData.sort((a, b) => {
-      const dateA = new Date(a.matchInfo.startDate);
-      const dateB = new Date(b.matchInfo.startDate);
-      return dateA - dateB;
+      const timestampA = parseInt(a.matchInfo.startDate);
+      const timestampB = parseInt(b.matchInfo.startDate);
+    
+      // Compare the timestamps
+      return timestampA - timestampB;
     });
   
     setFilteredMatches(sortedData);
@@ -79,12 +91,18 @@ const UpcomingMatches = () => {
     "All",
     "T20 Blast 2023",
     "County Championship Division One 2023",
-    "Women's Matches",
+    "Women",
     "The Ashes, 2023",
   ];
 
   const handleSeriesChange = (event) => {
-    setSelectedSeries(event.target.value);
+    const selectedValue = event.target.value;
+  
+    if (selectedValue === "Women") {
+      setSelectedSeries("Women");
+    } else {
+      setSelectedSeries(selectedValue);
+    }
   };
 
   return (

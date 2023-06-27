@@ -1,0 +1,128 @@
+{
+  "typeMatches": [
+    {
+      "matchType": "Women",
+      "seriesMatches": [
+        {
+          "seriesAdWrapper": {
+            "seriesId": 4779,
+            "seriesName": "Womens Ashes, 2023",
+            "matches": [
+              {
+                "matchInfo": {
+                  "matchId": 53378,
+                  "seriesId": 4779,
+                  "seriesName": "Womens Ashes, 2023",
+                  "matchDesc": "1st T20I",
+                  "matchFormat": "T20",
+                  "startDate": "1688234400000",
+                  "endDate": "1688247000000",
+                  "state": "Upcoming",
+                  "team1": {
+                    "teamId": 99,
+                    "teamName": "England Women",
+                    "teamSName": "ENGW",
+                    "imageId": 172191
+                  },
+                  "team2": {
+                    "teamId": 100,
+                    "teamName": "Australia Women",
+                    "teamSName": "AUSW",
+                    "imageId": 172192
+                  },
+                  "venueInfo": {
+                    "id": 20,
+                    "ground": "Edgbaston",
+                    "city": "Birmingham",
+                    "timezone": "+01:00",
+                    "latitude": "52.455774",
+                    "longitude": "-1.902624"
+                  },
+                  "seriesStartDt": "1687392000000",
+                  "seriesEndDt": "1689811200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match",
+                  "isFantasyEnabled": true
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 53385,
+                  "seriesId": 4779,
+                  "seriesName": "Womens Ashes, 2023",
+                  "matchDesc": "2nd T20I",
+                  "matchFormat": "T20",
+                  "startDate": "1688580000000",
+                  "endDate": "1688592600000",
+                  "state": "Upcoming",
+                  "team1": {
+                    "teamId": 99,
+                    "teamName": "England Women",
+                    "teamSName": "ENGW",
+                    "imageId": 172191
+                  },
+                  "team2": {
+                    "teamId": 100,
+                    "teamName": "Australia Women",
+                    "teamSName": "AUSW",
+                    "imageId": 172192
+                  },
+                  "venueInfo": {
+                    "id": 12,
+                    "ground": "Kennington Oval",
+                    "city": "London",
+                    "timezone": "+01:00",
+                    "latitude": "51.48368",
+                    "longitude": "-0.114885"
+                  },
+                  "seriesStartDt": "1687392000000",
+                  "seriesEndDt": "1689811200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match",
+                  "isFantasyEnabled": true
+                }
+              },
+              {
+                "matchInfo": {
+                  "matchId": 53387,
+                  "seriesId": 4779,
+                  "seriesName": "Womens Ashes, 2023",
+                  "matchDesc": "3rd T20I",
+                  "matchFormat": "T20",
+                  "startDate": "1688839200000",
+                  "endDate": "1688851800000",
+                  "state": "Upcoming",
+                  "team1": {
+                    "teamId": 99,
+                    "teamName": "England Women",
+                    "teamSName": "ENGW",
+                    "imageId": 172191
+                  },
+                  "team2": {
+                    "teamId": 100,
+                    "teamName": "Australia Women",
+                    "teamSName": "AUSW",
+                    "imageId": 172192
+                  },
+                  "venueInfo": {
+                    "id": 19,
+                    "ground": "Lord's",
+                    "city": "London",
+                    "timezone": "+01:00",
+                    "latitude": "51.529488",
+                    "longitude": "-0.172926"
+                  },
+                  "seriesStartDt": "1687392000000",
+                  "seriesEndDt": "1689811200000",
+                  "isTimeAnnounced": true,
+                  "stateTitle": "Upcoming Match",
+                  "isFantasyEnabled": true
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
