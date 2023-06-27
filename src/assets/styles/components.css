@@ -248,7 +248,9 @@ margin: 20px;
 
 @media (max-width: 826px) {
   .chart-container {
-    max-width: 300px; /* Adjust the maximum width for smaller screens */
+    width: 100%; /* Adjust the width for smaller screens */
+    overflow-x: auto; /* Add horizontal scrolling if necessary */
+   
   }
   .batsmen-data-container {
     display: flex;
@@ -264,7 +266,7 @@ margin: 20px;
 
 .batsmen-table th,
 .batsmen-table td {
-  padding: 8px;
+padding: 1px;
   text-align: center;
   border: 1px solid #ccc;
 }
@@ -276,11 +278,13 @@ margin: 20px;
 .batsmen-table tbody tr:nth-child(even) {
   background-color: #f2f2f2;
 }
+
 .table-responsive {
   /* Set a maximum width to prevent horizontal scrolling on small screens */
   max-width: 100%;
   overflow-x: auto;
 }
+
 
 .partnerships-table {
   width: 100%;

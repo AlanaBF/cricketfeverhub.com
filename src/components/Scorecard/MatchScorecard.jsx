@@ -91,8 +91,7 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
                     <td>
                       <Button
                         onClick={() => handleClickPlayerProfile(batsman.batId)}
-                      >
-                        Player Profile
+                      >Profile
                       </Button>
                     </td>
                   </tr>
@@ -372,7 +371,7 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
       </div>
       <Modal show={showModal} onHide={() => setShowModal(false)}>
           <Modal.Header closeButton>
-            <Modal.Title>Player Profile</Modal.Title>
+            <Modal.Title>Profile</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             {selectedPlayerInfo && (
