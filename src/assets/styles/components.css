@@ -1,3 +1,4 @@
+
 /* Header Component */
 
 .navigation {
@@ -127,6 +128,23 @@
 }
 
 /* Live match component */
+.scorecard-page {
+display: block;
+align-items: center;
+margin: auto;
+} 
+
+.section-light {
+background-color: var(--blue);
+}
+
+.section-dark {
+background-color: var(--grey);
+}
+
+.dark-heading {
+  color: white;
+}
 
 .match-container {
   padding: 10px;
@@ -196,19 +214,62 @@
   box-sizing: border-box; /* Include padding in the width calculation */
 }
 
-.scorecard {
-  flex: 1 0 50%; /* Occupies 50% of the container width */
+.summary-scorecard-card {
+  background-color: var(--pink) !important;
+  border: solid 10px var(--pink);
+  margin: 10px;
 }
 
-.partnerships-button, .wickets-button, .extras-button, .innings-button {
-background-color: var(--pink);
-border: solid 10px var(--pink);
-color: white;
-padding: 20px;
-border-radius: 20px;
-margin: 20px;
+.scorecard-header {
+  color: white !important;
 }
 
+.innings-summary {
+  background-color: white;
+  border: solid 10px var(--pink);
+}
+
+.innings-button {
+  background-color: var(--pink);
+  border: solid 10px var(--pink);
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 0 10px;
+}
+
+.innings-button:hover {
+  background-color: var(--blue);
+  border: solid 10px var(--blue);
+}
+
+.partnerships-button,
+.wickets-button,
+.extras-button,
+.batsmen-button,
+.bowlers-button {
+  background-color: var(--blue);
+  border: solid 10px var(--blue);
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 10px 10px;
+}
+
+.partnerships-button:hover,
+.wickets-button:hover,
+.extras-button:hover,
+.batsmen-button:hover,
+.bowlers-button:hover {
+  background-color: var(--pink);
+  border: solid 10px var(--pink);
+}
+
+.profile-button, .close-button {
+  background-color: var(--blue) !important;
+  border: var(--blue) !important;
+  margin: 10px;
+}
 /* Media query for mobile devices */
 @media (max-width: 768px) {
   .scorecard {
@@ -250,7 +311,6 @@ margin: 20px;
   .chart-container {
     width: 100%; /* Adjust the width for smaller screens */
     overflow-x: auto; /* Add horizontal scrolling if necessary */
-   
   }
   .batsmen-data-container {
     display: flex;
@@ -266,7 +326,7 @@ margin: 20px;
 
 .batsmen-table th,
 .batsmen-table td {
-padding: 1px;
+  padding: 1px;
   text-align: center;
   border: 1px solid #ccc;
 }
@@ -284,7 +344,6 @@ padding: 1px;
   max-width: 100%;
   overflow-x: auto;
 }
-
 
 .partnerships-table {
   width: 100%;
@@ -320,7 +379,6 @@ padding: 1px;
     text-overflow: ellipsis;
   }
 }
-
 
 .wickets-container {
   display: flex;

@@ -1,8 +1,11 @@
+hr {
+  margin: 0 !important;
+}
+
 /* Home Page */
 
 .pageBackground {
   background-color: var(--light-blue);
-  padding: 20px;
   color: var(--navy);
   min-height: 87vh;
   text-align: center;

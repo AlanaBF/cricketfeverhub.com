@@ -24,12 +24,15 @@ const ScorecardPage = () => {
   return (
     <div className="pageBackground">
       <h1>Scorecard Page</h1>
+      
       {scorecardData && (
         <MatchScorecard
           scoreCard={scorecardData.scoreCard}
           matchHeader={scorecardData.matchHeader}
         />
       )}
+
+
     </div>
   );
 };
