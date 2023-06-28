@@ -4,7 +4,7 @@ import '../../assets/styles/components.css';
 function Footer() {
   return (
     <footer className="footer">
-      <div>Made with ❤️️ by Alana &copy; 2023 Alana Barrett-Frew</div>
+     Made with ❤️️ by Alana &copy; 2023 Alana Barrett-Frew
     </footer>
   );
 }

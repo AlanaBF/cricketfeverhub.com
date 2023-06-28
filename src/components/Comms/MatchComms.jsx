@@ -14,7 +14,6 @@ const MatchCommentary = ({ matchId }) => {
         setError(error.message);
       }
     };
-
     fetchCommentaryData();
   }, [matchId]);
 
@@ -35,50 +34,15 @@ const MatchCommentary = ({ matchId }) => {
   return (
     <div>
       <h2>Match Commentary</h2>
-      <div>
-        {commentaryData.matchHeader &&
-          commentaryData.matchHeader.length > 0 &&
-          commentaryData.matchHeader.map((header, index) => (
-            <div key={index}>
-              <p>
-                {header.matchType} {header.matchFormat}{" "}
-                {header.matchDescription}
-              </p>
-              <p>
-                {header.tossResults.tossWinnerName}, chose{" "}
-                {header.tossResults.decision}
-              </p>
-              <p>
-                {header.team1.name} vs {header.team2.name}
-              </p>
-              <p>{header.status}</p>
-            </div>
-          ))}
-      </div>
       {commentaryData.commentaryList &&
         commentaryData.commentaryList.length > 0 &&
         commentaryData.commentaryList.map((commentary, index) => (
           <div key={index}>
             <p>{commentary.commText}</p>
             <p>Timestamp: {timestampToTimeString(commentary.timestamp)}</p>
-            <p>Ball Number: {commentary.ballNbr}</p>
-            <p>Over Number: {commentary.overNumber}</p>
-            <p>Innings ID: {commentary.inningsId}</p>
-            <p>Event: {commentary.event}</p>
-            <p>Batting Team Name: {commentary.batTeamName}</p>
-            <hr />
           </div>
         ))}
-      {Array.isArray(commentaryData.responseLastUpdated) &&
-        commentaryData.responseLastUpdated.length > 0 && (
-          <div>
-            {commentaryData.responseLastUpdated.map((update, index) => (
-              <div key={index}>
-                <p>Last Updated: {update}</p>
-              </div>
-            ))}
-          </div>
-        )}
+        
     </div>
   );
 };

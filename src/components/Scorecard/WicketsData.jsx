@@ -30,7 +30,7 @@ const renderWicketsData = () => {
               </div>
             ))}
           </div>
-          <Button variant="primary" onClick={() => setShowData(false)}>
+          <Button className="close-button" variant="primary" onClick={() => setShowData(false)}>
               Close Wickets Data
             </Button>
         </Card.Body>
@@ -39,12 +39,14 @@ const renderWicketsData = () => {
   };
 
   const handleClick = () => {
-    setShowData(true);
+    setShowData((prevShowData) => !prevShowData);
   };
-
+  
   return (
     <div>
-      <button className="wickets-button" onClick={handleClick}>Show Wickets Data</button>
+      <button onClick={handleClick} className="wickets-button">
+        {showData ? "Close Wickets Data" : "Open Wickets Data"}
+      </button>
       {showData && renderWicketsData()}
     </div>
   );

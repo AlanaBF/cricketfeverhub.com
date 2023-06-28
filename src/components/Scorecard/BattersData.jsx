@@ -57,8 +57,11 @@ const BatsmenDataComponent = ({ batsmenData }) => {
                       <td>{batsman.strikeRate}</td>
                       <td>{batsman.outDesc}</td>
                       <td>
-                        <Button className="profile-button"
-                          onClick={() => handleClickPlayerProfile(batsman.batId)}
+                        <Button
+                          className="profile-button"
+                          onClick={() =>
+                            handleClickPlayerProfile(batsman.batId)
+                          }
                         >
                           Profile
                         </Button>
@@ -70,7 +73,12 @@ const BatsmenDataComponent = ({ batsmenData }) => {
             </div>
           </Card.Body>
         </Card>
-        <Button className="close-button" variant="primary" onClick={() => setShowData(false)}>
+
+        <Button
+          className="close-button"
+          variant="primary"
+          onClick={() => setShowData(false)}
+        >
           Close Batsmen Data
         </Button>
       </div>
@@ -78,14 +86,15 @@ const BatsmenDataComponent = ({ batsmenData }) => {
   };
 
   const handleClick = () => {
-    setShowData(true);
+    setShowData((prevShowData) => !prevShowData);
   };
 
   return (
     <div>
-      <button className="batsmen-button" onClick={handleClick}>
-        Show Batsmen Data
+      <button onClick={handleClick} className="batsmen-button">
+        {showData ? "Close Batsmen Data" : "Open Batsmen Data"}
       </button>
+
       {showData && renderBatsmenData()}
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>

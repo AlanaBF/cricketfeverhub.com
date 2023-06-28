@@ -51,7 +51,7 @@ const ExtrasDataComponent = ({ extrasData }) => {
             </div>
           </Card.Body>
         </Card>
-        <Button variant="primary" onClick={() => setShowData(false)}>
+        <Button className="close-button" variant="primary" onClick={() => setShowData(false)}>
           Close Extras Data
         </Button>
       </div>
@@ -59,13 +59,13 @@ const ExtrasDataComponent = ({ extrasData }) => {
   };
 
   const handleClick = () => {
-    setShowData(true);
+    setShowData((prevShowData) => !prevShowData);
   };
-
+  
   return (
     <div>
-      <button className="extras-button" onClick={handleClick}>
-        Show Extras Data
+      <button onClick={handleClick} className="extras-button">
+        {showData ? "Close Extras Data" : "Open Extras Data"}
       </button>
       {showData && renderExtrasData()}
     </div>

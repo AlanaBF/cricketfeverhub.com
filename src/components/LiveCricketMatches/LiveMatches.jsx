@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Card, Button, Modal } from "react-bootstrap";
-import { useParams, useNavigate } from "react-router-dom";
+import {  Button, Modal } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import getLiveMatchesData from "../../utils/getLiveMatches_API";
 import getScorecard from "../../utils/getScorecard_API";
-import getComms from "../../utils/getComms_API";
-import MatchScorecard from "../Scorecard/MatchScorecard";
 import "../../assets/styles/components.css";
 import MatchCommentary from "../Comms/MatchComms";
 
@@ -13,7 +11,6 @@ const LiveMatches = () => {
   const [filteredMatches, setFilteredMatches] = useState([]);
   const [selectedMatch, setSelectedMatch] = useState(null);
   const [scorecardData, setScorecardData] = useState(null);
-  const [matchComments, setMatchComments] = useState([]);
   const [showModal, setShowModal] = useState(false);
 
   const navigate = useNavigate();

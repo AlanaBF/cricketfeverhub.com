@@ -225,6 +225,7 @@ background-color: var(--grey);
 }
 
 .innings-summary {
+  flex-basis: 100%;  
   background-color: white;
   border: solid 10px var(--pink);
 }
@@ -242,12 +243,16 @@ background-color: var(--grey);
   background-color: var(--blue);
   border: solid 10px var(--blue);
 }
+.summary-text {
+display: inline;
+}
 
 .partnerships-button,
 .wickets-button,
 .extras-button,
 .batsmen-button,
-.bowlers-button {
+.bowlers-button, 
+.commentary-button {
   background-color: var(--blue);
   border: solid 10px var(--blue);
   color: white;
@@ -260,7 +265,8 @@ background-color: var(--grey);
 .wickets-button:hover,
 .extras-button:hover,
 .batsmen-button:hover,
-.bowlers-button:hover {
+.bowlers-button:hover,
+.commentary-button:hover {
   background-color: var(--pink);
   border: solid 10px var(--pink);
 }
@@ -437,7 +443,7 @@ background-color: var(--grey);
 .footer {
   width: 100%;
   background-color: var(--navy) !important;
-  color: var(--cream);
+  color: var(--cream) !important;
   font-size: 1rem !important;
   text-align: center;
   padding: 1rem;

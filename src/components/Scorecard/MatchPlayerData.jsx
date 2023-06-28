@@ -22,33 +22,33 @@ const PlayerProfileCard = ({ playerInfo }) => {
       <div className="profile-header">
         <img src={image} alt="Player Image" />
         <h2>{name}</h2>
-        <p>Nickname: {nickName}</p>
+        <div>Nickname: {nickName}</div>
       </div>
       <div className="profile-details">
-        <p>
+        <div>
           <strong>Role:</strong> {role}
-        </p>
-        <p>
+        </div>
+        <div>
           <strong>Batting Style:</strong> {bat}
-        </p>
-        <p>
+        </div>
+        <div>
           <strong>Bowling Style:</strong> {bowl}
-        </p>
-        <p>
+        </div>
+        <div>
           <strong>Date of Birth:</strong> {DoB}
-        </p>
-        <p>
+        </div>
+        <div>
           <strong>Birth Place:</strong> {birthPlace}
-        </p>
-        <p>
+        </div>
+        <div>
           <strong>International Team:</strong> {intlTeam}
-        </p>
-        <p>
+        </div>
+        <div>
           <strong>Teams:</strong> {teams}
-        </p>
-          <p>
+        </div>
+          <div>
             <strong>Rankings:</strong>{" "}
-          </p>
+          </div>
           <Table striped bordered>
       <thead>
         <tr>
@@ -76,7 +76,7 @@ const PlayerProfileCard = ({ playerInfo }) => {
       </tbody>
     </Table>
       </div>
-      <p
+      <div
         className="profile-bio"
         style={{ maxHeight: "200px", overflowY: "auto" }}
       >
@@ -84,7 +84,7 @@ const PlayerProfileCard = ({ playerInfo }) => {
           bio
             .split(/<br\/><br\/>|<b>|<\/b>/)
             .map((paragraph, index) => <p key={index}>{paragraph}</p>)}
-      </p>
+      </div>
     </div>
   );
 };

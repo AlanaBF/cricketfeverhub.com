@@ -43,7 +43,7 @@ const PartnershipDataComponent = ({ partnershipsData }) => {
                 ))}
               </tbody>
             </table>
-            <Button variant="primary" onClick={() => setShowData(false)}>
+            <Button className="close-button" variant="primary" onClick={() => setShowData(false)}>
               Close Partnership Data
             </Button>
           </Card.Body>
@@ -53,12 +53,14 @@ const PartnershipDataComponent = ({ partnershipsData }) => {
   };
 
   const handleClick = () => {
-    setShowData(true);
+    setShowData((prevShowData) => !prevShowData);
   };
-
+  
   return (
     <div>
-      <button className="partnerships-button" onClick={handleClick}>Show Partnerships Data</button>
+      <button onClick={handleClick} className="partnerships-button">
+        {showData ? "Close Partnerships Data" : "Open Partnerships Data"}
+      </button>
       {showData && renderPartnershipsData()}
     </div>
   );

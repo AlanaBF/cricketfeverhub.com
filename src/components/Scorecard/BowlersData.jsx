@@ -40,7 +40,7 @@ const renderBowlersData = () => {
           </table>
         </Card.Body>
       </Card>
-      <Button variant="primary" onClick={() => setShowData(false)}>
+      <Button className="close-button" variant="primary" onClick={() => setShowData(false)}>
             Close Bowlers Data
           </Button>
 
@@ -49,12 +49,13 @@ const renderBowlersData = () => {
   };
 
   const handleClick = () => {
-    setShowData(true);
+    setShowData((prevShowData) => !prevShowData);
   };
+  
   return (
     <div>
-      <button className="bowlers-button" onClick={handleClick}>
-        Show Bowlers Data
+      <button onClick={handleClick} className="bowlers-button">
+        {showData ? "Close Bowler Data" : "Open Bowler Data"}
       </button>
       {showData && renderBowlersData()}
     </div>
