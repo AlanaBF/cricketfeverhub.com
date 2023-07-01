@@ -50,10 +50,14 @@ const CricketCardLayout = () => {
     }
   }, [selectedArticle]);
 
+
+
+
+  
   const handleOpenModal = async (item) => {
     setSelectedArticle(item);
     setShowModal(true);
-
+  
     const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key;
     try {
       const response = await axios.get(
@@ -65,13 +69,26 @@ const CricketCardLayout = () => {
           },
         }
       );
+      console.log(response.data);
       const data = response.data;
-
-      setArticleContent(data.content);
+  
+      const formattedContent = data.content.map((item) => {
+        if (item.content && item.content.contentType === "text" && item.content.hasFormat) {
+          item.content.contentValue = item.content.contentValue
+            .replace(/@B\d+\$/g, "") // Remove all bold format IDs
+            .replace(/@I\d+\$/g, "") // Remove all italic format IDs
+            .replace(/@L\d+\$/g, ""); // Remove all urls format IDs
+        }
+        return item;
+      });
+  
+      setArticleContent(formattedContent);
     } catch (error) {
       console.error("Error fetching article content:", error);
     }
   };
+  
+  
 
   const handleCloseModal = () => {
     setShowModal(false);
