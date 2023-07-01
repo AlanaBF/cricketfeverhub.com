@@ -135,7 +135,7 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
               <div className="scorecard-section">
                 <div className="scorecard-column">
                   <BatsmenDataComponent
-                    batsmenData={scoreCard[1].batsmenData}
+                    batsmenData={scoreCard[1].batTeamDetails?.batsmenData}
                   />
                 </div>
                 <div className="scorecard-column">
@@ -187,7 +187,7 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
               <div className="scorecard-section">
                 <div className="scorecard-column">
                   <BatsmenDataComponent
-                    batsmenData={scoreCard[2].batsmenData}
+                    batsmenData={scoreCard[2].batTeamDetails?.batsmenData}
                   />
                 </div>
                 <div className="scorecard-column">
@@ -238,7 +238,7 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
               <div className="scorecard-section">
                 <div className="scorecard-column">
                   <BatsmenDataComponent
-                    batsmenData={scoreCard[3].batsmenData}
+                    batsmenData={scoreCard[3].batTeamDetails?.batsmenData}
                   />
                 </div>
                 <div className="scorecard-column">
