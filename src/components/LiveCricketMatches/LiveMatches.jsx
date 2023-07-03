@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from "react";
-import {  Button, Modal } from "react-bootstrap";
+import {  Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import getLiveMatchesData from "../../utils/getLiveMatches_API";
-import getScorecard from "../../utils/getScorecard_API";
 import "../../assets/styles/components.css";
-import MatchCommentary from "../Comms/MatchComms";
+
 
 const LiveMatches = () => {
   const [matches, setMatches] = useState([]);
   const [filteredMatches, setFilteredMatches] = useState([]);
-  const [selectedMatch, setSelectedMatch] = useState(null);
-  const [scorecardData, setScorecardData] = useState(null);
-  const [showModal, setShowModal] = useState(false);
+
 
   const navigate = useNavigate();
 
@@ -45,29 +42,6 @@ const LiveMatches = () => {
     return date.toLocaleDateString();
   };
 
-  const handleViewScorecard = async (matchId) => {
-    try {
-      const response = await getScorecard(matchId);
-      setScorecardData(response.data);
-      setShowModal(true);
-    } catch (error) {
-      console.error("Error fetching scorecard data:", error);
-    }
-  };
-
-  const handleViewMatchComments = async (matchId) => {
-    try {
-        setSelectedMatch(matchId);
-        setShowModal(true);
-    } catch (error) {
-      console.error("Error fetching match comments:", error);
-    }
-  };
-
-  const toggleModal = () => {
-    setShowModal(!showModal);
-  };
-
   return (
     <div className="live-matches">
       <h1>Live Matches</h1>
@@ -75,8 +49,8 @@ const LiveMatches = () => {
         filteredMatches.map((match, index) => (
           <div key={index} className="match-container">
             <p>
-              {match.matchInfo.team1.teamName} vs{" "}
-              {match.matchInfo.team2.teamName}
+             {match.matchInfo.team1.teamName} vs{" "}
+             {match.matchInfo.team2.teamName}
             </p>
             <p>{match.matchInfo.seriesName}</p>
             <p>Match Format: {match.matchInfo.matchFormat}</p>
@@ -85,7 +59,7 @@ const LiveMatches = () => {
             </p>
             <p>End Date: {convertTimestampToDate(match.matchInfo.endDate)}</p>
             <p>Status: {match.matchInfo.status}</p>
-            <p>MatchId: {match.matchInfo.matchId}</p>
+            {/* <p>MatchId: {match.matchInfo.matchId}</p> */}
             <p>
               Venue: {match.matchInfo.venueInfo.ground},{" "}
               {match.matchInfo.venueInfo.city}
@@ -171,26 +145,7 @@ const LiveMatches = () => {
             >
               View Scorecard
             </Button>
-            <Button
-              variant="primary"
-              onClick={() => handleViewMatchComments(match.matchInfo.matchId)}
-            >
-              Show Match Comments
-            </Button>
-
-            <Modal show={showModal} onHide={toggleModal}>
-              <Modal.Header closeButton>
-                <Modal.Title>Match Comments</Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-                <MatchCommentary matchId={selectedMatch} />
-              </Modal.Body>
-              <Modal.Footer>
-                <Button variant="secondary" onClick={toggleModal}>
-                  Close
-                </Button>
-              </Modal.Footer>
-            </Modal>
+         
           </div>
         ))
       ) : (

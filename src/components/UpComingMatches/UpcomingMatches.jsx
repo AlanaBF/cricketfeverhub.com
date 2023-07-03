@@ -10,20 +10,21 @@ const UpcomingMatches = () => {
   const isDesiredSeriesMatch = (seriesMatch) => {
     const seriesName = seriesMatch.seriesAdWrapper?.seriesName;
     const matchType = seriesMatch.matchInfo?.matchType;
-  
+    const team1 = seriesMatch.matchInfo?.team1?.teamName;
+    const team2 = seriesMatch.matchInfo?.team2?.teamName;
     if (selectedSeries === "All") {
       return true; // Return true for all matches
     } else if (selectedSeries === "The Ashes, 2023") {
       return (
         seriesName === "The Ashes, 2023" || seriesName === "Womens Ashes, 2023"
       );
-    } else {
+    }   
+    else {
       return (
         (seriesName && seriesName.includes(selectedSeries))
       );
     }
   };
-  
 
   useEffect(() => {
     const fetchData = async () => {

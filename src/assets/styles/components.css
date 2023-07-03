@@ -66,6 +66,21 @@
   border: solid 10px var(--pink) !important;
 }
 
+.dropdown-menu {
+  background-color: var(--light-blue) !important;
+}
+
+.dropdown-item {
+color: var(--navy) !important;
+text-align: center !important;
+}
+
+.dropdown-item:hover {
+  background-color: var(--navy) !important;
+  color: var(--light-blue) !important;
+  text-align: center !important;
+  }
+
 /* Player Data Component */
 
 .playerCard {
@@ -97,9 +112,9 @@
   flex-direction: column;
   border-radius: 10px;
   margin-bottom: 20px;
-  background-color: var(--blue) !important;
+  background-color: var(--light-blue) !important;
   color: var(--navy) !important;
-  border: var(--blue) solid 10px !important;
+  border: var(--navy) solid 10px !important;
   width: 100%;
 }
 
@@ -158,22 +173,20 @@ background-color: var(--grey);
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
+  background-color: var(--light-blue) !important;
+  border-radius: 40px !important;
+  border: var(--navy) 10px solid !important;
+  color: var(--navy);
 }
+
 
 .score-table th,
 .score-table td {
   padding: 5px;
   text-align: center;
-}
-
-.score-table th {
   background-color: var(--light-blue) !important;
 }
 
-.score-table td {
-  background-color: var(--pink) !important;
-  color: white;
-}
 
 /* Scorecard */
 

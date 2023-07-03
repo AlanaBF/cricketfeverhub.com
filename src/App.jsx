@@ -7,6 +7,7 @@ import UpcomingMatchesPage from "./pages/UpcomingMatches/UpcomingMatchesPage";
 import NotFound from "./pages/NotFound/NotFound";
 import LiveMatchesPage from "./pages/LiveMatches/LiveMatchesPage";
 import ScoreCardPage from "./pages/ScorecardPage/ScoreCardPage";
+import TeamSelectionPage from "./pages/TeamSelection/TeamSelectionPage"
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -19,6 +20,7 @@ const App = () => {
       {/* Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/TeamSelectionPage" element={<TeamSelectionPage />} />
         <Route path="/LiveMatchesPage" element={<LiveMatchesPage />} />
         <Route path="/scorecard/:matchId" element={<ScoreCardPage />} />
         <Route path="/UpcomingMatchesPage" element={<UpcomingMatchesPage />} />

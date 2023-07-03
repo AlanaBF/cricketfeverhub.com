@@ -29,8 +29,6 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
     });
   };
 
-  
-
   return (
     // Match Intro
     <div className="scorecard-page">

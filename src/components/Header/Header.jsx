@@ -30,6 +30,10 @@ function Header() {
             <LinkContainer to="/">
               <Nav.Link className="navLink">Home</Nav.Link>
             </LinkContainer>
+        
+              <LinkContainer to="/TeamSelectionPage">
+                <Nav.Link className="navLink">Team Selection</Nav.Link>
+              </LinkContainer>
 
             <NavDropdown title="Matches" id="matches-dropdown">
               <LinkContainer to="/LiveMatchesPage">

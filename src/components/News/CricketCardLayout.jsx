@@ -103,7 +103,7 @@ const CricketCardLayout = () => {
           const { id, hline, intro, source, pubTime } = item.story;
 
           return (
-            <Card key={id} className="card">
+            <Card key={id} className="news-card">
               <Card.Body>
                 <Card.Title>{hline}</Card.Title>
                 <Card.Text>{intro}</Card.Text>
