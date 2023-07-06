@@ -163,10 +163,11 @@ background-color: var(--grey);
 
 .match-container {
   padding: 10px;
-  margin-bottom: 10px;
+  margin: 20px auto;
   background-color: var(--light-blue) !important;
   border: 10px solid var(--navy);
   border-radius: 40px !important;
+  width: 75%;
 }
 
 .score-table {
@@ -317,8 +318,6 @@ display: inline;
 
 .batsmen-data-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .chart-container {
@@ -341,6 +340,7 @@ display: inline;
   width: 100%;
   max-width: 100%;
   margin-top: 10px;
+  overflow-x: auto;
 }
 
 .batsmen-table th,
@@ -361,7 +361,7 @@ display: inline;
 .table-responsive {
   /* Set a maximum width to prevent horizontal scrolling on small screens */
   max-width: 100%;
-  overflow-x: auto;
+  
 }
 
 .partnerships-table {
@@ -461,4 +461,51 @@ display: inline;
   text-align: center;
   padding: 1rem;
   margin: 0;
+}
+
+
+
+
+/* Leaflet */
+.venue {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.leaflet-container {
+  width: 90%;
+  height: 60vh;
+  border-radius: 25px;
+  margin: auto;
+  text-align: center;
+}
+
+.leaflet-popup-close-button {
+  color: var(--mint);
+}
+
+.venue .slogan {
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  background: transparent;
+}
+
+.leaflet-popup-content-wrapper {
+  width: 100%;
+  background: var(--teal);
+  border-radius: 10px;
+}
+
+.leaflet-popup {
+  width: moz-fit-content;
+}
+
+.leaflet-card-ul {
+  margin: 0;
+  padding: 0;
 }
