@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import getLiveMatchesData from "../../utils/getLiveMatches_API";
 import "../../assets/styles/components.css";
 import Map from "../../utils/Leaflet/Leaflet_API";
+import MatchCommentary from "../Comms/MatchComms";
+import { Button, Modal } from "react-bootstrap";
 
 const LiveMatches = () => {
   const [matches, setMatches] = useState([]);
   const [filteredMatches, setFilteredMatches] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedMatchId, setSelectedMatchId] = useState(null);
 
   const navigate = useNavigate();
 
@@ -72,6 +75,15 @@ const LiveMatches = () => {
                 </tr>
               </thead>
               <tbody>
+                <Modal show={showModal} onHide={() => setShowModal(false)}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Match Commentary</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <MatchCommentary matchId={selectedMatchId} />
+                  </Modal.Body>
+                </Modal>
+
                 {match.matchScore ? (
                   <>
                     <tr>
@@ -139,6 +151,15 @@ const LiveMatches = () => {
                 )}
               </tbody>
             </table>
+            <Button
+              onClick={() => {
+                setSelectedMatchId(match.matchInfo.matchId);
+                setShowModal(true);
+              }}
+            >
+              View Match Commentary
+            </Button>
+
             <Button
               onClick={() => navigate(`/scorecard/${match.matchInfo.matchId}`)}
             >

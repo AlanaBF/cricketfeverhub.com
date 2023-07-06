@@ -5,7 +5,7 @@ const getComms = async (matchId) => {
 
   const options = {
     method: 'GET',
-    url: `https://cricbuzz-cricket.p.rapidapi.com/mcenter/v1/${matchId}/hcomm`,
+    url: `https://cricbuzz-cricket.p.rapidapi.com/mcenter/v1/${matchId}/comm`,
     headers: {
       'X-RapidAPI-Key': VITE_RapidAPI_Key,
       'X-RapidAPI-Host': 'cricbuzz-cricket.p.rapidapi.com'
@@ -14,7 +14,7 @@ const getComms = async (matchId) => {
 
   try {
     const response = await axios.request(options);
-    console.log(response.data)
+    //console.log(response.data)
     return response.data; // Return the data to the caller
   } catch (error) {
     console.error(error);
