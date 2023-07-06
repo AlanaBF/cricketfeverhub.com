@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
-import {  Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import getLiveMatchesData from "../../utils/getLiveMatches_API";
 import "../../assets/styles/components.css";
-
+import Map from "../../utils/Leaflet/Leaflet_API";
 
 const LiveMatches = () => {
   const [matches, setMatches] = useState([]);
   const [filteredMatches, setFilteredMatches] = useState([]);
-
 
   const navigate = useNavigate();
 
@@ -49,8 +48,8 @@ const LiveMatches = () => {
         filteredMatches.map((match, index) => (
           <div key={index} className="match-container">
             <p>
-             {match.matchInfo.team1.teamName} vs{" "}
-             {match.matchInfo.team2.teamName}
+              {match.matchInfo.team1.teamName} vs{" "}
+              {match.matchInfo.team2.teamName}
             </p>
             <p>{match.matchInfo.seriesName}</p>
             <p>Match Format: {match.matchInfo.matchFormat}</p>
@@ -59,11 +58,11 @@ const LiveMatches = () => {
             </p>
             <p>End Date: {convertTimestampToDate(match.matchInfo.endDate)}</p>
             <p>Status: {match.matchInfo.status}</p>
-            {/* <p>MatchId: {match.matchInfo.matchId}</p> */}
             <p>
               Venue: {match.matchInfo.venueInfo.ground},{" "}
               {match.matchInfo.venueInfo.city}
             </p>
+            <Map venue={match.matchInfo.venueInfo} />
             <table className="score-table">
               <thead>
                 <tr>
@@ -145,7 +144,6 @@ const LiveMatches = () => {
             >
               View Scorecard
             </Button>
-         
           </div>
         ))
       ) : (

@@ -115,7 +115,7 @@ const UpcomingMatches = () => {
   };
 
   const MatchModal = ({ match, onClose }) => {
-    const { team1, team2, startDate, venueInfo, matchFormat } = match.matchInfo;
+    const { team1, team2, teamId, startDate, venueInfo, matchFormat } = match.matchInfo;
     const [imageURLT1, setImageURLT1] = useState('');
     const [imageURLT2, setImageURLT2] = useState('');
   

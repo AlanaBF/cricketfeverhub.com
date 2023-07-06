@@ -73,6 +73,24 @@
 
 import React from "react";
 
+const axios = require('axios');
+
+const options = {
+  method: 'GET',
+  url: 'https://cricbuzz-cricket.p.rapidapi.com/mcenter/v1/53357/team/9',
+  headers: {
+    'X-RapidAPI-Key': '651de565e1msh496d8bbe1965ca2p10954ejsne0818fbfc744',
+    'X-RapidAPI-Host': 'cricbuzz-cricket.p.rapidapi.com'
+  }
+};
+
+try {
+	const response = await axios.request(options);
+	console.log(response.data);
+} catch (error) {
+	console.error(error);
+}
+
 const TeamSelector = ({ teams }) => {
   return (
     <div>
