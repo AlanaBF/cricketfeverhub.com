@@ -167,7 +167,7 @@ background-color: var(--grey);
   background-color: var(--light-blue) !important;
   border: 10px solid var(--navy);
   border-radius: 40px !important;
-  width: 75%;
+  width: 100%;
 }
 
 .score-table {
