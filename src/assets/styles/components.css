@@ -81,11 +81,12 @@
 }
 
 /* Podcast Component */
+
 .podcast-container {
   display: flex;
   align-items: center;
   /* Optional: Set a max-width for the container to control its width on larger screens */
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto; /* Optional: Center the container horizontally */
   padding: 10px;
 }
@@ -98,6 +99,14 @@
 .podcast-image-container {
   flex: 1;
   padding: 10px;
+}
+
+/* Adjust the images within .podcast-image-container */
+.podcast-image-container img {
+  width: 100%; /* Set width to 100% to make the images responsive */
+  height: auto; /* Automatically adjust the height to maintain aspect ratio */
+  max-width: 300px; /* Set a maximum width to prevent the images from overflowing */
+  object-fit: cover; /* Maintain the aspect ratio while covering the container */
 }
 
 /* Player Data Component */

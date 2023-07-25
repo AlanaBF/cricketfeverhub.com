@@ -18,19 +18,22 @@ function Podcast() {
         </p>
       </div>
       <div>
-        <div className="podcast-container"></div>
+        <div className="podcast-container">
+        <div className="podcast-image-container">
         <a href="https://www.bbc.co.uk/programmes/m001j5cp" target="_blank">
           <img
             src="https://ichef.bbci.co.uk/images/ic/640x360/p0fts28l.jpg"
             target="_blank"
           />
         </a>
+        </div>
+        </div>
         <div>
           <div className="podcast-container">
             <div className="podcast-text-container">
-              <h1 className="pageTitle">
+              <h3 className="page-sub-title">
                 The Sleeping Forecast with Nish Kumar
-              </h1>
+              </h3>
               <p className="pageDescription">
                 Fall asleep to the gentle sounds with Nish Kumar
               </p>
@@ -50,7 +53,7 @@ function Podcast() {
 
           <div className="podcast-container">
             <div className="podcast-text-container">
-              <h1 className="pageTitle">Sport's Strangest Crimes</h1>
+              <h3 className="page-sub-title">Sport's Strangest Crimes</h3>
               <p className="pageDescription">
                 Allen Stanford: The Man Who Bought Cricket
               </p>

@@ -13,7 +13,7 @@ hr {
 
 .hero-image {
   width: 100%; /* Set width to 100% to make the image responsive */
-  height: 300px; /* Adjust the height as needed */
+  height: auto; /* Automatically adjust the height to maintain aspect ratio */
   object-fit: cover; /* Maintain the aspect ratio while covering the container */
 }
 
@@ -24,8 +24,12 @@ hr {
   margin: 30px;
 }
 
+.page-sub-title {
+font-size: 20px;
+}
+
 .pageDescription {
-  font-size: 18px;
+  font-size: 15px;
   color: white;
   margin-bottom: 30px;
 }

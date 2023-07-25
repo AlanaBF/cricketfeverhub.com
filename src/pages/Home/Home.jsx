@@ -21,7 +21,7 @@ function Home() {
       <div className="newsContainer">
         <CricketCardLayout />
       </div>
-      <img src={Cricketbanner}></img>
+      <img className="hero-image" src={Cricketbanner}></img>
     </div>
   );
 }
