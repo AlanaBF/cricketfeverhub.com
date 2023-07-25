@@ -5,7 +5,10 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import "../../assets/styles/components.css";
 import axios from "axios";
-import getImages from '../../utils/getImage_API.jsx';
+import getImages from "../../utils/getImage_API.jsx";
+import "../../assets/styles/pages.css";
+import "../../assets/styles/components.css";
+import CricketImage from "../../assets/CricketImage.jpeg";
 
 const CricketCardLayout = () => {
   const [news, setNews] = useState([]);
@@ -18,7 +21,7 @@ const CricketCardLayout = () => {
     const fetchData = async () => {
       try {
         const newsData = await getNewsData();
-        const topStories = newsData.storyList.slice(0, 11); // Extract the top 5 stories
+        const topStories = newsData.storyList.slice(0, 8); // Extract the top 5 stories
         setNews(topStories);
       } catch (error) {
         console.error("Error fetching cricket news data:", error);
@@ -50,14 +53,10 @@ const CricketCardLayout = () => {
     }
   }, [selectedArticle]);
 
-
-
-
-  
   const handleOpenModal = async (item) => {
     setSelectedArticle(item);
     setShowModal(true);
-  
+
     const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key;
     try {
       const response = await axios.get(
@@ -71,9 +70,13 @@ const CricketCardLayout = () => {
       );
       console.log(response.data);
       const data = response.data;
-  
+
       const formattedContent = data.content.map((item) => {
-        if (item.content && item.content.contentType === "text" && item.content.hasFormat) {
+        if (
+          item.content &&
+          item.content.contentType === "text" &&
+          item.content.hasFormat
+        ) {
           item.content.contentValue = item.content.contentValue
             .replace(/@B\d+\$/g, "") // Remove all bold format IDs
             .replace(/@I\d+\$/g, "") // Remove all italic format IDs
@@ -81,14 +84,12 @@ const CricketCardLayout = () => {
         }
         return item;
       });
-  
+
       setArticleContent(formattedContent);
     } catch (error) {
       console.error("Error fetching article content:", error);
     }
   };
-  
-  
 
   const handleCloseModal = () => {
     setShowModal(false);
@@ -97,69 +98,76 @@ const CricketCardLayout = () => {
   };
 
   return (
-    <div className="news-card-layout">
-      {news.map((item) => {
-        if (item && item.story) {
-          const { id, hline, intro, source, pubTime } = item.story;
+    <div>
+      <div class="image-container">
+        <img className="cricket-image" src={CricketImage}></img>
+        <h1 className="heading">Cricket in the News</h1>
+        <img className="cricket-image" src={CricketImage}></img>
+      </div>
+      <div className="news-card-layout">
+        {news.map((item) => {
+          if (item && item.story) {
+            const { id, hline, intro, source, pubTime } = item.story;
 
-          return (
-            <Card key={id} className="news-card">
-              <Card.Body>
-                <Card.Title>{hline}</Card.Title>
-                <Card.Text>{intro}</Card.Text>
-                <Card.Text>Source: {source}</Card.Text>
-                <Card.Text>
-                  Publication Time: {formatTimestamp(pubTime)}
-                </Card.Text>
-                <Button onClick={() => handleOpenModal(item.story)}>
-                  Read More
-                </Button>
-              </Card.Body>
-            </Card>
-          );
-        } else {
-          return null; // Ignore items without a story object
-        }
-      })}
+            return (
+              <Card key={id} className="news-card">
+                <Card.Body>
+                  <Card.Title>{hline}</Card.Title>
+                  <Card.Text>{intro}</Card.Text>
+                  <Card.Text>Source: {source}</Card.Text>
+                  <Card.Text>
+                    Publication Time: {formatTimestamp(pubTime)}
+                  </Card.Text>
+                  <Button onClick={() => handleOpenModal(item.story)}>
+                    Read More
+                  </Button>
+                </Card.Body>
+              </Card>
+            );
+          } else {
+            return null; // Ignore items without a story object
+          }
+        })}
 
-      {selectedArticle && (
-        <Modal show={showModal} onHide={handleCloseModal}>
-          <Modal.Header closeButton>
-            <Modal.Title>{selectedArticle.hline}</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            {selectedArticle.coverImage && (
-              <>
-                {isLoadingImage ? (
-                  <p>Loading image...</p> // Show loading state
-                ) : (
-                  <Card.Img
-                    variant="top"
-                    src={`https://cricbuzz-cricket.p.rapidapi.com/img/v1/i1/c${selectedArticle.coverImage.id}/i.jpg?p=de`}
-                    alt="Cover Image"
-                  />
-                )}
-              </>
-            )}
-            {articleContent && articleContent.length > 0 ? (
-              articleContent.map((item, index) => (
-                <p key={index}>
-                  {item.content &&
-                    item.content.contentValue &&
-                    item.content.contentValue}
-                </p>
-              ))
-            ) : (
-              <p>No article content available.</p>
-            )}
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleCloseModal}>
-              Close
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      )}
+        {selectedArticle && (
+          <Modal show={showModal} onHide={handleCloseModal}>
+            <Modal.Header closeButton>
+              <Modal.Title>{selectedArticle.hline}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              {selectedArticle.coverImage && (
+                <>
+                  {isLoadingImage ? (
+                    <p>Loading image...</p> // Show loading state
+                  ) : (
+                    <Card.Img
+                      variant="top"
+                      src={`https://cricbuzz-cricket.p.rapidapi.com/img/v1/i1/c${selectedArticle.coverImage.id}/i.jpg?p=de`}
+                      alt="Cover Image"
+                    />
+                  )}
+                </>
+              )}
+              {articleContent && articleContent.length > 0 ? (
+                articleContent.map((item, index) => (
+                  <p key={index}>
+                    {item.content &&
+                      item.content.contentValue &&
+                      item.content.contentValue}
+                  </p>
+                ))
+              ) : (
+                <p>No article content available.</p>
+              )}
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleCloseModal}>
+                Close
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        )}
+      </div>
     </div>
   );
 };

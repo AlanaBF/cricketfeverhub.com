@@ -1,10 +1,9 @@
-
 /* Header Component */
 
 .navigation {
   width: 100% !important;
   font-size: 1rem !important;
-  background-color: var(--navy);
+  background-color: var(--purple);
   justify-content: space-around !important;
 }
 
@@ -71,15 +70,35 @@
 }
 
 .dropdown-item {
-color: var(--navy) !important;
-text-align: center !important;
+  color: var(--navy) !important;
+  text-align: center !important;
 }
 
 .dropdown-item:hover {
   background-color: var(--navy) !important;
   color: var(--light-blue) !important;
   text-align: center !important;
-  }
+}
+
+/* Podcast Component */
+.podcast-container {
+  display: flex;
+  align-items: center;
+  /* Optional: Set a max-width for the container to control its width on larger screens */
+  max-width: 800px;
+  margin: 0 auto; /* Optional: Center the container horizontally */
+  padding: 10px;
+}
+
+.podcast-text-container {
+  flex: 1;
+  padding: 10px;
+}
+
+.podcast-image-container {
+  flex: 1;
+  padding: 10px;
+}
 
 /* Player Data Component */
 
@@ -99,6 +118,22 @@ text-align: center !important;
 
 /* News Cards */
 
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cricket-image {
+  max-width: 100px;
+}
+
+.heading {
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+
 .news-card-layout {
   margin: auto;
   padding: 20px;
@@ -112,9 +147,8 @@ text-align: center !important;
   flex-direction: column;
   border-radius: 10px;
   margin-bottom: 20px;
-  background-color: var(--light-blue) !important;
-  color: var(--navy) !important;
-  border: var(--navy) solid 10px !important;
+  background-color: var(--purple) !important;
+  border: var(--pink) solid 10px !important;
   width: 100%;
 }
 
@@ -122,12 +156,13 @@ text-align: center !important;
   font-size: 1em;
   display: flex;
   flex-direction: column;
-  color: var(--navy) !important;
+  color: white !important;
 }
 
 .card-title {
   font-size: 1em;
   text-decoration: underline;
+  color: white;
 }
 
 @media (max-width: 768px) {
@@ -144,17 +179,17 @@ text-align: center !important;
 
 /* Live match component */
 .scorecard-page {
-display: block;
-align-items: center;
-margin: auto;
-} 
+  display: block;
+  align-items: center;
+  margin: auto;
+}
 
 .section-light {
-background-color: var(--blue);
+  background-color: var(--blue);
 }
 
 .section-dark {
-background-color: var(--grey);
+  background-color: var(--grey);
 }
 
 .dark-heading {
@@ -180,14 +215,12 @@ background-color: var(--grey);
   color: var(--navy);
 }
 
-
 .score-table th,
 .score-table td {
   padding: 5px;
   text-align: center;
   background-color: var(--light-blue) !important;
 }
-
 
 /* Scorecard */
 
@@ -239,7 +272,7 @@ background-color: var(--grey);
 }
 
 .innings-summary {
-  flex-basis: 100%;  
+  flex-basis: 100%;
   background-color: white;
   border: solid 10px var(--pink);
 }
@@ -258,14 +291,14 @@ background-color: var(--grey);
   border: solid 10px var(--blue);
 }
 .summary-text {
-display: inline;
+  display: inline;
 }
 
 .partnerships-button,
 .wickets-button,
 .extras-button,
 .batsmen-button,
-.bowlers-button, 
+.bowlers-button,
 .commentary-button {
   background-color: var(--blue);
   border: solid 10px var(--blue);
@@ -285,7 +318,8 @@ display: inline;
   border: solid 10px var(--pink);
 }
 
-.profile-button, .close-button {
+.profile-button,
+.close-button {
   background-color: var(--blue) !important;
   border: var(--blue) !important;
   margin: 10px;
@@ -361,7 +395,6 @@ display: inline;
 .table-responsive {
   /* Set a maximum width to prevent horizontal scrolling on small screens */
   max-width: 100%;
-  
 }
 
 .partnerships-table {
@@ -462,9 +495,6 @@ display: inline;
   padding: 1rem;
   margin: 0;
 }
-
-
-
 
 /* Leaflet */
 .venue {

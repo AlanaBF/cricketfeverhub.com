@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import favicon from "../../assets/favicon_io/apple-touch-icon.png";
+import favicon from "/CricketImage.jpeg";
 import "../../assets/styles/components.css";
 
 function Header() {

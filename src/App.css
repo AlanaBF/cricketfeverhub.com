@@ -8,6 +8,7 @@
   --pink: #fb0483;
   --navy: #19194B;
   --cream: #c7c8b3;
+  --purple: #45099D;
   height: 100vh;
   font-family: "Handlee", cursive;
 }
@@ -22,7 +23,7 @@ p {
   font-family: "Handlee", cursive;
   margin: 0;
   text-align: center;
-  color: var(--navy);
+  color: white !important;
 }
 
 * {

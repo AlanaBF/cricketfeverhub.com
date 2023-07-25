@@ -5,28 +5,33 @@ hr {
 /* Home Page */
 
 .pageBackground {
-  background-color: var(--light-blue);
-  color: var(--navy);
+  background-color: var(--navy);
   min-height: 87vh;
   text-align: center;
   overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
+.hero-image {
+  width: 100%; /* Set width to 100% to make the image responsive */
+  height: 300px; /* Adjust the height as needed */
+  object-fit: cover; /* Maintain the aspect ratio while covering the container */
+}
+
 .pageTitle {
   font-size: 32px;
   font-weight: bold;
-  color: var(--navy);
-  margin-bottom: 20px;
+  color:white;
+  margin: 30px;
 }
 
 .pageDescription {
   font-size: 18px;
-  color: var(--navy);
+  color: white;
   margin-bottom: 30px;
 }
 
 .newsPage {
- padding: 50px;
+ padding: 10px;
 }
 
 .playerSearch {
