@@ -240,6 +240,29 @@ border: solid 10px var(--pink) !important;
   background-color: var(--light-blue) !important;
 }
 
+/* styles.css */
+/* Add this CSS to style the legends */
+.legend {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+}
+
+.legend div {
+  margin-bottom: 5px;
+}
+
+.legend-color {
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  margin-right: 5px;
+}
+
+
 /* Scorecard */
 
 .scorecard-container {
