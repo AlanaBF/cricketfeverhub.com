@@ -169,7 +169,7 @@ const LiveMatches = () => {
           </div>
         ))
       ) : (
-        <p>No live matches available.</p>
+        <p className="pageDescription">No live matches available.</p>
       )}
     </div>
   );
