@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import GetTeamsData from "../../utils/getTeams_API";
 import CountryList from "../../components/TeamSelection/CountryList";
+import CricketHero from "../../assets/Cricketbanner.jpeg";
+import "../../assets/styles/pages.css";
+import "../../assets/styles/components.css";
+
 
 const TeamSelectionPage = () => {
   const [selectedCountry, setSelectedCountry] = useState(null);
@@ -46,7 +50,9 @@ const TeamSelectionPage = () => {
     // Fetch teams based on countryId
     try {
       const response = await GetTeamsData();
-      const fetchedTeams = response.list.filter((team) => team.teamId === country.teamId);
+      const fetchedTeams = response.list.filter(
+        (team) => team.teamId === country.teamId
+      );
       setTeams(fetchedTeams);
     } catch (error) {
       console.log("Error fetching teams:", error);
@@ -55,10 +61,15 @@ const TeamSelectionPage = () => {
 
   return (
     <div className="pageBackground">
-    <br/>
-    <h1>Teams Page</h1>
-    <br/>
-    <h1>COMING SOON</h1>
+     
+        <img className="hero-image" src={CricketHero}></img>
+        <h1 className="heading">COMING SOON</h1>
+        
+  
+      <br />
+      <h1>Teams Page</h1>
+      <br />
+      <h1>COMING SOON</h1>
       {/* Render CountryList component */}
       {/* <CountryList
         countries={countries}
