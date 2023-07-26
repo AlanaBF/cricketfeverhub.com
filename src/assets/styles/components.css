@@ -251,6 +251,7 @@ border: solid 10px var(--pink) !important;
 .intro-description {
   text-align: center;
   margin: 10px; /* Adds some spacing between the descriptions */
+  color: white;
 }
 
 .teams-container {

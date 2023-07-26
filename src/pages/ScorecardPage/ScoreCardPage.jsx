@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import getScorecard from "../../utils/getScorecard_API";
 import MatchScorecard from "../../components/Scorecard/MatchScorecard";
+import "../../assets/styles/components.css"
 
 const ScorecardPage = () => {
   const { matchId } = useParams();
@@ -23,7 +24,7 @@ const ScorecardPage = () => {
 
   return (
     <div className="pageBackground">
-      <h1>Scorecard Page</h1>
+      <h1 className='pageTitle'>Scorecard Page</h1>
       
       {scorecardData && (
         <MatchScorecard

@@ -67,9 +67,8 @@ const TeamSelectionPage = () => {
         
   
       <br />
-      <h1>Teams Page</h1>
-      <br />
-      <h1>COMING SOON</h1>
+      <h1 className="heading">Teams Page</h1>
+     
       {/* Render CountryList component */}
       {/* <CountryList
         countries={countries}

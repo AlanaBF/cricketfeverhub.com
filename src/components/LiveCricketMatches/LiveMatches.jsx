@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import getLiveMatchesData from "../../utils/getLiveMatches_API";
 import "../../assets/styles/components.css";
+import "../../assets/styles/pages.css"
 import Map from "../../utils/Leaflet/Leaflet_API";
 import MatchCommentary from "../Comms/MatchComms";
 import { Button, Modal } from "react-bootstrap";
@@ -46,7 +47,7 @@ const LiveMatches = () => {
 
   return (
     <div className="live-matches">
-      <h1>Live Matches</h1>
+      <h1 className="pageTitle">Live Matches</h1>
       {filteredMatches.length > 0 ? (
         filteredMatches.map((match, index) => (
           <div key={index} className="match-container">
