@@ -167,9 +167,9 @@ const UpcomingMatches = () => {
 
   return (
     <div className="live-matches">
-      <h1>Upcoming Matches</h1>
+      <h1 className="pageTitle">Upcoming Matches</h1>
       <div className="filter-container">
-        <label htmlFor="series-select">Filter by Series:</label>
+        <label className="pageDescription" htmlFor="series-select">Filter by Series:</label>
         <select
           id="series-select"
           value={selectedSeries}
@@ -200,7 +200,7 @@ const UpcomingMatches = () => {
          ))}
         </>
       ) : (
-        <p>No upcoming matches available.</p>
+        <p className="pageDescription">No upcoming matches available.</p>
       )}
 
       {selectedMatch && (

@@ -45,7 +45,7 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
         </div>
         <div className="intro-description">
           {matchHeader.tossResults.tossWinnerName} have won the toss and have
-          elected
+          elected {' '}
           {matchHeader.tossResults.decision} first
         </div>
         <div className="intro-description">
@@ -55,215 +55,62 @@ const MatchScorecard = ({ scoreCard, matchHeader }) => {
           Winning Team: {matchHeader.result.winningTeam}
         </div>
       </div>
-{/* Innings 1, Batting Team */}
-      <div>
-        <div className="section-dark">
+    {/* Render innings data dynamically */}
+    {scoreCard.map((innings, index) => (
+        <div key={index} className={index % 2 === 0 ? "section-dark" : "section-light"}>
           <div className="teams-container">
             <div className="team-container">
-              <h2 className="dark-heading">{Team1} 1st Innings</h2>{" "}
+              <h2 className={index % 2 === 0 ? "dark-heading" : ""}>
+                {index % 2 === 0 ? Team1 : Team2} {index + 1}{index === 0 ? "st" : "nd"} Innings
+              </h2>
               <div className="scorecard-column">
-                {scoreCard[0] ? (
+                {scoreCard[index] ? (
                   <SummaryInningsDataComponent
-                    scoreDetails={scoreCard[0]?.scoreDetails}
+                    scoreDetails={scoreCard[index]?.scoreDetails}
                   />
                 ) : (
                   <div>No data yet</div>
                 )}
               </div>
-              <div className="dark-heading">
+              <div className={index % 2 === 0 ? "dark-heading" : ""}>
                 <button
-                  onClick={() => toggleInningsData(0)}
+                  onClick={() => toggleInningsData(index)}
                   className="innings-button"
                 >
-                  {inningsDataVisible[0] ? "Close Scorecard" : "Open Scorecard"}
+                  {inningsDataVisible[index] ? "Close Scorecard" : "Open Scorecard"}
                 </button>
               </div>
-              {inningsDataVisible[0] && scoreCard[0] ? (
+              {inningsDataVisible[index] && scoreCard[index] && (
                 <div className="scorecard-section">
                   <div className="scorecard-column">
                     <BatsmenDataComponent
-                      batsmenData={scoreCard[0].batTeamDetails?.batsmenData}
+                      batsmenData={scoreCard[index].batTeamDetails?.batsmenData}
                     />
                   </div>
                   <div className="scorecard-column">
                     <BowlersDataComponent
-                      bowlersData={scoreCard[0].bowlTeamDetails?.bowlersData}
+                      bowlersData={scoreCard[index].bowlTeamDetails?.bowlersData}
                     />
                   </div>
                   <div className="scorecard-column">
-                    <ExtrasDataComponent extrasData={scoreCard[0].extrasData} />
+                    <ExtrasDataComponent extrasData={scoreCard[index].extrasData} />
                   </div>
                   <div className="scorecard-column">
                     <PartnershipDataComponent
-                      partnershipsData={scoreCard[0].partnershipsData}
+                      partnershipsData={scoreCard[index].partnershipsData}
                     />
                   </div>
                   <div className="scorecard-column">
                     <WicketsDataComponent
-                      wicketsData={scoreCard[0].wicketsData}
+                      wicketsData={scoreCard[index].wicketsData}
                     />
                   </div>
                 </div>
-              ) : (
-                <div></div>
               )}
             </div>
-          </div>
-{/* Innings 1, Bowling Team */}
-          <div className="team-container">
-            <h2 className="dark-heading">{Team2} 1st Innings</h2>
-            <div className="scorecard-column">
-              {scoreCard[1] ? (
-                <SummaryInningsDataComponent
-                  scoreDetails={scoreCard[1]?.scoreDetails}
-                />
-              ) : (
-                <div>No data yet</div>
-              )}
-            </div>
-            <div className="dark-heading">
-              <button
-                onClick={() => toggleInningsData(1)}
-                className="innings-button"
-              >
-                {inningsDataVisible[1] ? "Close Scorecard" : "Open Scorecard"}
-              </button>
-            </div>
-            {inningsDataVisible[1] && scoreCard[1] ? (
-              <div className="scorecard-section">
-                <div className="scorecard-column">
-                  <BatsmenDataComponent
-                    batsmenData={scoreCard[1].batTeamDetails?.batsmenData}
-                  />
-                </div>
-                <div className="scorecard-column">
-                  <BowlersDataComponent
-                    bowlersData={scoreCard[1].bowlTeamDetails?.bowlersData}
-                  />
-                </div>
-                <div className="scorecard-column">
-                  <ExtrasDataComponent extrasData={scoreCard[1].extrasData} />
-                </div>
-                <div className="scorecard-column">
-                  <PartnershipDataComponent
-                    partnershipsData={scoreCard[1].partnershipsData}
-                  />
-                </div>
-                <div className="scorecard-column">
-                  <WicketsDataComponent
-                    wicketsData={scoreCard[1].wicketsData}
-                  />
-                </div>
-              </div>
-            ) : (
-              <div></div>
-            )}
           </div>
         </div>
-{/* Innings 2, Batting Team */}
-        <div className="section-light">
-          <div className="team-container">
-            <h2>{Team1} 2nd Innings</h2>
-            <div className="scorecard-column">
-              {scoreCard[2] ? (
-                <SummaryInningsDataComponent
-                  scoreDetails={scoreCard[2]?.scoreDetails}
-                />
-              ) : (
-                <div>No data yet</div>
-              )}
-            </div>
-            <div>
-              <button
-                onClick={() => toggleInningsData(2)}
-                className="innings-button"
-              >
-                {inningsDataVisible[2] ? "Close Scorecard" : "Open Scorecard"}
-              </button>
-            </div>
-            {inningsDataVisible[2] && scoreCard[2] ? (
-              <div className="scorecard-section">
-                <div className="scorecard-column">
-                  <BatsmenDataComponent
-                    batsmenData={scoreCard[2].batTeamDetails?.batsmenData}
-                  />
-                </div>
-                <div className="scorecard-column">
-                  <BowlersDataComponent
-                    bowlersData={scoreCard[2].bowlTeamDetails?.bowlersData}
-                  />
-                </div>
-                <div className="scorecard-column">
-                  <ExtrasDataComponent extrasData={scoreCard[2].extrasData} />
-                </div>
-                <div className="scorecard-column">
-                  <PartnershipDataComponent
-                    partnershipsData={scoreCard[2].partnershipsData}
-                  />
-                </div>
-
-                <div className="scorecard-column">
-                  <WicketsDataComponent
-                    wicketsData={scoreCard[2].wicketsData}
-                  />
-                </div>
-              </div>
-            ) : (
-              <div></div>
-            )}
-          </div>
-{/* Innings 2, Bowling Team */}
-          <div className="team-container">
-            <h2>{Team2} 2nd Innings</h2>
-            <div>
-              {scoreCard[3] ? (
-                <SummaryInningsDataComponent
-                  scoreDetails={scoreCard[3]?.scoreDetails}
-                />
-              ) : (
-                <div>No data yet</div>
-              )}
-            </div> 
-            <div>
-              <button
-                onClick={() => toggleInningsData(3)}
-                className="innings-button"
-              >
-                {inningsDataVisible[3] ? "Close Scorecard" : "Open Scorecard"}
-              </button>
-            </div>
-            {inningsDataVisible[3] && scoreCard[3] ? (
-              <div className="scorecard-section">
-                <div className="scorecard-column">
-                  <BatsmenDataComponent
-                    batsmenData={scoreCard[3].batTeamDetails?.batsmenData}
-                  />
-                </div>
-                <div className="scorecard-column">
-                  <BowlersDataComponent
-                    bowlersData={scoreCard[3].bowlTeamDetails?.bowlersData}
-                  />
-                </div>
-                <div className="scorecard-column">
-                  <ExtrasDataComponent extrasData={scoreCard[3].extrasData} />
-                </div>
-                <div className="scorecard-column">
-                  <PartnershipDataComponent
-                    partnershipsData={scoreCard[3].partnershipsData}
-                  />
-                </div>
-                <div className="scorecard-column">
-                  <WicketsDataComponent
-                    wicketsData={scoreCard[3].wicketsData}
-                  />
-                </div>
-              </div>
-            ) : (
-              <div></div>
-            )}
-          </div>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
