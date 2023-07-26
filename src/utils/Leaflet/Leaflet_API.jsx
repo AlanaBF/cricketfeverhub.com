@@ -9,9 +9,6 @@ const customIcon = L.divIcon({
   html: '<i class="fas fa-location-dot"></i>',
 });
 
-
-
-
 function Map({ venue }) {
   return (
     <MapContainer
@@ -29,7 +26,6 @@ function Map({ venue }) {
           <div className="card">
             <h3>{venue.ground}</h3>
             <h4>{venue.city}</h4>
-            {/* Additional venue information */}
           </div>
         </Popup>
       </Marker>

@@ -127,6 +127,11 @@
 
 /* News Cards */
 
+.news-modal-readmore {
+background-color: var(--pink) !important;
+border: solid 10px var(--pink) !important;
+}
+
 .image-container {
   display: flex;
   align-items: center;
@@ -172,6 +177,10 @@
   font-size: 1em;
   text-decoration: underline;
   color: white;
+}
+
+.news-modal-text {
+  color: navy !important;
 }
 
 @media (max-width: 768px) {

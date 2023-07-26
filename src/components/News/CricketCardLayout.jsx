@@ -99,7 +99,7 @@ const CricketCardLayout = () => {
 
   return (
     <div>
-      <div class="image-container">
+      <div className="image-container">
         <img className="cricket-image" src={CricketImage}></img>
         <h1 className="heading">Cricket in the News</h1>
         <img className="cricket-image" src={CricketImage}></img>
@@ -118,7 +118,7 @@ const CricketCardLayout = () => {
                   <Card.Text>
                     Publication Time: {formatTimestamp(pubTime)}
                   </Card.Text>
-                  <Button onClick={() => handleOpenModal(item.story)}>
+                  <Button className="news-modal-readmore" onClick={() => handleOpenModal(item.story)}>
                     Read More
                   </Button>
                 </Card.Body>
@@ -132,13 +132,13 @@ const CricketCardLayout = () => {
         {selectedArticle && (
           <Modal show={showModal} onHide={handleCloseModal}>
             <Modal.Header closeButton>
-              <Modal.Title>{selectedArticle.hline}</Modal.Title>
+              <Modal.Title className="news-modal-text">{selectedArticle.hline}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               {selectedArticle.coverImage && (
                 <>
                   {isLoadingImage ? (
-                    <p>Loading image...</p> // Show loading state
+                    <p className="news-modal-text">Loading image...</p> // Show loading state
                   ) : (
                     <Card.Img
                       variant="top"
@@ -150,14 +150,14 @@ const CricketCardLayout = () => {
               )}
               {articleContent && articleContent.length > 0 ? (
                 articleContent.map((item, index) => (
-                  <p key={index}>
+                  <p className="news-modal-text" key={index}>
                     {item.content &&
                       item.content.contentValue &&
                       item.content.contentValue}
                   </p>
                 ))
               ) : (
-                <p>No article content available.</p>
+                <p className="news-modal-text">No article content available.</p>
               )}
             </Modal.Body>
             <Modal.Footer>
