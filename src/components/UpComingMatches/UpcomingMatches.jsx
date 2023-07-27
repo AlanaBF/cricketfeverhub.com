@@ -115,24 +115,8 @@ const UpcomingMatches = () => {
   };
 
   const MatchModal = ({ match, onClose }) => {
-    const { team1, team2, teamId, startDate, venueInfo, matchFormat } = match.matchInfo;
-    const [imageURLT1, setImageURLT1] = useState('');
-    const [imageURLT2, setImageURLT2] = useState('');
-  
-    useEffect(() => {
-      const loadImageURLs = async () => {
-        try {
-          const urlT1 = await getImages(match.matchInfo?.team1?.imageId);
-          const urlT2 = await getImages(match.matchInfo?.team2?.imageId);
-          setImageURLT1(urlT1);
-          setImageURLT2(urlT2);
-        } catch (error) {
-          console.error('Error loading image URLs:', error);
-        }
-      };
-  
-      loadImageURLs();
-    }, [match]);
+    const { team1, team2, startDate, venueInfo, matchFormat } = match.matchInfo;
+   
   
     return (
       <div>
@@ -143,8 +127,6 @@ const UpcomingMatches = () => {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <div src={imageURLT1} alt="" />
-            <img src={imageURLT2} alt="" />
             <p>Start Date: {formatDate(startDate)}</p>
             <p>{matchFormat}</p>
             <p>

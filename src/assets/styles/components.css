@@ -82,6 +82,10 @@
 
 /* Podcast Component */
 
+.page-sub-title {
+color: white;
+}  
+
 .podcast-container {
   display: flex;
   align-items: center;
@@ -196,6 +200,25 @@ border: solid 10px var(--pink) !important;
 }
 
 /* Live match component */
+
+.teams-heading {
+font-size: 2rem;
+}
+
+.teams-heading {
+  font-size: 1.5rem;
+  }
+
+.live-match-container {
+  border: 5px solid var(--navy);
+  min-width: 100%; 
+}
+
+.live-match-table {
+  border: 2px solid var(--navy);
+  min-width: 100%; 
+}
+
 .scorecard-page {
   display: block;
   align-items: center;

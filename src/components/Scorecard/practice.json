@@ -1,0 +1,755 @@
+{
+    "typeMatches": [
+        {
+            "matchType": "International",
+            "seriesMatches": [
+                {
+                    "seriesAdWrapper": {
+                        "seriesId": 4777,
+                        "seriesName": "The Ashes, 2023",
+                        "matches": [
+                            {
+                                "matchInfo": {
+                                    "matchId": 53366,
+                                    "seriesId": 4777,
+                                    "seriesName": "The Ashes, 2023",
+                                    "matchDesc": "5th Test",
+                                    "matchFormat": "TEST",
+                                    "startDate": "1690452000000",
+                                    "endDate": "1690822800000",
+                                    "state": "Stumps",
+                                    "status": "Day 1: Stumps - Australia trail by 222 runs",
+                                    "team1": {
+                                        "teamId": 9,
+                                        "teamName": "England",
+                                        "teamSName": "ENG",
+                                        "imageId": 172123
+                                    },
+                                    "team2": {
+                                        "teamId": 4,
+                                        "teamName": "Australia",
+                                        "teamSName": "AUS",
+                                        "imageId": 172117
+                                    },
+                                    "venueInfo": {
+                                        "id": 12,
+                                        "ground": "Kennington Oval",
+                                        "city": "London",
+                                        "timezone": "+01:00",
+                                        "latitude": "51.48368",
+                                        "longitude": "-0.114885"
+                                    },
+                                    "currBatTeamId": 4,
+                                    "seriesStartDt": "1686873600000",
+                                    "seriesEndDt": "1690934400000",
+                                    "isTimeAnnounced": true,
+                                    "stateTitle": "Stumps",
+                                    "isFantasyEnabled": true
+                                },
+                                "matchScore": {
+                                    "team1Score": {
+                                        "inngs1": {
+                                            "inningsId": 1,
+                                            "runs": 283,
+                                            "wickets": 10,
+                                            "overs": 54.4
+                                        }
+                                    },
+                                    "team2Score": {
+                                        "inngs1": {
+                                            "inningsId": 2,
+                                            "runs": 61,
+                                            "wickets": 1,
+                                            "overs": 24.6
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "adDetail": {
+                        "name": "native_matches",
+                        "layout": "native_large",
+                        "position": 1
+                    }
+                },
+                {
+                    "seriesAdWrapper": {
+                        "seriesId": 6582,
+                        "seriesName": "India tour of West Indies, 2023",
+                        "matches": [
+                            {
+                                "matchInfo": {
+                                    "matchId": 72833,
+                                    "seriesId": 6582,
+                                    "seriesName": "India tour of West Indies, 2023",
+                                    "matchDesc": "1st ODI",
+                                    "matchFormat": "ODI",
+                                    "startDate": "1690464600000",
+                                    "endDate": "1690493400000",
+                                    "state": "Complete",
+                                    "status": "India won by 5 wkts",
+                                    "team1": {
+                                        "teamId": 10,
+                                        "teamName": "West Indies",
+                                        "teamSName": "WI",
+                                        "imageId": 172124
+                                    },
+                                    "team2": {
+                                        "teamId": 2,
+                                        "teamName": "India",
+                                        "teamSName": "IND",
+                                        "imageId": 172115
+                                    },
+                                    "venueInfo": {
+                                        "id": 55,
+                                        "ground": "Kensington Oval",
+                                        "city": "Bridgetown, Barbados",
+                                        "timezone": "-04:00",
+                                        "latitude": "13.105021",
+                                        "longitude": "-59.62257"
+                                    },
+                                    "currBatTeamId": 2,
+                                    "seriesStartDt": "1689120000000",
+                                    "seriesEndDt": "1692057600000",
+                                    "isTimeAnnounced": true,
+                                    "stateTitle": "IND Won",
+                                    "isFantasyEnabled": true
+                                },
+                                "matchScore": {
+                                    "team1Score": {
+                                        "inngs1": {
+                                            "inningsId": 1,
+                                            "runs": 114,
+                                            "wickets": 10,
+                                            "overs": 22.6
+                                        }
+                                    },
+                                    "team2Score": {
+                                        "inngs1": {
+                                            "inningsId": 2,
+                                            "runs": 118,
+                                            "wickets": 5,
+                                            "overs": 22.5
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "seriesAdWrapper": {
+                        "seriesId": 6333,
+                        "seriesName": "ICC Mens T20 World Cup Europe Qualifier 2023",
+                        "matches": [
+                            {
+                                "matchInfo": {
+                                    "matchId": 70898,
+                                    "seriesId": 6333,
+                                    "seriesName": "ICC Mens T20 World Cup Europe Qualifier 2023",
+                                    "matchDesc": "18th Match",
+                                    "matchFormat": "T20",
+                                    "startDate": "1690468200000",
+                                    "endDate": "1690480800000",
+                                    "state": "Complete",
+                                    "status": "Match abandoned  without a ball bowled",
+                                    "team1": {
+                                        "teamId": 527,
+                                        "teamName": "Italy",
+                                        "teamSName": "ITA",
+                                        "imageId": 172577
+                                    },
+                                    "team2": {
+                                        "teamId": 532,
+                                        "teamName": "Austria",
+                                        "teamSName": "AUT",
+                                        "imageId": 172583
+                                    },
+                                    "venueInfo": {
+                                        "id": 1580,
+                                        "ground": "Goldenacre",
+                                        "city": "Edinburgh",
+                                        "timezone": "+01:00",
+                                        "latitude": "55.960766",
+                                        "longitude": "-3.213116"
+                                    },
+                                    "seriesStartDt": "1689811200000",
+                                    "seriesEndDt": "1690675200000",
+                                    "isTimeAnnounced": true,
+                                    "stateTitle": "Abandon"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "matchType": "League",
+            "seriesMatches": [
+                {
+                    "seriesAdWrapper": {
+                        "seriesId": 6620,
+                        "seriesName": "Major League Cricket 2023",
+                        "matches": [
+                            {
+                                "matchInfo": {
+                                    "matchId": 73337,
+                                    "seriesId": 6620,
+                                    "seriesName": "Major League Cricket 2023",
+                                    "matchDesc": "Eliminator (3 v 4)",
+                                    "matchFormat": "T20",
+                                    "startDate": "1690489800000",
+                                    "endDate": "1690502400000",
+                                    "state": "Toss",
+                                    "status": "Washington Freedom opt to bowl",
+                                    "team1": {
+                                        "teamId": 1591,
+                                        "teamName": "Washington Freedom",
+                                        "teamSName": "WAF",
+                                        "imageId": 333488
+                                    },
+                                    "team2": {
+                                        "teamId": 1573,
+                                        "teamName": "MI New York",
+                                        "teamSName": "MINY",
+                                        "imageId": 334729
+                                    },
+                                    "venueInfo": {
+                                        "id": 1668,
+                                        "ground": "Grand Prairie Stadium",
+                                        "city": "Dallas",
+                                        "timezone": "-05:00",
+                                        "latitude": "32.67942",
+                                        "longitude": "-97.028338"
+                                    },
+                                    "seriesStartDt": "1689206400000",
+                                    "seriesEndDt": "1690848000000",
+                                    "isTimeAnnounced": true,
+                                    "stateTitle": "Toss"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "seriesAdWrapper": {
+                        "seriesId": 6843,
+                        "seriesName": "Zim Afro T10 2023",
+                        "matches": [
+                            {
+                                "matchInfo": {
+                                    "matchId": 77396,
+                                    "seriesId": 6843,
+                                    "seriesName": "Zim Afro T10 2023",
+                                    "matchDesc": "20th Match",
+                                    "matchFormat": "T20",
+                                    "startDate": "1690477200000",
+                                    "endDate": "1690489800000",
+                                    "state": "Complete",
+                                    "status": "Joburg Buffaloes won by 9 wkts",
+                                    "team1": {
+                                        "teamId": 1650,
+                                        "teamName": "Harare Hurricanes",
+                                        "teamSName": "HH",
+                                        "imageId": 334690
+                                    },
+                                    "team2": {
+                                        "teamId": 1640,
+                                        "teamName": "Joburg Buffaloes",
+                                        "teamSName": "JB",
+                                        "imageId": 334696
+                                    },
+                                    "venueInfo": {
+                                        "id": 69,
+                                        "ground": "Harare Sports Club",
+                                        "city": "Harare",
+                                        "timezone": "+02:00",
+                                        "latitude": "-17.814114",
+                                        "longitude": "31.050962"
+                                    },
+                                    "currBatTeamId": 1640,
+                                    "seriesStartDt": "1689811200000",
+                                    "seriesEndDt": "1690761600000",
+                                    "isTimeAnnounced": true,
+                                    "stateTitle": "Complete"
+                                },
+                                "matchScore": {
+                                    "team1Score": {
+                                        "inngs1": {
+                                            "inningsId": 1,
+                                            "runs": 81,
+                                            "wickets": 7,
+                                            "overs": 9.6
+                                        }
+                                    },
+                                    "team2Score": {
+                                        "inngs1": {
+                                            "inningsId": 2,
+                                            "runs": 85,
+                                            "wickets": 1,
+                                            "overs": 6.2
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "matchInfo": {
+                                    "matchId": 77389,
+                                    "seriesId": 6843,
+                                    "seriesName": "Zim Afro T10 2023",
+                                    "matchDesc": "19th Match",
+                                    "matchFormat": "T20",
+                                    "startDate": "1690470000000",
+                                    "endDate": "1690482600000",
+                                    "state": "Complete",
+                                    "status": "Durban Qalandars won by 7 runs",
+                                    "team1": {
+                                        "teamId": 429,
+                                        "teamName": "Durban Qalandars",
+                                        "teamSName": "DQ",
+                                        "imageId": 334700
+                                    },
+                                    "team2": {
+                                        "teamId": 1636,
+                                        "teamName": "Bulawayo Braves",
+                                        "teamSName": "BLWB",
+                                        "imageId": 334697
+                                    },
+                                    "venueInfo": {
+                                        "id": 69,
+                                        "ground": "Harare Sports Club",
+                                        "city": "Harare",
+                                        "timezone": "+02:00",
+                                        "latitude": "-17.814114",
+                                        "longitude": "31.050962"
+                                    },
+                                    "currBatTeamId": 429,
+                                    "seriesStartDt": "1689811200000",
+                                    "seriesEndDt": "1690761600000",
+                                    "isTimeAnnounced": true,
+                                    "stateTitle": "DQ Won"
+                                },
+                                "matchScore": {
+                                    "team1Score": {
+                                        "inngs1": {
+                                            "inningsId": 1,
+                                            "runs": 103,
+                                            "wickets": 8,
+                                            "overs": 9.6
+                                        }
+                                    },
+                                    "team2Score": {
+                                        "inngs1": {
+                                            "inningsId": 2,
+                                            "runs": 96,
+                                            "wickets": 7,
+                                            "overs": 9.6
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "matchType": "Domestic",
+            "seriesMatches": [
+                {
+                    "seriesAdWrapper": {
+                        "seriesId": 5129,
+                        "seriesName": "County Championship Division Two 2023",
+                        "matches": [
+                            {
+                                "matchInfo": {
+                                    "matchId": 59813,
+                                    "seriesId": 5129,
+                                    "seriesName": "County Championship Division Two 2023",
+                                    "matchDesc": "County Div 2",
+                                    "matchFormat": "TEST",
+                                    "startDate": "1690365600000",
+                                    "endDate": "1690650000000",
+                                    "state": "Stumps",
+                                    "status": "Day 2: Stumps - Gloucestershire trail by 194 runs",
+                                    "team1": {
+                                        "teamId": 147,
+                                        "teamName": "Worcestershire",
+                                        "teamSName": "WORCS",
+                                        "imageId": 172214
+                                    },
+                                    "team2": {
+                                        "teamId": 151,
+                                        "teamName": "Gloucestershire",
+                                        "teamSName": "GLOUCS",
+                                        "imageId": 172218
+                                    },
+                                    "venueInfo": {
+                                        "id": 352,
+                                        "ground": "College Ground",
+                                        "city": "Cheltenham",
+                                        "timezone": "+01:00",
+                                        "latitude": "51.898963",
+                                        "longitude": "-2.061148"
+                                    },
+                                    "currBatTeamId": 151,
+                                    "seriesStartDt": "1680739200000",
+                                    "seriesEndDt": "1696118400000",
+                                    "isTimeAnnounced": true,
+                                    "stateTitle": "Stumps"
+                                },
+                                "matchScore": {
+                                    "team1Score": {
+                                        "inngs1": {
+                                            "inningsId": 1,
+                                            "runs": 406,
+                                            "wickets": 10,
+                                            "overs": 90.5
+                                        }
+                                    },
+                                    "team2Score": {
+                                        "inngs1": {
+                                            "inningsId": 2,
+                                            "runs": 212,
+                                            "wickets": 4,
+                                            "overs": 74.6
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "matchInfo": {
+                                    "matchId": 59799,
+                                    "seriesId": 5129,
+                                    "seriesName": "County Championship Division Two 2023",
+                                    "matchDesc": "County Div 2",
+                                    "matchFormat": "TEST",
+                                    "startDate": "1690279200000",
+                                    "endDate": "1690563600000",
+                                    "state": "Stumps",
+                                    "status": "Day 3: Stumps - Derbyshire trail by 125 runs",
+                                    "team1": {
+                                        "teamId": 149,
+                                        "teamName": "Glamorgan",
+                                        "teamSName": "GLAM",
+                                        "imageId": 172216
+                                    },
+                                    "team2": {
+                                        "teamId": 144,
+                                        "teamName": "Derbyshire",
+                                        "teamSName": "DERBY",
+                                        "imageId": 172211
+                                    },
+                                    "venueInfo": {
+                                        "id": 226,
+                                        "ground": "County Ground",
+                                        "city": "Derby",
+                                        "timezone": "+01:00",
+                                        "latitude": "52.927517",
+                                        "longitude": "-1.461188"
+                                    },
+                                    "currBatTeamId": 144,
+                                    "seriesStartDt": "1680739200000",
+                                    "seriesEndDt": "1696118400000",
+                                    "isTimeAnnounced": true,
+                                    "stateTitle": "Stumps"
+                                },
+                                "matchScore": {
+                                    "team1Score": {
+                                        "inngs1": {
+                                            "inningsId": 1,
+                                            "runs": 521,
+                                            "wickets": 8,
+                                            "overs": 117.6,
+                                            "isDeclared": true
+                                        }
+                                    },
+                                    "team2Score": {
+                                        "inngs1": {
+                                            "inningsId": 2,
+                                            "runs": 318,
+                                            "wickets": 10,
+                                            "overs": 104.5
+                                        },
+                                        "inngs2": {
+                                            "inningsId": 3,
+                                            "runs": 78,
+                                            "overs": 32.6,
+                                            "isFollowOn": true
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "matchInfo": {
+                                    "matchId": 59806,
+                                    "seriesId": 5129,
+                                    "seriesName": "County Championship Division Two 2023",
+                                    "matchDesc": "County Div 2",
+                                    "matchFormat": "TEST",
+                                    "startDate": "1690279200000",
+                                    "endDate": "1690563600000",
+                                    "state": "Stumps",
+                                    "status": "Day 3: Stumps - Durham trail by 234 runs",
+                                    "team1": {
+                                        "teamId": 146,
+                                        "teamName": "Yorkshire",
+                                        "teamSName": "YORKS",
+                                        "imageId": 172213
+                                    },
+                                    "team2": {
+                                        "teamId": 141,
+                                        "teamName": "Durham",
+                                        "teamSName": "DUR",
+                                        "imageId": 172208
+                                    },
+                                    "venueInfo": {
+                                        "id": 220,
+                                        "ground": "North Marine Road Ground",
+                                        "city": "Scarborough",
+                                        "timezone": "+01:00",
+                                        "latitude": "54.288277",
+                                        "longitude": "-0.40539"
+                                    },
+                                    "currBatTeamId": 141,
+                                    "seriesStartDt": "1680739200000",
+                                    "seriesEndDt": "1696118400000",
+                                    "isTimeAnnounced": true,
+                                    "stateTitle": "Stumps"
+                                },
+                                "matchScore": {
+                                    "team1Score": {
+                                        "inngs1": {
+                                            "inningsId": 1,
+                                            "runs": 340,
+                                            "wickets": 10,
+                                            "overs": 87.5
+                                        }
+                                    },
+                                    "team2Score": {
+                                        "inngs1": {
+                                            "inningsId": 2,
+                                            "runs": 106,
+                                            "wickets": 1,
+                                            "overs": 32.6
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "seriesAdWrapper": {
+                        "seriesId": 5127,
+                        "seriesName": "County Championship Division One 2023",
+                        "matches": [
+                            {
+                                "matchInfo": {
+                                    "matchId": 59503,
+                                    "seriesId": 5127,
+                                    "seriesName": "County Championship Division One 2023",
+                                    "matchDesc": "County Div 1",
+                                    "matchFormat": "TEST",
+                                    "startDate": "1690279200000",
+                                    "endDate": "1690563600000",
+                                    "state": "Complete",
+                                    "status": "Surrey won by 10 wkts",
+                                    "team1": {
+                                        "teamId": 119,
+                                        "teamName": "Somerset",
+                                        "teamSName": "SOM",
+                                        "imageId": 172199
+                                    },
+                                    "team2": {
+                                        "teamId": 148,
+                                        "teamName": "Surrey",
+                                        "teamSName": "SUR",
+                                        "imageId": 172215
+                                    },
+                                    "venueInfo": {
+                                        "id": 223,
+                                        "ground": "The Cooper Associates County Ground",
+                                        "city": "Taunton",
+                                        "timezone": "+01:00",
+                                        "latitude": "51.018913",
+                                        "longitude": "3.100894"
+                                    },
+                                    "currBatTeamId": 148,
+                                    "seriesStartDt": "1680739200000",
+                                    "seriesEndDt": "1696118400000",
+                                    "isTimeAnnounced": true,
+                                    "stateTitle": "SUR Won"
+                                },
+                                "matchScore": {
+                                    "team1Score": {
+                                        "inngs1": {
+                                            "inningsId": 1,
+                                            "runs": 170,
+                                            "wickets": 10,
+                                            "overs": 56.3
+                                        },
+                                        "inngs2": {
+                                            "inningsId": 3,
+                                            "runs": 226,
+                                            "wickets": 10,
+                                            "overs": 62.5
+                                        }
+                                    },
+                                    "team2Score": {
+                                        "inngs1": {
+                                            "inningsId": 2,
+                                            "runs": 368,
+                                            "wickets": 10,
+                                            "overs": 90.1
+                                        },
+                                        "inngs2": {
+                                            "inningsId": 4,
+                                            "runs": 29,
+                                            "overs": 8.3
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "matchInfo": {
+                                    "matchId": 59491,
+                                    "seriesId": 5127,
+                                    "seriesName": "County Championship Division One 2023",
+                                    "matchDesc": "County Div 1",
+                                    "matchFormat": "TEST",
+                                    "startDate": "1690279200000",
+                                    "endDate": "1690563600000",
+                                    "state": "Stumps",
+                                    "status": "Day 3: Stumps - Lancashire lead by 156 runs",
+                                    "team1": {
+                                        "teamId": 142,
+                                        "teamName": "Northamptonshire",
+                                        "teamSName": "NHNTS",
+                                        "imageId": 172209
+                                    },
+                                    "team2": {
+                                        "teamId": 143,
+                                        "teamName": "Lancashire",
+                                        "teamSName": "LANCS",
+                                        "imageId": 172210
+                                    },
+                                    "venueInfo": {
+                                        "id": 65,
+                                        "ground": "Emirates Old Trafford",
+                                        "city": "Manchester",
+                                        "timezone": "+01:00",
+                                        "latitude": "53.463066",
+                                        "longitude": "-2.291301"
+                                    },
+                                    "currBatTeamId": 143,
+                                    "seriesStartDt": "1680739200000",
+                                    "seriesEndDt": "1696118400000",
+                                    "isTimeAnnounced": true,
+                                    "stateTitle": "Stumps"
+                                },
+                                "matchScore": {
+                                    "team1Score": {
+                                        "inngs1": {
+                                            "inningsId": 1,
+                                            "runs": 342,
+                                            "wickets": 10,
+                                            "overs": 116.1
+                                        }
+                                    },
+                                    "team2Score": {
+                                        "inngs1": {
+                                            "inningsId": 2,
+                                            "runs": 498,
+                                            "wickets": 7,
+                                            "overs": 102.6
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "matchInfo": {
+                                    "matchId": 59496,
+                                    "seriesId": 5127,
+                                    "seriesName": "County Championship Division One 2023",
+                                    "matchDesc": "County Div 1",
+                                    "matchFormat": "TEST",
+                                    "startDate": "1690279200000",
+                                    "endDate": "1690563600000",
+                                    "state": "Stumps",
+                                    "status": "Day 3: Stumps - Nottinghamshire lead by 210 runs",
+                                    "team1": {
+                                        "teamId": 139,
+                                        "teamName": "Nottinghamshire",
+                                        "teamSName": "NOTTS",
+                                        "imageId": 172206
+                                    },
+                                    "team2": {
+                                        "teamId": 150,
+                                        "teamName": "Kent",
+                                        "teamSName": "KENT",
+                                        "imageId": 172217
+                                    },
+                                    "venueInfo": {
+                                        "id": 18,
+                                        "ground": "Trent Bridge",
+                                        "city": "Nottingham",
+                                        "timezone": "+01:00",
+                                        "latitude": "52.936884",
+                                        "longitude": "-1.132230"
+                                    },
+                                    "currBatTeamId": 139,
+                                    "seriesStartDt": "1680739200000",
+                                    "seriesEndDt": "1696118400000",
+                                    "isTimeAnnounced": true,
+                                    "stateTitle": "Stumps"
+                                },
+                                "matchScore": {
+                                    "team1Score": {
+                                        "inngs1": {
+                                            "inningsId": 1,
+                                            "runs": 350,
+                                            "wickets": 10,
+                                            "overs": 106.6
+                                        },
+                                        "inngs2": {
+                                            "inningsId": 3,
+                                            "runs": 176,
+                                            "wickets": 1,
+                                            "overs": 40.6
+                                        }
+                                    },
+                                    "team2Score": {
+                                        "inngs1": {
+                                            "inningsId": 2,
+                                            "runs": 316,
+                                            "wickets": 10,
+                                            "overs": 103.6
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "filters": {
+        "matchType": [
+            "International",
+            "League",
+            "Domestic",
+            "Women"
+        ]
+    },
+    "appIndex": {
+        "seoTitle": "Live Cricket Score - Scorecard and Match Results",
+        "webURL": "www.cricbuzz.com/live-cricket-scores/"
+    },
+    "responseLastUpdated": "1690489403"
+}
