@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import getLiveMatchesData from "../../utils/getLiveMatches_API";
 import "../../assets/styles/components.css";
 import "../../assets/styles/pages.css";
-//import Map from "../../utils/Leaflet/Leaflet_API";
+import Map from "../../utils/Leaflet/Leaflet_API";
 import { Button } from "react-bootstrap";
 import CricketHero from "../../assets/Cricketbanner.jpeg";
 
@@ -44,6 +44,9 @@ const LiveMatches = () => {
     return date.toLocaleDateString();
   };
 
+  if (filteredMatches.length > 0) {
+  console.log(filteredMatches[0].matchInfo.venueInfo)
+  }
   return (
     <div className="live-matches">
       <img className="hero-image" src={CricketHero}></img>
@@ -90,13 +93,17 @@ const LiveMatches = () => {
               </tbody>
             </table>
 
-            {/* <Map venue={match.matchInfo.venueInfo} /> */}
+            <Map venue={match.matchInfo.venueInfo} />
 
-            <Button
-              onClick={() => navigate(`/scorecard/${match.matchInfo.matchId}`)}
+           <Link to={{pathname: `/scorecard/${match.matchInfo.matchId}`, state: { venue:"Alana" } }}>
+           
+           <Button
+              // onClick={() => navigate(`/scorecard/${match.matchInfo.matchId}`)}
             >
               View Scorecard
             </Button>
+
+            </Link>
           </div>
         ))
       ) : (

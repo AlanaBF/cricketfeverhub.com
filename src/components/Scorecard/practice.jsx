@@ -9,42 +9,48 @@ import WicketsDataComponent from "./WicketsData";
 import ExtrasDataComponent from "./ExtrasData";
 import BatsmenDataComponent from "./BattersData";
 import BowlersDataComponent from "./BowlersData";
-import SummaryInningsDataComponent from "./SummaryInningsCard";
+import { useLocation } from "react-router-dom";
 
-const LiveMatchScoreCard = ({ scoreCard, matchHeader }) => {
-  const [matches, setMatches] = useState([]);
-  const [filteredMatches, setFilteredMatches] = useState([]);
+// import SummaryInningsDataComponent from "./SummaryInningsCard";
 
-  const [inningsDataVisible, setInningsDataVisible] = useState(
-    Array(scoreCard.length).fill(false)
-  );
+
+const LiveMatchScoreCard = ({ scoreCard, matchInfo }) => {
+//   const [matches, setMatches] = useState([]);
+//   const [filteredMatches, setFilteredMatches] = useState([]);
+
+//   const [inningsDataVisible, setInningsDataVisible] = useState(
+//     Array(scoreCard.length).fill(false)
+//   );
 
   // ADD TEAM 1 and TEAM 2 ASSIGN WHO BATS FIRST
   const Team1 = scoreCard[0]?.batTeamDetails?.batTeamName || "";
   const Team2 = scoreCard[1]?.batTeamDetails?.batTeamName || "";
 
+  const location = useLocation()
+  console.log(location.state )
+  const venue = location.state && location.state.venue
+  console.log(venue)
+//   const convertTimestampToDate = (timestamp) => {
+//     const date = new Date(parseInt(timestamp));
+//     return date.toLocaleDateString();
+//   };
 
-  const convertTimestampToDate = (timestamp) => {
-    const date = new Date(parseInt(timestamp));
-    return date.toLocaleDateString();
-  };
-
-  const toggleInningsData = (index) => {
-    setInningsDataVisible((prevVisible) => {
-      const updatedVisible = [...prevVisible];
-      updatedVisible[index] = !prevVisible[index];
-      return updatedVisible;
-    });
-  };
+//   const toggleInningsData = (index) => {
+//     setInningsDataVisible((prevVisible) => {
+//       const updatedVisible = [...prevVisible];
+//       updatedVisible[index] = !prevVisible[index];
+//       return updatedVisible;
+//     });
+//   };
 
   return (
     <div className="live-matches">
       <img className="hero-image" src={CricketHero}></img>
 
       <br />
-            {/* <Map venue={matchInfo.venueInfo} /> */}
+           
+            {/* <Map /> */}
         
-
 
       {scoreCard.map((innings, index) => (
         <div
@@ -57,7 +63,7 @@ const LiveMatchScoreCard = ({ scoreCard, matchHeader }) => {
                 {index % 2 === 0 ? Team1 : Team2} {index + 1}
                 {index === 0 ? "st" : "nd"} Innings
               </h2>
-              <div className="scorecard-column">
+              {/* <div className="scorecard-column">
                 {scoreCard[index] ? (
                   
                     <SummaryInningsDataComponent
@@ -67,18 +73,18 @@ const LiveMatchScoreCard = ({ scoreCard, matchHeader }) => {
                 ) : (
                   <div>No data yet</div>
                 )}
-              </div>
+              </div> */}
               <div className={index % 2 === 0 ? "dark-heading" : ""}>
-                <button
+                {/* <button
                   onClick={() => toggleInningsData(index)}
                   className="innings-button"
                 >
                   {inningsDataVisible[index]
                     ? "Close Scorecard"
                     : "Open Scorecard"}
-                </button>
+                </button> */}
               </div>
-              {inningsDataVisible[index] && scoreCard[index] && (
+              {/* {inningsDataVisible[index] && scoreCard[index] && ( */}
                 <div className="scorecard-section">
                   <div className="scorecard-column">
                     <BatsmenDataComponent
@@ -108,7 +114,7 @@ const LiveMatchScoreCard = ({ scoreCard, matchHeader }) => {
                     />
                   </div>
                 </div>
-              )}
+              {/* )} */}
             </div>
           </div>
         </div>
