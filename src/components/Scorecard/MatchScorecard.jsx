@@ -14,7 +14,7 @@ import SummaryInningsDataComponent from "./SummaryInningsCard";
 
 const LiveMatchScoreCard = ({
   scoreCard,
-  matchInfo,
+  // matchInfo,
   venueInfo,
   matchHeader,
 }) => {
