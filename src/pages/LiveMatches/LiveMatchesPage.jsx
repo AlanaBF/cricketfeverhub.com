@@ -1,5 +1,5 @@
 import '../../assets/styles/pages.css'
-import LiveMatches from '../../components/LiveCricketMatches/LiveMatches'
+import LiveMatches from '../../components/LiveMatches/index'
 import "../../assets/styles/components.css"
 function LiveMatchesPage() {
   return (
