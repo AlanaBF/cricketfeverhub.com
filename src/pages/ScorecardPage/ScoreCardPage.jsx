@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import getScorecard from "../../utils/getScorecard_API";
 //import MatchScorecard from "../../components/Scorecard/MatchScorecard";
 import "../../assets/styles/components.css"
-import LiveMatchScoreCard from '../../components/Scorecard/practice';
+import LiveMatchScoreCard from '../../components/Scorecard/MatchScorecard';
 
 const ScorecardPage = () => {
   const { matchId } = useParams();
