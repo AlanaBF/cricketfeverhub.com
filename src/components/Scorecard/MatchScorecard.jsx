@@ -78,7 +78,7 @@ const LiveMatchScoreCard = ({
           </p>
           <p>{"matchFormat"}</p>
 
-          <MatchMap venue={venueInfo} matchId={matchId} />
+          <MatchMap venueInfo={venueInfo} matchId={matchId} />
 
           {scoreCard.map((innings, index) => (
             <div
