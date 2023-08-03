@@ -34,7 +34,9 @@ const LiveMatches = () => {
     const fetchData = async () => {
       try {
         const data = await getLiveMatchesData();
-        setMatches(data.typeMatches); // Update the state with fetched match data
+        if (data && data.typeMatches) {
+          setMatches(data.typeMatches); 
+        } // Update the state with fetched match data
       } catch (error) {
         console.error("Error fetching upcoming matches data:", error);
       }
@@ -63,7 +65,13 @@ const LiveMatches = () => {
         return [...filtered, ...filteredSeriesMatches];
       }, []);
     } else {
-      filteredData = matches.reduce((filtered, typeMatch) => {
+      if (!matches || matches.length === 0) {
+        // Handle the case when matches is empty or undefined
+        filteredData = [];
+      } else {
+        // Proceed with the filtering logic using .reduce()
+        filteredData = matches.reduce((filtered, typeMatch) => {
+      
         const seriesMatches = typeMatch.seriesMatches || [];
         const filteredSeriesMatches = seriesMatches.reduce(
           (filteredSeries, seriesMatch) => {
@@ -82,6 +90,7 @@ const LiveMatches = () => {
         return [...filtered, ...filteredSeriesMatches];
       }, []);
     }
+  }
 
     // Sort matches by start date
     const sortedData = filteredData.sort((a, b) => {
