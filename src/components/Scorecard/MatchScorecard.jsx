@@ -68,21 +68,13 @@ const LiveMatchScoreCard = ({
           elected {matchHeader.tossResults.decision} first
         </div>
         <div className="intro-description">
-          Current Status: {matchHeader.status}
-        </div>
-        <div className="intro-description">
           Winning Team: {matchHeader.result.winningTeam}
         </div>
       </div>
 
+
       {matchData && (
         <div>
-
-          <p>
-            Start Date:{" "}
-            {convertTimestampToDate(matchHeader.matchStartTimestamp)}
-          </p>
-          <p>{"matchFormat"}</p>
 
           <MatchMap venueInfo={venueInfo} matchId={matchId} />
 
