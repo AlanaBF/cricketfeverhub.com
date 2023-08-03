@@ -6,6 +6,7 @@ import getScorecard from "../../utils/getScorecard_API";
 import "../../assets/styles/components.css";
 import LiveMatchScoreCard from "../../components/Scorecard/MatchScorecard";
 
+
 const ScorecardPage = () => {
   const { matchId } = useParams();
   const [scorecardData, setScorecardData] = useState(null);

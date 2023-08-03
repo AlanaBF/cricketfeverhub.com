@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../assets/styles/components.css";
 import "../../assets/styles/pages.css";
+
 import CricketHero from "../../assets/Cricketbanner.jpeg";
 import PartnershipDataComponent from "./PartnershipsData";
 import WicketsDataComponent from "./WicketsData";
@@ -10,14 +11,18 @@ import BowlersDataComponent from "./BowlersData";
 import { useLocation } from "react-router-dom";
 
 import SummaryInningsDataComponent from "./SummaryInningsCard";
+
 import MatchMap from "../MatchMap";
+
 
 const LiveMatchScoreCard = ({
   scoreCard,
   // matchInfo,
   venueInfo,
   matchHeader,
+
   matchId,
+
 }) => {
   const [inningsDataVisible, setInningsDataVisible] = useState(
     Array(scoreCard.length).fill(false)
@@ -72,6 +77,7 @@ const LiveMatchScoreCard = ({
 
       {matchData && (
         <div>
+
           <p>
             Start Date:{" "}
             {convertTimestampToDate(matchHeader.matchStartTimestamp)}
@@ -79,6 +85,7 @@ const LiveMatchScoreCard = ({
           <p>{"matchFormat"}</p>
 
           <MatchMap venueInfo={venueInfo} matchId={matchId} />
+
 
           {scoreCard.map((innings, index) => (
             <div

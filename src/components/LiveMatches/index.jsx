@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import getLiveMatchesData from "../../utils/getLiveMatches_API";
+
 import { Link, useNavigate } from "react-router-dom";
+
 import { Button } from "react-bootstrap";
 import "../../assets/styles/components.css";
 import "../../assets/styles/pages.css";
@@ -192,6 +194,7 @@ const LiveMatches = () => {
                 </tbody>
               </table>
 
+
               <Link
                 to={`/scorecard/${match.matchInfo.matchId}`}
                 state={{
@@ -201,6 +204,7 @@ const LiveMatches = () => {
               >
                 <Button>View Scorecard</Button>
               </Link>
+
             </div>
           ))}
         </>
