@@ -1,20 +1,23 @@
-import '../../assets/styles/pages.css'
+import "../../assets/styles/pages.css";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import getScorecard from "../../utils/getScorecard_API";
 //import MatchScorecard from "../../components/Scorecard/MatchScorecard";
-import "../../assets/styles/components.css"
-import LiveMatchScoreCard from '../../components/Scorecard/MatchScorecard';
+import "../../assets/styles/components.css";
+import LiveMatchScoreCard from "../../components/Scorecard/MatchScorecard";
+
 
 const ScorecardPage = () => {
   const { matchId } = useParams();
   const [scorecardData, setScorecardData] = useState(null);
 
+  const location = useLocation();
+
   useEffect(() => {
     const fetchScorecardData = async () => {
       try {
         const response = await getScorecard(matchId);
-    
+
         setScorecardData(response.data);
       } catch (error) {
         console.error("Error fetching scorecard data:", error);
@@ -26,16 +29,16 @@ const ScorecardPage = () => {
 
   return (
     <div className="pageBackground">
-      <h1 className='pageTitle'>Scorecard Page</h1>
-      
+      <h1 className="pageTitle">Scorecard Page</h1>
+
       {scorecardData && (
         <LiveMatchScoreCard
           scoreCard={scorecardData.scoreCard}
           matchHeader={scorecardData.matchHeader}
+          venueInfo={location.state?.venueInfo}
+          matchId={matchId}
         />
       )}
-
-
     </div>
   );
 };

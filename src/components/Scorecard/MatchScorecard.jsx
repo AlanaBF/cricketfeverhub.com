@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../assets/styles/components.css";
 import "../../assets/styles/pages.css";
-import Map from "../../utils/Leaflet/Leaflet_API";
+
 import CricketHero from "../../assets/Cricketbanner.jpeg";
 import PartnershipDataComponent from "./PartnershipsData";
 import WicketsDataComponent from "./WicketsData";
@@ -12,11 +12,17 @@ import { useLocation } from "react-router-dom";
 
 import SummaryInningsDataComponent from "./SummaryInningsCard";
 
+import MatchMap from "../MatchMap";
+
+
 const LiveMatchScoreCard = ({
   scoreCard,
   // matchInfo,
   venueInfo,
   matchHeader,
+
+  matchId,
+
 }) => {
   const [inningsDataVisible, setInningsDataVisible] = useState(
     Array(scoreCard.length).fill(false)
@@ -40,7 +46,7 @@ const LiveMatchScoreCard = ({
       return updatedVisible;
     });
   };
-
+  console.log(matchData);
   return (
     <div className="live-matches">
       <img className="hero-image" src={CricketHero}></img>
@@ -71,24 +77,15 @@ const LiveMatchScoreCard = ({
 
       {matchData && (
         <div>
-          <p>Start Date: {convertTimestampToDate(startDate)}</p>
-          <p>{matchFormat}</p>
+
           <p>
-            Venue: {venueInfo.ground}, {venueInfo.city}
+            Start Date:{" "}
+            {convertTimestampToDate(matchHeader.matchStartTimestamp)}
           </p>
-          {venueInfo && (
-            <Map
-              venue={{
-                id: venueId,
-                name: venueName,
-                city: venueCity,
-                country: venueCountry,
-                timezone: venueTimezone,
-                latitude: venueLatitude,
-                longitude: venueLongitude,
-              }}
-            />
-          )}
+          <p>{"matchFormat"}</p>
+
+          <MatchMap venueInfo={venueInfo} matchId={matchId} />
+
 
           {scoreCard.map((innings, index) => (
             <div

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import getLiveMatchesData from "../../utils/getLiveMatches_API";
-import { useNavigate } from "react-router-dom";
+
+import { Link, useNavigate } from "react-router-dom";
+
 import { Button } from "react-bootstrap";
 import "../../assets/styles/components.css";
 import "../../assets/styles/pages.css";
@@ -192,15 +194,17 @@ const LiveMatches = () => {
                 </tbody>
               </table>
 
-              <Button
-                onClick={() =>
-                  navigate(`/scorecard/${match.matchInfo.matchId}`, {
-                    matchData: match,
-                  })
-                }
+
+              <Link
+                to={`/scorecard/${match.matchInfo.matchId}`}
+                state={{
+                  matchData: match,
+                  venueInfo: match.matchInfo.venueInfo,
+                }}
               >
-                View Scorecard
-              </Button>
+                <Button>View Scorecard</Button>
+              </Link>
+
             </div>
           ))}
         </>
