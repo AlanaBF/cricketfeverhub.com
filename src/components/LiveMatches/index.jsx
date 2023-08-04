@@ -160,10 +160,6 @@ const LiveMatches = () => {
               className="match-container"
               onClick={() => setSelectedMatch(match)}
             >
-              <h2>
-                {match.matchInfo?.team1?.teamName} vs{" "}
-                {match.matchInfo?.team2?.teamName}
-              </h2>
               <div className="teams-heading">
                 {match.matchInfo.team1.teamName} vs{" "}
                 {match.matchInfo.team2.teamName}
