@@ -46,10 +46,10 @@ const PlayerProfileCard = ({ playerInfo }) => {
         <div>
           <strong>Teams:</strong> {teams}
         </div>
-          <div>
+        {/* <div>
             <strong>Rankings:</strong>{" "}
-          </div>
-          <Table striped bordered>
+          </div> */}
+        {/* <Table striped bordered>
       <thead>
         <tr>
           <th>Category</th>
@@ -74,7 +74,7 @@ const PlayerProfileCard = ({ playerInfo }) => {
           <td>{rankings.bowl[0].t20BestRank}</td>
         </tr>
       </tbody>
-    </Table>
+    </Table> */}
       </div>
       <div
         className="profile-bio"

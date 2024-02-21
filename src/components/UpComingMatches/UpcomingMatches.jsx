@@ -16,9 +16,9 @@ const UpcomingMatches = () => {
 
     if (selectedSeries === "All") {
       return true; // Return true for all matches
-    } else if (selectedSeries === "The Ashes, 2023") {
+    } else if (selectedSeries === "The Ashes, 2024") {
       return (
-        seriesName === "The Ashes, 2023" || seriesName === "Womens Ashes, 2023"
+        seriesName === "The Ashes, 2024" || seriesName === "Womens Ashes, 2024"
       );
     } else {
       return seriesName && seriesName.includes(selectedSeries);
@@ -98,10 +98,10 @@ const UpcomingMatches = () => {
 
   const seriesNames = [
     "All",
-    "T20 Blast 2023",
-    "County Championship Division One 2023",
+    "T20 Blast 2024",
+    "County Championship Division One 2024",
     "Women",
-    "The Ashes, 2023",
+    "The Ashes, 2024",
   ];
 
   const handleSeriesChange = (event) => {

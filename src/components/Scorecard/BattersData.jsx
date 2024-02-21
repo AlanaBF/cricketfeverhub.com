@@ -63,7 +63,7 @@ const BatsmenDataComponent = ({ batsmenData }) => {
                             handleClickPlayerProfile(batsman.batId)
                           }
                         >
-                          Profile
+                          View Profile
                         </Button>
                       </td>
                     </tr>
