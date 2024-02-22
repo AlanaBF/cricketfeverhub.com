@@ -3,16 +3,15 @@ import { Card, Button } from "react-bootstrap";
 import "../../assets/styles/components.css";
 
 const BowlersDataComponent = ({ bowlersData }) => {
-  const [showData, setShowData] = useState(false);
+  //   const [showData, setShowData] = useState(false);
 
+  // const renderBowlersData = () => {
+  //     if (!bowlersData) {
+  //       return null;
+  //     }
 
-const renderBowlersData = () => {
-    if (!bowlersData) {
-      return null;
-    }
-
-    return (
-      <div>
+  return (
+    <div>
       <Card className="scorecard-card">
         <Card.Header>Bowlers Data</Card.Header>
         <Card.Body>
@@ -40,26 +39,25 @@ const renderBowlersData = () => {
           </table>
         </Card.Body>
       </Card>
-      <Button className="close-button" variant="primary" onClick={() => setShowData(false)}>
+      {/* <Button className="close-button" variant="primary" onClick={() => setShowData(false)}>
             Close Bowlers Data
-          </Button>
-
-      </div>
-    );
-  };
-
-  const handleClick = () => {
-    setShowData((prevShowData) => !prevShowData);
-  };
-  
-  return (
-    <div>
-      <button onClick={handleClick} className="bowlers-button">
-        {showData ? "Close Bowler Data" : "Open Bowler Data"}
-      </button>
-      {showData && renderBowlersData()}
+          </Button> */}
     </div>
   );
-  };
+};
+
+// const handleClick = () => {
+//   setShowData((prevShowData) => !prevShowData);
+// };
+
+// return (
+//   <div>
+//     <button onClick={handleClick} className="bowlers-button">
+//       {showData ? "Close Bowler Data" : "Open Bowler Data"}
+//     </button>
+//     {showData && renderBowlersData()}
+//   </div>
+// );
+//};
 
 export default BowlersDataComponent;
