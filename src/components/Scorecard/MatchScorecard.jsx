@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../../assets/styles/components.css";
 import "../../assets/styles/pages.css";
 
-import CricketHero from "../../assets/Cricketbanner.jpeg";
 import PartnershipDataComponent from "./PartnershipsData";
 import WicketsDataComponent from "./WicketsData";
 import ExtrasDataComponent from "./ExtrasData";
@@ -147,9 +146,7 @@ const LiveMatchScoreCard = ({
     //   )}
     // </div>
     <div className="live-matches">
-      <img className="hero-image" src={CricketHero}></img>
 
-      <br />
       <div className="scorecard-container">
         <h1 className="intro-description">{matchHeader.seriesDesc}</h1>
         <h2 className="intro-description">

@@ -5,6 +5,7 @@ import getScorecard from "../../utils/getScorecard_API";
 //import MatchScorecard from "../../components/Scorecard/MatchScorecard";
 import "../../assets/styles/components.css";
 import LiveMatchScoreCard from "../../components/Scorecard/MatchScorecard";
+import CricketHero from "../../assets/Cricketbanner.jpeg";
 
 
 const ScorecardPage = () => {
@@ -29,6 +30,9 @@ const ScorecardPage = () => {
 
   return (
     <div className="pageBackground">
+          <img className="hero-image" src={CricketHero}></img>
+
+<br />
       <h1 className="pageTitle">Scorecard Page</h1>
 
       {scorecardData && (
