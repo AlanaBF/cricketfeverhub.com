@@ -330,14 +330,21 @@ font-size: 2rem;
   background-color: var(--pink) !important;
   border: solid 10px var(--pink);
   margin: 10px;
-}
 
+}
+.scorecard-column {
+  min-width: 100% !important;
+}
 .scorecard-header {
+  font-size: 1.5em;
   color: white !important;
 }
 
 .innings-summary {
-  flex-basis: 100%;
+  /* flex-basis: 100%; */
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
   background-color: white;
   border: solid 10px var(--pink);
 }

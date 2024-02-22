@@ -30,6 +30,7 @@ const ScorecardPage = () => {
 
   return (
     <div className="pageBackground">
+    <div className="scorecard-page">
           <img className="hero-image" src={CricketHero}></img>
 
 <br />
@@ -43,6 +44,7 @@ const ScorecardPage = () => {
           matchId={matchId}
         />
       )}
+      </div>
     </div>
   );
 };
