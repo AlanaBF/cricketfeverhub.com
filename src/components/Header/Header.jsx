@@ -30,30 +30,56 @@ function Header() {
             <LinkContainer to="/">
               <Nav.Link className="navLink">Home</Nav.Link>
             </LinkContainer>
-        
-              <LinkContainer to="/TeamSelectionPage">
-                <Nav.Link className="navLink">Team Selection</Nav.Link>
-              </LinkContainer>
 
-            <NavDropdown title="Matches" id="matches-dropdown">
+            {/* <LinkContainer to="/TeamSelectionPage">
+                <Nav.Link className="navLink">Team Selection</Nav.Link>
+              </LinkContainer> */}
+
+            <LinkContainer to="/LiveMatchesPage">
+              <Nav.Link className="navLink">Live Matches</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/UpcomingMatchesPage">
+              <Nav.Link className="navLink">Upcoming Matches</Nav.Link>
+            </LinkContainer>
+
+            {/* <NavDropdown title="Matches" id="matches-dropdown">
               <LinkContainer to="/LiveMatchesPage">
                 <NavDropdown.Item className="navLink">Live Matches</NavDropdown.Item>
               </LinkContainer>
               <LinkContainer to="/UpcomingMatchesPage">
                 <NavDropdown.Item className="navLink">Upcoming Matches</NavDropdown.Item>
               </LinkContainer>
-            </NavDropdown>
+            </NavDropdown> */}
           </Nav>
 
           <Nav className="nav navbar-nav flex-row justify-content-md-center justify-content-start flex-nowrap">
             <div className="navIcons">
-              <a href="https://twitter.com/AlanaBF81" rel="noopener noreferrer">
-                <i className="fa navbarIcons fa-twitter"></i>
+              <a
+                href="https://www.instagram.com/teacherturnsturtle81/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <i className="fa navbarIcons fa-instagram"></i>
               </a>
-              <a href="https://github.com/AlanaBF" rel="noopener noreferrer">
+              <a
+                href="https://www.facebook.com/teacherturnsturtle"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <i className="fa navbarIcons fa-facebook"></i>
+              </a>
+              <a
+                href="https://github.com/AlanaBF"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <i className="fa navbarIcons fa-github"></i>
               </a>{" "}
-              <a href="https://www.linkedin.com/in/alanabarrettfrew/" rel="noopener noreferrer">
+              <a
+                href="https://www.linkedin.com/in/alanabarrettfrew/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <i className="fa navbarIcons fa-linkedin"></i>
               </a>
             </div>
@@ -65,4 +91,3 @@ function Header() {
 }
 
 export default Header;
-
