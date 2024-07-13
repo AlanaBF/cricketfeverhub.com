@@ -12,12 +12,15 @@ function Home() {
 
       <br />
 
-      <p className="pageDescription">
-        Welcome to the Cricket Fever Hub! Here you can find information about
-        Men's and Women's cricket matches, including live updates and upcoming
-        fixtures. Explore the latest news and commentary.
+      <p className="pageDescription" style={{ fontSize: "3rem" }}>
+        Welcome to the Cricket Fever Hub!{" "}
       </p>
-      <Podcast />
+
+      <p className="pageDescription" style={{ fontSize: "1.5rem" }}>
+        Here you can find information about Men's and Women's cricket matches,
+        including live updates and upcoming fixtures. Explore the latest news.
+      </p>
+      {/* <Podcast /> */}
       <div className="newsContainer">
         <CricketCardLayout />
       </div>

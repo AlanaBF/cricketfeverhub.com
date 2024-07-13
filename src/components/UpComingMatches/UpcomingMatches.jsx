@@ -101,6 +101,8 @@ const UpcomingMatches = () => {
     "County Championship Division One 2024",
     "Women",
     "The Ashes, 2024",
+    "The Hundred Mens Competition 2024",
+    "The Hundred Womens Competition 2024",
   ];
 
   const handleSeriesChange = (event) => {

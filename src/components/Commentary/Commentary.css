@@ -1,0 +1,26 @@
+.match-summary-table {
+    margin: 0 auto; /* Center the table */
+    border-collapse: collapse;
+    width: 80%; /* Adjust the width as needed */
+    background-color: #f9f9f9; /* Light background color for the table */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add some shadow for a 3D effect */
+  }
+  
+  .match-summary-table th, .match-summary-table td {
+    text-align: left; /* Align text to the left */
+    padding: 12px; /* Add some padding for better spacing */
+    border-bottom: 1px solid #ddd; /* Add a border to the bottom of each cell */
+  }
+  
+  .match-summary-table th {
+    background-color: var(--pink); /* Header background color */
+    color: white; /* Header text color */
+  }
+  
+  .match-summary-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Zebra striping for rows */
+  }
+  
+  .match-summary-table tbody tr:hover {
+    background-color: #ddd; /* Highlight row on hover */
+  }

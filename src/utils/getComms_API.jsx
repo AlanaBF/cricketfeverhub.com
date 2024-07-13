@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const getComms = async (matchId) => {
+const getMatchCommentary = async (matchId) => {
   const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key;
 
   const options = {
@@ -14,7 +14,6 @@ const getComms = async (matchId) => {
 
   try {
     const response = await axios.request(options);
-    //console.log(response.data)
     return response.data; // Return the data to the caller
   } catch (error) {
     console.error(error);
@@ -22,5 +21,4 @@ const getComms = async (matchId) => {
   }
 };
 
-export default getComms;
-
+export default getMatchCommentary;

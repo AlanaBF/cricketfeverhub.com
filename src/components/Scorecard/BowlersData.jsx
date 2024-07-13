@@ -3,6 +3,7 @@ import { Card } from "react-bootstrap";
 import "../../assets/styles/components.css";
 
 const BowlersDataComponent = ({ bowlersData }) => {
+  
   return (
     <div>
       <Card className="scorecard-card">
