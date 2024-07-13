@@ -1,20 +1,12 @@
-//import React, { useState, useEffect } from "react";
+import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-//import axios from "axios";
 import L from "leaflet";
-
 import "../../assets/styles/components.css";
 
-const Map = ({venue}) => {
+const Map = ({ venue }) => {
+  const apiKey = import.meta.env.VITE_RapidAPI_Key_Weather;
   
-   const layer = "precipitation_new"
-
-  const fetchWeatherOverlay = async () => {
-    const apiKey = import.meta.env.VITE_RapidAPI_Key;
-    const url = `https://tile.openweathermap.org/map/${layer}/{z}/{x}/{y}.png?appid=${apiKey}`;
-  }
-
   const customIcon = L.divIcon({
     className: "custom-icon",
     html: '<i class="fas fa-location-dot"></i>',
@@ -22,7 +14,6 @@ const Map = ({venue}) => {
 
   return (
     <div>
-
       <MapContainer
         center={[venue.latitude, venue.longitude]}
         zoom={15}
@@ -32,7 +23,10 @@ const Map = ({venue}) => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-
+        <TileLayer
+          attribution='&copy; <a href="https://openweathermap.org/">OpenWeatherMap</a>'
+          url={`https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=${apiKey}`}
+        />
         <Marker position={[venue.latitude, venue.longitude]} icon={customIcon}>
           <Popup>
             <div className="card">

@@ -1,23 +1,28 @@
 import axios from 'axios';
 
-async function displayWeatherInfo(city) {
-    const APIKey = import.meta.env.VITE_RapidAPI_Key_OpenWeatherAPI;
+const fetchWeatherData = async (city) => {
+    const APIKey = import.meta.env.VITE_RapidAPI_Key_Weather;
     const queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey}`;
     try {
         const response = await axios.get(queryURL);
-        const iconcode = response.data.list[0].weather[0].icon;
-        const iconURL = `http://openweathermap.org/img/w/${iconcode}.png`;
-        $(".weather-icon").attr("src", iconURL);
-        const tempC = Math.floor(response.data.list[0].main.temp - 273.15);
-        const wind = response.data.list[0].wind.speed;
-        const humidity = response.data.list[0].main.humidity;
+        const weatherData = response.data.list[0];
+        const iconURL = `http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
+        const tempC = Math.floor(weatherData.main.temp - 273.15);
+        const wind = weatherData.wind.speed;
+        const humidity = weatherData.main.humidity;
+        const description = weatherData.weather[0].description;
 
-        //append the data to web application
-        $("#temperature").text(`Temp: ${tempC}°C`);
-        $("#wind").text(`Wind Speed: ${wind}MPH`);
-        $("#humidity").text(`Humidity: ${humidity}%`);
+        return {
+            iconURL,
+            tempC,
+            wind,
+            humidity,
+            description,
+        };
     } catch (error) {
-        console.error(error);
+        console.error("Error fetching weather data:", error);
+        return null;
     }
-}
+};
 
+export default fetchWeatherData;
