@@ -35,7 +35,7 @@ const LiveMatches = () => {
       try {
         const data = await getLiveMatchesData();
         if (data && data.typeMatches) {
-          setMatches(data.typeMatches); 
+          setMatches(data.typeMatches);
         } // Update the state with fetched match data
       } catch (error) {
         console.error("Error fetching upcoming matches data:", error);
@@ -71,26 +71,25 @@ const LiveMatches = () => {
       } else {
         // Proceed with the filtering logic using .reduce()
         filteredData = matches.reduce((filtered, typeMatch) => {
-      
-        const seriesMatches = typeMatch.seriesMatches || [];
-        const filteredSeriesMatches = seriesMatches.reduce(
-          (filteredSeries, seriesMatch) => {
-            const seriesAdWrapper = seriesMatch.seriesAdWrapper;
-            if (
-              isDesiredSeriesMatch(seriesMatch) &&
-              seriesAdWrapper &&
-              seriesAdWrapper.matches
-            ) {
-              return [...filteredSeries, ...seriesAdWrapper.matches];
-            }
-            return filteredSeries;
-          },
-          []
-        );
-        return [...filtered, ...filteredSeriesMatches];
-      }, []);
+          const seriesMatches = typeMatch.seriesMatches || [];
+          const filteredSeriesMatches = seriesMatches.reduce(
+            (filteredSeries, seriesMatch) => {
+              const seriesAdWrapper = seriesMatch.seriesAdWrapper;
+              if (
+                isDesiredSeriesMatch(seriesMatch) &&
+                seriesAdWrapper &&
+                seriesAdWrapper.matches
+              ) {
+                return [...filteredSeries, ...seriesAdWrapper.matches];
+              }
+              return filteredSeries;
+            },
+            []
+          );
+          return [...filtered, ...filteredSeriesMatches];
+        }, []);
+      }
     }
-  }
 
     // Sort matches by start date
     const sortedData = filteredData.sort((a, b) => {
@@ -199,7 +198,6 @@ const LiveMatches = () => {
                 </tbody>
               </table>
 
-
               <Link
                 to={`/scorecard/${match.matchInfo.matchId}`}
                 state={{
@@ -209,7 +207,6 @@ const LiveMatches = () => {
               >
                 <Button>View Scorecard</Button>
               </Link>
-
             </div>
           ))}
         </>

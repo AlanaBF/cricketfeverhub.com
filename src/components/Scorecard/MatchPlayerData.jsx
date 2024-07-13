@@ -1,5 +1,4 @@
 import React from "react";
-import { Table } from "react-bootstrap";
 
 const PlayerProfileCard = ({ playerInfo }) => {
   const {
@@ -46,35 +45,6 @@ const PlayerProfileCard = ({ playerInfo }) => {
         <div>
           <strong>Teams:</strong> {teams}
         </div>
-        {/* <div>
-            <strong>Rankings:</strong>{" "}
-          </div> */}
-        {/* <Table striped bordered>
-      <thead>
-        <tr>
-          <th>Category</th>
-          <th>Test Rank</th>
-          <th>Best Test Rank</th>
-          <th>Best ODI Rank</th>
-          <th>Best T20 Rank</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Batting</td>
-          <td>{rankings.bat[0].testRank}</td>
-          <td>{rankings.bat[0].testBestRank}</td>
-          <td>{rankings.bat[0].odiBestRank}</td>
-          <td>{rankings.bat[0].t20BestRank}</td>
-        </tr>
-        <tr>
-          <td>Bowling</td>
-          <td>{rankings.bowl[0].testBestRank}</td>
-          <td>{rankings.bowl[0].odiBestRank}</td>
-          <td>{rankings.bowl[0].t20BestRank}</td>
-        </tr>
-      </tbody>
-    </Table> */}
       </div>
       <div
         className="profile-bio"

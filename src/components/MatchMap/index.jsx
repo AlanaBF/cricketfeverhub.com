@@ -33,13 +33,10 @@ const MatchMap = ({ matchId, venueInfo }) => {
       };
 
       // Fetch data when venueDetails is not available from props
-      //(For example, page was opened by clicking on shared link and venueDetails were not passed
-      // as no click on button on previouse page)
       fetchData();
     }
   }, [matchId]); // Re-run the effect when matchId changes
-
-  // Render the Map component with the venue details if available, otherwise display a message
+ 
   const renderMap = venueDetails ? (
     <div>
       <p style={{ color: "#fff" }}>

@@ -1,15 +1,8 @@
-import React, { useState } from "react";
-import { Card, Button } from "react-bootstrap";
+import React from "react";
+import { Card } from "react-bootstrap";
 import "../../assets/styles/components.css";
 
 const BowlersDataComponent = ({ bowlersData }) => {
-  //   const [showData, setShowData] = useState(false);
-
-  // const renderBowlersData = () => {
-  //     if (!bowlersData) {
-  //       return null;
-  //     }
-
   return (
     <div>
       <Card className="scorecard-card">
@@ -39,25 +32,8 @@ const BowlersDataComponent = ({ bowlersData }) => {
           </table>
         </Card.Body>
       </Card>
-      {/* <Button className="close-button" variant="primary" onClick={() => setShowData(false)}>
-            Close Bowlers Data
-          </Button> */}
     </div>
   );
 };
-
-// const handleClick = () => {
-//   setShowData((prevShowData) => !prevShowData);
-// };
-
-// return (
-//   <div>
-//     <button onClick={handleClick} className="bowlers-button">
-//       {showData ? "Close Bowler Data" : "Open Bowler Data"}
-//     </button>
-//     {showData && renderBowlersData()}
-//   </div>
-// );
-//};
 
 export default BowlersDataComponent;

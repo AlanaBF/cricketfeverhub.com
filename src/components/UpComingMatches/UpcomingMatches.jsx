@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import getUpcomingMatchesData from "../../utils/getUpcomingMatches_API";
 import "./UpcomingMatches.css";
 import { Modal, Button } from "react-bootstrap";
-import getImages from "../../utils/getImage_API";
 import Map from "../../utils/Leaflet/Leaflet_API";
 
 const UpcomingMatches = () => {
@@ -15,7 +14,7 @@ const UpcomingMatches = () => {
     const seriesName = seriesMatch.seriesAdWrapper?.seriesName;
 
     if (selectedSeries === "All") {
-      return true; // Return true for all matches
+      return true;
     } else if (selectedSeries === "The Ashes, 2024") {
       return (
         seriesName === "The Ashes, 2024" || seriesName === "Womens Ashes, 2024"
@@ -29,7 +28,7 @@ const UpcomingMatches = () => {
     const fetchData = async () => {
       try {
         const data = await getUpcomingMatchesData();
-        setMatches(data.typeMatches); // Update the state with fetched match data
+        setMatches(data.typeMatches);
       } catch (error) {
         console.error("Error fetching upcoming matches data:", error);
       }
@@ -116,8 +115,7 @@ const UpcomingMatches = () => {
 
   const MatchModal = ({ match, onClose }) => {
     const { team1, team2, startDate, venueInfo, matchFormat } = match.matchInfo;
-   
-  
+
     return (
       <div>
         <Modal show={true} onHide={onClose}>
@@ -133,7 +131,6 @@ const UpcomingMatches = () => {
               Venue: {venueInfo.ground}, {venueInfo.city}
             </p>
             <Map venue={venueInfo} />
-            {/* Additional information */}
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={onClose}>
@@ -145,13 +142,13 @@ const UpcomingMatches = () => {
     );
   };
 
-
-
   return (
     <div className="live-matches">
       <h1 className="pageTitle">Upcoming Matches</h1>
       <div className="filter-container">
-        <label className="pageDescription" htmlFor="series-select">Filter by Series:</label>
+        <label className="pageDescription" htmlFor="series-select">
+          Filter by Series:
+        </label>
         <select
           id="series-select"
           value={selectedSeries}
@@ -165,21 +162,21 @@ const UpcomingMatches = () => {
         </select>
       </div>
 
-
       {filteredMatches.length > 0 ? (
         <>
           {filteredMatches.map((match, index) => (
-
-              <div
-                key={index}
-                className="match-container"
-                onClick={() => setSelectedMatch(match)}
-              >
- <h2>
-            {match.matchInfo?.team1?.teamName} vs {match.matchInfo?.team2?.teamName}
-          </h2>
-              Click for details</div>
-         ))}
+            <div
+              key={index}
+              className="match-container"
+              onClick={() => setSelectedMatch(match)}
+            >
+              <h2>
+                {match.matchInfo?.team1?.teamName} vs{" "}
+                {match.matchInfo?.team2?.teamName}
+              </h2>
+              Click for details
+            </div>
+          ))}
         </>
       ) : (
         <p className="pageDescription">No upcoming matches available.</p>

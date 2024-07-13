@@ -118,7 +118,10 @@ const CricketCardLayout = () => {
                   <Card.Text>
                     Publication Time: {formatTimestamp(pubTime)}
                   </Card.Text>
-                  <Button className="news-modal-readmore" onClick={() => handleOpenModal(item.story)}>
+                  <Button
+                    className="news-modal-readmore"
+                    onClick={() => handleOpenModal(item.story)}
+                  >
                     Read More
                   </Button>
                 </Card.Body>
@@ -132,7 +135,9 @@ const CricketCardLayout = () => {
         {selectedArticle && (
           <Modal show={showModal} onHide={handleCloseModal}>
             <Modal.Header closeButton>
-              <Modal.Title className="news-modal-text">{selectedArticle.hline}</Modal.Title>
+              <Modal.Title className="news-modal-text">
+                {selectedArticle.hline}
+              </Modal.Title>
             </Modal.Header>
             <Modal.Body>
               {selectedArticle.coverImage && (

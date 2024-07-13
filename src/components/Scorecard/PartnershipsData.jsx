@@ -1,15 +1,8 @@
-import React, { useState } from "react";
-import { Card, Button } from "react-bootstrap";
+import React from "react";
+import { Card } from "react-bootstrap";
 import "../../assets/styles/components.css";
 
 const PartnershipDataComponent = ({ partnershipsData }) => {
-  // const [showData, setShowData] = useState(false);
-
-  // const renderPartnershipsData = () => {
-  //   if (!partnershipsData) {
-  //     return null;
-  //   }
-
   const partnerships = Object.values(partnershipsData);
 
   const sortedPartnerships = partnerships.sort(
@@ -43,27 +36,10 @@ const PartnershipDataComponent = ({ partnershipsData }) => {
               ))}
             </tbody>
           </table>
-          {/* <Button className="close-button" variant="primary" onClick={() => setShowData(false)}>
-              Close Partnership Data
-            </Button> */}
         </Card.Body>
       </Card>
     </div>
   );
 };
-
-//   const handleClick = () => {
-//     setShowData((prevShowData) => !prevShowData);
-//   };
-
-//   return (
-//     <div>
-//       <button onClick={handleClick} className="partnerships-button">
-//         {showData ? "Close Partnerships Data" : "Open Partnerships Data"}
-//       </button>
-//       {showData && renderPartnershipsData()}
-//     </div>
-//   );
-// };
 
 export default PartnershipDataComponent;

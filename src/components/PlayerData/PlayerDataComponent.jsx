@@ -22,12 +22,19 @@ const PlayerCard = ({ id, name, teamName, faceImageId, fetchData }) => {
 
   return (
     <Card key={id} className="playerCard">
-      <Card.Img className="playerCardImage" variant="top" src={imageURL} alt="Player" />
+      <Card.Img
+        className="playerCardImage"
+        variant="top"
+        src={imageURL}
+        alt="Player"
+      />
       <Card.Body className="playerCardBody">
         <Card.Title className="playerCardTitle">Player Name: {name}</Card.Title>
         <Card.Text className="playerCardText">Team Name: {teamName}</Card.Text>
       </Card.Body>
-      <Button className="playerCardButton" variant="primary">Go somewhere</Button>
+      <Button className="playerCardButton" variant="primary">
+        Go somewhere
+      </Button>
     </Card>
   );
 };

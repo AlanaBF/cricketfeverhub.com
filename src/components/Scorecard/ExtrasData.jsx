@@ -1,16 +1,9 @@
-import React, { useState } from "react";
-import { Card, Button } from "react-bootstrap";
+import React from "react";
+import { Card } from "react-bootstrap";
 import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
 import "../../assets/styles/components.css";
 
 const ExtrasDataComponent = ({ extrasData }) => {
-  // const [showData, setShowData] = useState(false);
-
-  // const renderExtrasData = () => {
-  //   if (!extrasData) {
-  //     return null;
-  //   }
-
   const data = [
     { name: "Wides", value: extrasData.wides },
     { name: "No Balls", value: extrasData.noBalls },
@@ -51,25 +44,8 @@ const ExtrasDataComponent = ({ extrasData }) => {
           </div>
         </Card.Body>
       </Card>
-      {/* <Button className="close-button" variant="primary" onClick={() => setShowData(false)}>
-          Close Extras Data
-        </Button> */}
     </div>
   );
 };
-
-//   const handleClick = () => {
-//     setShowData((prevShowData) => !prevShowData);
-//   };
-
-//   return (
-//     <div>
-//       <button onClick={handleClick} className="extras-button">
-//         {showData ? "Close Extras Data" : "Open Extras Data"}
-//       </button>
-//       {showData && renderExtrasData()}
-//     </div>
-//   );
-// };
 
 export default ExtrasDataComponent;

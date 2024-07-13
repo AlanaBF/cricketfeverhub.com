@@ -1,14 +1,8 @@
-import React, { useState } from "react";
-import { Card, Button } from "react-bootstrap";
+import React from "react";
+import { Card } from "react-bootstrap";
 import "../../assets/styles/components.css";
 
 const WicketsDataComponent = ({ wicketsData }) => {
-  // const [showData, setShowData] = useState(false);
-
-  // const renderWicketsData = () => {
-  //     if (!wicketsData) {
-  //       return null;
-  //     }
   const sortedWickets = Object.values(wicketsData).sort(
     (a, b) => a.wktNbr - b.wktNbr
   );
@@ -28,26 +22,9 @@ const WicketsDataComponent = ({ wicketsData }) => {
             </div>
           ))}
         </div>
-        {/* <Button className="close-button" variant="primary" onClick={() => setShowData(false)}>
-              Close Wickets Data
-            </Button> */}
       </Card.Body>
     </Card>
   );
 };
-
-//   const handleClick = () => {
-//     setShowData((prevShowData) => !prevShowData);
-//   };
-
-//   return (
-//     <div>
-//       <button onClick={handleClick} className="wickets-button">
-//         {showData ? "Close Wickets Data" : "Open Wickets Data"}
-//       </button>
-//       {showData && renderWicketsData()}
-//     </div>
-//   );
-// };
 
 export default WicketsDataComponent;

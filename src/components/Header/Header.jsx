@@ -3,7 +3,6 @@ import { LinkContainer } from "react-router-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import favicon from "/CricketImage.jpeg";
 import "../../assets/styles/components.css";
 
@@ -31,25 +30,12 @@ function Header() {
               <Nav.Link className="navLink">Home</Nav.Link>
             </LinkContainer>
 
-            {/* <LinkContainer to="/TeamSelectionPage">
-                <Nav.Link className="navLink">Team Selection</Nav.Link>
-              </LinkContainer> */}
-
             <LinkContainer to="/LiveMatchesPage">
               <Nav.Link className="navLink">Live Matches</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/UpcomingMatchesPage">
               <Nav.Link className="navLink">Upcoming Matches</Nav.Link>
             </LinkContainer>
-
-            {/* <NavDropdown title="Matches" id="matches-dropdown">
-              <LinkContainer to="/LiveMatchesPage">
-                <NavDropdown.Item className="navLink">Live Matches</NavDropdown.Item>
-              </LinkContainer>
-              <LinkContainer to="/UpcomingMatchesPage">
-                <NavDropdown.Item className="navLink">Upcoming Matches</NavDropdown.Item>
-              </LinkContainer>
-            </NavDropdown> */}
           </Nav>
 
           <Nav className="nav navbar-nav flex-row justify-content-md-center justify-content-start flex-nowrap">

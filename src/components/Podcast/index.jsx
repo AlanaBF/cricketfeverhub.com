@@ -10,7 +10,7 @@ function Podcast() {
         <h1 className="heading">Cricket Podcasts</h1>
         <img className="cricket-image" src={CricketImage}></img>
       </div>
-      <br/>
+      <br />
       <div>
         <p className="pageDescription">
           {" "}
@@ -19,14 +19,14 @@ function Podcast() {
       </div>
       <div>
         <div className="podcast-container">
-        <div className="podcast-image-container">
-        <a href="https://www.bbc.co.uk/programmes/m001j5cp" target="_blank">
-          <img
-            src="https://ichef.bbci.co.uk/images/ic/640x360/p0fts28l.jpg"
-            target="_blank"
-          />
-        </a>
-        </div>
+          <div className="podcast-image-container">
+            <a href="https://www.bbc.co.uk/programmes/m001j5cp" target="_blank">
+              <img
+                src="https://ichef.bbci.co.uk/images/ic/640x360/p0fts28l.jpg"
+                target="_blank"
+              />
+            </a>
+          </div>
         </div>
         <div>
           <div className="podcast-container">
