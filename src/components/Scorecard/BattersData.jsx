@@ -28,6 +28,7 @@ const BatsmenDataComponent = ({ batsmenData }) => {
     setShowModal(false); // Close modal when batsmen data is updated
   }, [batsmenData]);
 
+  
   return (
     <div>
       <Card className="scorecard-card">

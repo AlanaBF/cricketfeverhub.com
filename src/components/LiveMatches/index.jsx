@@ -207,6 +207,9 @@ const LiveMatches = () => {
               >
                 <Button>View Scorecard</Button>
               </Link>
+              <Link to={`/commentary/${match.matchInfo.matchId}`}>
+              <Button>View Match Commentary</Button>
+              </Link>
             </div>
           ))}
         </>

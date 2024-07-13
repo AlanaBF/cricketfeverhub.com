@@ -24,7 +24,7 @@ const LiveMatchScoreCard = ({ scoreCard, venueInfo, matchHeader, matchId }) => {
     const date = new Date(parseInt(timestamp));
     return date.toLocaleDateString();
   };
-
+ 
   return (
     <div className="live-matches">
       <div className="scorecard-container">
