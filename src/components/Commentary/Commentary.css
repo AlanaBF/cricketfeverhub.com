@@ -24,3 +24,22 @@
   .match-summary-table tbody tr:hover {
     background-color: #ddd; /* Highlight row on hover */
   }
+
+  .commentary-container {
+    margin: 0 auto; 
+    border-collapse: collapse;
+    width: 80%; 
+    background-color: var(--purple);
+    border-radius: 50px; 
+    border: solid 10px var(--pink);
+    }
+
+    .commentary {
+      color: white;
+      font-size: 20px;
+      padding: 10px;
+    }
+
+    .commentary:not(:last-child) {
+      border-bottom: var(--pink) solid 1px;
+    }

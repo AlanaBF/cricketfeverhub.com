@@ -1,0 +1,36 @@
+  .hero-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  
+  .readme-content {
+    color: white; /* Make text white */
+    text-align: left; /* Left-align text */
+    padding:20px;
+  }
+  
+  .readme-content h1,
+  .readme-content h2,
+  .readme-content h3,
+  .readme-content h4,
+  .readme-content h5,
+  .readme-content h6,
+  .readme-content p {
+    color: #61dafb; /* Example color for headings */
+    text-align: left;
+  }
+  
+  .readme-content a {
+    color: #61dafb; /* Example color for links */
+    text-align: left;
+  }
+  
+  .readme-content code {
+    background-color: #444;
+    color: #f8f8f2;
+    padding: 2px 4px;
+    border-radius: 4px;
+    text-align: left;
+  }

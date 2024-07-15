@@ -1,7 +1,6 @@
 import React from "react";
 import CricketCardLayout from "../../components/News/CricketCardLayout";
 import Cricketbanner from "../../assets/Cricketbanner.png";
-import Podcast from "../../components/Podcast";
 import "../../assets/styles/pages.css";
 import CricketHero from "../../assets/Cricketbanner.jpeg";
 

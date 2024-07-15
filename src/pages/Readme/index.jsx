@@ -1,4 +1,11 @@
-# cricketfeverhub
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import CricketHero from "../../assets/Cricketbanner.jpeg";
+import './ReadmePage.css'; // Import the CSS file
+import Cricketbanner from "../../assets/Cricketbanner.png";
+
+const readmeContent = `
+# Cricket Fever Hub
 
 An app for users to share their love of cricket
 
@@ -32,50 +39,46 @@ CricketFeverHub is a comprehensive cricket app that provides live match updates,
 
 1. Clone the repository:
 
-   ```sh
+   \`\`\`sh
    git clone https://github.com/AlanaBF/cricketfeverhub.com.git
-   ```
+   \`\`\`
 
 2. Navigate to the project directory:
 
-    ```sh
+    \`\`\`sh
     cd cricketfeverhub
-    ```
+    \`\`\`
 
 3. Install dependencies:
 
-    ```sh
+    \`\`\`sh
     npm install
-    ```
+    \`\`\`
 
 4. Create a .env file in the root directory and add your API keys:
 
-    ```env
+    \`\`\`env
     VITE_RapidAPI_Key=your_rapidapi_key
-    VITE_RapidAPI_Key_Weather=you_openweatherapi_key
-    ```
+    VITE_RapidAPI_Key_Weather=your_openweatherapi_key
+    \`\`\`
 
 ### Usage
-
-#### Screenshots
-
-<!-- ![Home Page](./src/assets/Screenshots/homepage.png) -->
 
 #### Development
 
 To start the development server:
 
-```sh
+\`\`\`sh
 npm run dev
-```
+\`\`\`
 
 #### Build
 
 To build the app for production:
 
-```sh
+\`\`\`sh
 npm run build
-```
+\`\`\`
 
 #### Deployment
 
@@ -85,47 +88,36 @@ To deploy the app to Vercel:
 - Link the repository to Vercel.
 - Set up environment variables in the Vercel dashboard.
 
-#### Dependencies
+## Dependencies
 
-@vercel/analytics: Vercel Analytics for performance tracking.
+- \`@vercel/analytics\`: Vercel Analytics for performance tracking.
+- \`axios\`: For making API calls.
+- \`axios-rate-limit\`: To handle rate limiting in API requests.
+- \`bootstrap\`: For responsive design.
+- \`dotenv\`: For managing environment variables.
+- \`leaflet\`: For interactive maps.
+- \`react\`: React library for building the user interface.
+- \`react-bootstrap\`: Bootstrap components for React.
+- \`react-dom\`: React library for DOM manipulations.
+- \`react-leaflet\`: React components for Leaflet maps.
+- \`react-router-bootstrap\`: Integration of React Router with React-Bootstrap.
+- \`react-router-dom\`: For client-side routing.
 
-axios: For making API calls.
+## API Integration
 
-axios-rate-limit: To handle rate limiting in API requests.
-
-bootstrap: For responsive design.
-
-dotenv: For managing environment variables.
-
-leaflet: For interactive maps.
-
-react: React library for building the user interface.
-
-react-bootstrap: Bootstrap components for React.
-
-react-dom: React library for DOM manipulations.
-
-react-leaflet: React components for Leaflet maps.
-
-react-router-bootstrap: Integration of React Router with React-Bootstrap.
-
-react-router-dom: For client-side routing.
-
-#### API Integration
-
-##### RapidAPI Cricbuzz Cricket API
+### RapidAPI Cricbuzz Cricket API
 
 - Website: [https://rapidapi.com/cricketapilive/api/cricbuzz-cricket](https://rapidapi.com/cricketapilive/api/cricbuzz-cricket)
 - Authentication: Requires an API key from RapidAPI.
 
-##### Open Weather Map
+### Open Weather Map
 
 - Website: [https://openweathermap.org/](https://openweathermap.org/)
 - Authentication: Requires an API key from openweathermap.
 
-#### Project Structure
+## Project Structure
 
-```css
+\`\`\`plaintext
 cricketfeverhub/
 ├── public/
 │   ├── banner.jpeg
@@ -142,9 +134,9 @@ cricketfeverhub/
 ├── index.html
 ├── package.json
 └── README.md
-```
+\`\`\`
 
-#### Features
+## Features
 
 - **Live Matches**: Real-time updates of ongoing matches.
 - **Upcoming Matches**: Schedule of upcoming matches.
@@ -154,7 +146,7 @@ cricketfeverhub/
 - **Maps**: Interactive maps showing match locations.
 - **Match Commentary**: Live commentary of matches.
 
-#### To Do
+## To Do
 
 1. Home Page
 
@@ -232,7 +224,7 @@ cricketfeverhub/
 
 ## License
 
-*This project is licensed under* [MIT](https://choosealicense.com/licenses/mit/) see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Credits
 
@@ -242,10 +234,24 @@ cricketfeverhub/
 - Vercel
 - Open Weather Map API
 
-## Questions
+## Contact Information
 
 Thank you for visiting my Cricket Site. I look forward to hearing from you. If you have any questions or need further assistance, please contact me:
 
 - Email: [alanabarrettfrew@gmail.com](mailto:alanabarrett-frew@hotmail.com)
 - Website: [www.alanabarrettfrew.com](https://www.alanabarrettfrew.com)
-- Github: [AlanaBF](https://github.com/AlanaBF)
+- Github: [AlanaBF](https://github.com/AlanaBF)`;
+
+const ReadmePage = () => {
+  return (
+    <div className="pageBackground readmePage">
+      <img className="hero-image" src={CricketHero} alt="Cricket Hero" />
+      <div className="readme-content">
+        <ReactMarkdown>{readmeContent}</ReactMarkdown>
+      </div>
+      <img className="hero-image" src={Cricketbanner}></img>
+    </div>
+  );
+};
+
+export default ReadmePage;

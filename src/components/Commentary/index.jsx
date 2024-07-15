@@ -125,9 +125,9 @@ function Commentary() {
       <br></br>
       <br></br>
       {commentaryData && (
-        <div className="pageDescription">
+        <div className="pageDescription commentary-container">
           {commentaryData.commentaryList.map((commentary, index) => (
-            <div key={index} className="commentary-container">
+            <div key={index} className="commentary">
               <div className="commentary-description">
                 {formatCommentaryText(commentary.commText, commentary.commentaryFormats)}
               </div>

@@ -36,39 +36,9 @@ function Header() {
             <LinkContainer to="/UpcomingMatchesPage">
               <Nav.Link className="navLink">Upcoming Matches</Nav.Link>
             </LinkContainer>
-          </Nav>
-
-          <Nav className="nav navbar-nav flex-row justify-content-md-center justify-content-start flex-nowrap">
-            <div className="navIcons">
-              <a
-                href="https://www.instagram.com/teacherturnsturtle81/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <i className="fa navbarIcons fa-instagram"></i>
-              </a>
-              <a
-                href="https://www.facebook.com/teacherturnsturtle"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <i className="fa navbarIcons fa-facebook"></i>
-              </a>
-              <a
-                href="https://github.com/AlanaBF"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <i className="fa navbarIcons fa-github"></i>
-              </a>{" "}
-              <a
-                href="https://www.linkedin.com/in/alanabarrettfrew/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <i className="fa navbarIcons fa-linkedin"></i>
-              </a>
-            </div>
+            <LinkContainer to="/Fun">
+              <Nav.Link className="navLink">Fun</Nav.Link>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Container>

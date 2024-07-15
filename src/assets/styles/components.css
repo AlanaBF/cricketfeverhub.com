@@ -91,8 +91,11 @@ color: white;
   align-items: center;
   /* Optional: Set a max-width for the container to control its width on larger screens */
   max-width: 1000px;
-  margin: 0 auto; /* Optional: Center the container horizontally */
+  margin: 10px auto; /* Optional: Center the container horizontally */
   padding: 10px;
+  background-color: var(--purple);
+  border-radius: 50px;
+  border: solid 10px var(--pink);
 }
 
 .podcast-text-container {
