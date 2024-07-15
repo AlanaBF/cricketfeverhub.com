@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const GetNewsData = async () => {
-  const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key;
+  const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key4;
 
   const options = {
     method: 'GET',

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const getPlayersData = async (playerName) => {
-  const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key;
+  const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key2;
 
   const options = {
     method: 'GET',

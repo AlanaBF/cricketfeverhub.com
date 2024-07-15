@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const getMatchCommentary = async (matchId) => {
-  const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key;
+  const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key1;
 
   const options = {
     method: 'GET',

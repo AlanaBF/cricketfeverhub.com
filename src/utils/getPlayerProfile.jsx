@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const getPlayerProfile = async (batId) => {
     
-      const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key;
+      const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key5;
       
       const options = {
         method: 'GET',
