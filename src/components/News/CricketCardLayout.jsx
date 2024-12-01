@@ -21,7 +21,8 @@ const CricketCardLayout = () => {
     const fetchData = async () => {
       try {
         const newsData = await getNewsData();
-        const topStories = newsData.storyList.slice(0, 8); // Extract the top 5 stories
+        console.log(newsData); // Log the response data
+        const topStories = newsData.storyList.slice(0, 8); // Extract the top 8 stories
         setNews(topStories);
       } catch (error) {
         console.error("Error fetching cricket news data:", error);
@@ -57,7 +58,7 @@ const CricketCardLayout = () => {
     setSelectedArticle(item);
     setShowModal(true);
 
-    const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key;
+    const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key4;
     try {
       const response = await axios.get(
         `https://cricbuzz-cricket.p.rapidapi.com/news/v1/detail/${item.id}`,

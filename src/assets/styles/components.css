@@ -132,6 +132,25 @@ color: white;
   margin: 10px;
 }
 
+.player-profile-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover; /* Ensure proper scaling */
+  display: block; /* Ensure it's visible */
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+}
+
+.profile-header img {
+  display: block;
+  margin: 0 auto; /* Ensures the image is horizontally centered */
+}
+
+
 /* News Cards */
 
 .news-modal-readmore {
@@ -150,9 +169,10 @@ border: solid 10px var(--pink) !important;
 }
 
 .heading {
-  color: white;
+  color: white !important;
   padding: 0;
   margin: 0;
+  text-decoration: none;
 }
 
 .news-card-layout {
@@ -171,6 +191,7 @@ border: solid 10px var(--pink) !important;
   background-color: var(--purple) !important;
   border: var(--pink) solid 10px !important;
   width: 100%;
+  color: white !important;
 }
 
 .card-text {

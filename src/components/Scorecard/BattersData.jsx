@@ -12,17 +12,19 @@ const BatsmenDataComponent = ({ batsmenData }) => {
   const handleClickPlayerProfile = (batId) => {
     getPlayerProfile(batId)
       .then((playerData) => {
-        setSelectedPlayerId(playerData.batId); // Update to batId
-        setSelectedPlayerInfo({
-          ...playerData,
-          id: playerData.batId, // Update to batId
-        });
+        setSelectedPlayerId(playerData.id); // Use the correct id
+        console.log(playerData);
+        setSelectedPlayerInfo(playerData); // Set the entire playerData object
         setShowModal(true);
       })
       .catch((error) => {
         console.error("Error fetching player profile:", error);
       });
   };
+
+  useEffect(() => {
+    setShowModal(false); // Close modal when batsmen data is updated
+  }, [batsmenData]);
 
   useEffect(() => {
     setShowModal(false); // Close modal when batsmen data is updated
