@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import getNewsData from "../../utils/getNews_API";
+import getCricbuzzImageUrl from "../../utils/getCricbuzzImageUrl";
 import Card from "react-bootstrap/Card";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+import LoadingSpinner from "../LoadingSpinner";
+import ErrorState from "../ErrorState";
 import "../../assets/styles/components.css";
 import axios from "axios";
-import getImages from "../../utils/getImage_API.jsx";
 import "../../assets/styles/pages.css";
-import "../../assets/styles/components.css";
 import CricketImage from "../../assets/CricketImage.jpeg";
 
 const CricketCardLayout = () => {
@@ -15,53 +16,41 @@ const CricketCardLayout = () => {
   const [selectedArticle, setSelectedArticle] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [articleContent, setArticleContent] = useState("");
-  const [isLoadingImage, setIsLoadingImage] = useState(false); // Added loading state
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const fetchNewsData = async () => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const newsData = await getNewsData();
+      const topStories = newsData.storyList.slice(0, 8);
+      setNews(topStories);
+    } catch (fetchError) {
+      console.error("Error fetching cricket news data:", fetchError);
+      setError("Unable to load cricket news. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const newsData = await getNewsData();
-        console.log(newsData); // Log the response data
-        const topStories = newsData.storyList.slice(0, 8); // Extract the top 8 stories
-        setNews(topStories);
-      } catch (error) {
-        console.error("Error fetching cricket news data:", error);
-      }
-    };
-
-    fetchData();
+    fetchNewsData();
   }, []);
 
   const formatTimestamp = (timestamp) => {
     const date = new Date(parseInt(timestamp));
-    return date.toLocaleString(); // Adjust the format as per your requirements
+    return date.toLocaleString();
   };
 
-  useEffect(() => {
-    const fetchCoverImage = async () => {
-      try {
-        setIsLoadingImage(true); // Set loading state
-        const data = await getImages(selectedArticle.coverImage.id);
-        setIsLoadingImage(false); // Clear loading state
-      } catch (error) {
-        console.error("Error:", error);
-        setIsLoadingImage(false); // Clear loading state in case of error
-      }
-    };
-
-    if (selectedArticle) {
-      fetchCoverImage();
-    }
-  }, [selectedArticle]);
-
-  const handleOpenModal = async (item) => {
-    setSelectedArticle(item);
+  const handleOpenModal = async (article) => {
+    setSelectedArticle(article);
     setShowModal(true);
 
     const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key4;
     try {
       const response = await axios.get(
-        `https://cricbuzz-cricket.p.rapidapi.com/news/v1/detail/${item.id}`,
+        `https://cricbuzz-cricket.p.rapidapi.com/news/v1/detail/${article.id}`,
         {
           headers: {
             "x-rapidapi-host": "cricbuzz-cricket.p.rapidapi.com",
@@ -69,26 +58,25 @@ const CricketCardLayout = () => {
           },
         }
       );
-      console.log(response.data);
       const data = response.data;
 
-      const formattedContent = data.content.map((item) => {
+      const formattedContent = data.content.map((contentBlock) => {
         if (
-          item.content &&
-          item.content.contentType === "text" &&
-          item.content.hasFormat
+          contentBlock.content &&
+          contentBlock.content.contentType === "text" &&
+          contentBlock.content.hasFormat
         ) {
-          item.content.contentValue = item.content.contentValue
-            .replace(/@B\d+\$/g, "") // Remove all bold format IDs
-            .replace(/@I\d+\$/g, "") // Remove all italic format IDs
-            .replace(/@L\d+\$/g, ""); // Remove all urls format IDs
+          contentBlock.content.contentValue = contentBlock.content.contentValue
+            .replace(/@B\d+\$/g, "")
+            .replace(/@I\d+\$/g, "")
+            .replace(/@L\d+\$/g, "");
         }
-        return item;
+        return contentBlock;
       });
 
       setArticleContent(formattedContent);
-    } catch (error) {
-      console.error("Error fetching article content:", error);
+    } catch (fetchError) {
+      console.error("Error fetching article content:", fetchError);
     }
   };
 
@@ -98,20 +86,28 @@ const CricketCardLayout = () => {
     setSelectedArticle(null);
   };
 
+  if (isLoading) {
+    return <LoadingSpinner message="Fetching latest cricket news..." />;
+  }
+
+  if (error) {
+    return <ErrorState message={error} onRetry={fetchNewsData} />;
+  }
+
   return (
     <div>
       <div className="image-container">
-        <img className="cricket-image" src={CricketImage}></img>
-        <h1 className="heading">Cricket in the News</h1>
-        <img className="cricket-image" src={CricketImage}></img>
+        <img className="cricket-image" src={CricketImage} alt="" />
+        <h2 className="heading">Cricket in the News</h2>
+        <img className="cricket-image" src={CricketImage} alt="" />
       </div>
       <div className="news-card-layout">
-        {news.map((item) => {
-          if (item && item.story) {
-            const { id, hline, intro, source, pubTime } = item.story;
+        {news.map((newsItem) => {
+          if (newsItem && newsItem.story) {
+            const { id, hline, intro, source, pubTime } = newsItem.story;
 
             return (
-              <Card key={id} className="news-card">
+              <Card key={id} className="news-card" as="article">
                 <Card.Body>
                   <Card.Title>{hline}</Card.Title>
                   <Card.Text>{intro}</Card.Text>
@@ -121,7 +117,8 @@ const CricketCardLayout = () => {
                   </Card.Text>
                   <Button
                     className="news-modal-readmore"
-                    onClick={() => handleOpenModal(item.story)}
+                    onClick={() => handleOpenModal(newsItem.story)}
+                    aria-label={`Read more about: ${hline}`}
                   >
                     Read More
                   </Button>
@@ -129,41 +126,39 @@ const CricketCardLayout = () => {
               </Card>
             );
           } else {
-            return null; // Ignore items without a story object
+            return null;
           }
         })}
 
         {selectedArticle && (
-          <Modal show={showModal} onHide={handleCloseModal}>
+          <Modal
+            show={showModal}
+            onHide={handleCloseModal}
+            aria-labelledby="news-modal-title"
+          >
             <Modal.Header closeButton>
-              <Modal.Title className="news-modal-text">
+              <Modal.Title id="news-modal-title" className="news-modal-text">
                 {selectedArticle.hline}
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
               {selectedArticle.coverImage && (
-                <>
-                  {isLoadingImage ? (
-                    <p className="news-modal-text">Loading image...</p> // Show loading state
-                  ) : (
-                    <Card.Img
-                      variant="top"
-                      src={`https://cricbuzz-cricket.p.rapidapi.com/img/v1/i1/c${selectedArticle.coverImage.id}/i.jpg?p=de`}
-                      alt="Cover Image"
-                    />
-                  )}
-                </>
+                <Card.Img
+                  variant="top"
+                  src={getCricbuzzImageUrl(selectedArticle.coverImage.id)}
+                  alt={`Cover image for ${selectedArticle.hline}`}
+                />
               )}
               {articleContent && articleContent.length > 0 ? (
-                articleContent.map((item, index) => (
-                  <p className="news-modal-text" key={index}>
-                    {item.content &&
-                      item.content.contentValue &&
-                      item.content.contentValue}
+                articleContent.map((contentBlock, contentIndex) => (
+                  <p className="news-modal-text" key={contentIndex}>
+                    {contentBlock.content &&
+                      contentBlock.content.contentValue &&
+                      contentBlock.content.contentValue}
                   </p>
                 ))
               ) : (
-                <p className="news-modal-text">No article content available.</p>
+                <p className="news-modal-text">Loading article content...</p>
               )}
             </Modal.Body>
             <Modal.Footer>

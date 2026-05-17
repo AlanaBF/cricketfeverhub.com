@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { findCurrentMatch } from "./helpers";
 import Map from "../../utils/Leaflet/Leaflet_API";
 import getLiveMatchesData from "../../utils/getLiveMatches_API";

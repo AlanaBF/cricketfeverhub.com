@@ -1,28 +1,27 @@
-import React from "react";
 import { Card } from "react-bootstrap";
 import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
 import "../../assets/styles/components.css";
 
 const ExtrasDataComponent = ({ extrasData }) => {
-  const data = [
-    { name: "Wides", value: extrasData.wides },
-    { name: "No Balls", value: extrasData.noBalls },
-    { name: "Byes", value: extrasData.byes },
-    { name: "Leg Byes", value: extrasData.legByes },
+  const chartData = [
+    { name: "Wides", value: extrasData.wides || 0 },
+    { name: "No Balls", value: extrasData.noballs || extrasData.noBalls || 0 },
+    { name: "Byes", value: extrasData.byes || 0 },
+    { name: "Leg Byes", value: extrasData.legbyes || extrasData.legByes || 0 },
   ];
 
-  const COLORS = ["#8884d8", "#82ca9d", "#ffc658", "#ff7f50", "#dc143c"];
+  const totalExtras = extrasData.total || chartData.reduce((sum, item) => sum + item.value, 0);
+  const COLORS = ["#8884d8", "#82ca9d", "#ffc658", "#ff7f50"];
 
   return (
     <div>
       <Card className="scorecard-card">
-        <Card.Header>Extras Data</Card.Header>
+        <Card.Header>Extras Data (Total: {totalExtras})</Card.Header>
         <Card.Body>
           <div className="extras-data-container">
-            <h4 className="extras-heading">Extras Data</h4>
             <PieChart width={400} height={300}>
               <Pie
-                data={data}
+                data={chartData}
                 dataKey="value"
                 nameKey="name"
                 cx="50%"
@@ -31,10 +30,10 @@ const ExtrasDataComponent = ({ extrasData }) => {
                 fill="#8884d8"
                 label
               >
-                {data.map((entry, index) => (
+                {chartData.map((entry) => (
                   <Cell
-                    key={`cell-${index}`}
-                    fill={COLORS[index % COLORS.length]}
+                    key={`cell-${entry.name}`}
+                    fill={COLORS[chartData.indexOf(entry) % COLORS.length]}
                   />
                 ))}
               </Pie>

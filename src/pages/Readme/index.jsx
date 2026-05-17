@@ -1,7 +1,6 @@
-import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import CricketHero from "../../assets/Cricketbanner.jpeg";
-import './ReadmePage.css'; // Import the CSS file
+import './ReadmePage.css';
 import Cricketbanner from "../../assets/Cricketbanner.png";
 
 const readmeContent = `
@@ -92,9 +91,7 @@ To deploy the app to Vercel:
 
 - \`@vercel/analytics\`: Vercel Analytics for performance tracking.
 - \`axios\`: For making API calls.
-- \`axios-rate-limit\`: To handle rate limiting in API requests.
 - \`bootstrap\`: For responsive design.
-- \`dotenv\`: For managing environment variables.
 - \`leaflet\`: For interactive maps.
 - \`react\`: React library for building the user interface.
 - \`react-bootstrap\`: Bootstrap components for React.
@@ -128,7 +125,6 @@ cricketfeverhub/
 │   ├── pages/
 │   ├── utils/
 │   ├── App.jsx
-│   └── index.jsx
 │   └── main.jsx
 ├── .env
 ├── index.html
@@ -138,89 +134,13 @@ cricketfeverhub/
 
 ## Features
 
-- **Live Matches**: Real-time updates of ongoing matches.
-- **Upcoming Matches**: Schedule of upcoming matches.
-- **Cricket News**: Latest news in the cricket world.
-- **Weather Integration**: Weather forecasts for match locations.
-- **Scorecards**: Detailed scorecards for matches.
-- **Maps**: Interactive maps showing match locations.
-- **Match Commentary**: Live commentary of matches.
-
-## To Do
-
-1. Home Page
-
-   - [ ] Display International Matches:
-     - [ ] List of matches for the current week.
-     - [ ] Information to include: Day, Date, Time, Match Details (Teams, Venue), Weather forecast.
-     - [ ] Data source integration for live match schedules and weather updates.
-     - [ ] Add weather and map integration
-
-2. For Fun Page
-
-   - [ ] Podcasts:
-     - [ ] Embed or link to popular cricket podcasts.
-     - [ ] Regularly update with new episodes.
-   - [ ] Additional Interest Links:
-     - [ ] Links to other cricket-related apps.
-     - [ ] Links to England Cricket, ECB, The Hundred.
-     - [ ] Ensure all links are regularly checked and updated.
-
-3. Map Integration
-
-   - [x] Weather Information:
-     - [x] Integrate weather information into all maps.
-     - [x] Ensure real-time updates and accuracy.
-     - [x] Test for different locations and conditions.
-     - [ ] Add weather map to upcoming fixtures
-     - [ ] Add weather map and forecast with search to Homepage
-
-4. Scorecard and Commentary
-
-   - [ ] Scorecard and Commentary Buttons:
-     - [ ] Ensure Scorecard and Commentary sections are accessible from each other.
-     - [ ] Add a toggle button to switch between Scorecard and Commentary within the same section.
-     - [ ] Ensure seamless transition and minimal load times.
-
-5. General Tasks
-
-   - [ ] User Interface Design:
-     - [ ] Ensure the design is user-friendly and intuitive.
-     - [ ] Consistent theme and branding across all pages.
-     - [ ] Regularly update design elements based on user feedback.
-
-6. Performance Optimization
-
-   - [ ] Ensure fast loading times for all pages.
-   - [ ] Optimize images and other media for quick load times.
-   - [ ] Regularly monitor and improve app performance.
-
-7. Testing and Bug Fixes
-
-   - [ ] Conduct thorough testing for all new features.
-   - [ ] Regularly check for and fix bugs.
-   - [ ] User testing sessions to gather feedback and make improvements.
-
-8. Regular Updates
-
-   - [ ] Plan for regular updates and new features.
-   - [ ] Keep the content fresh and engaging.
-   - [ ] Monitor trends and user preferences to keep the app relevant.
-
-9. Optional Enhancements
-
-   - [ ] User Profiles:
-     - [ ] Allow users to create profiles to save preferences.
-     - [ ] Personalized match notifications and updates.
-
-10. Social Media Integration
-
-    - [ ] Integrate social media sharing options.
-    - [ ] Allow users to share match updates and scores on their social profiles.
-
-11. Push Notifications
-
-    - [ ] Implement push notifications for match updates, scores, and weather alerts.
+- Live Matches: Real-time updates of ongoing matches.
+- Upcoming Matches: Schedule of upcoming matches.
+- Cricket News: Latest news in the cricket world.
+- Weather Integration: Weather forecasts for match locations.
+- Scorecards: Detailed scorecards for matches.
+- Maps: Interactive maps showing match locations.
+- Match Commentary: Live commentary of matches.
 
 ## License
 
@@ -245,11 +165,11 @@ Thank you for visiting my Cricket Site. I look forward to hearing from you. If y
 const ReadmePage = () => {
   return (
     <div className="pageBackground readmePage">
-      <img className="hero-image" src={CricketHero} alt="Cricket Hero" />
+      <img className="hero-image" src={CricketHero} alt="Cricket players in action" />
       <div className="readme-content">
         <ReactMarkdown>{readmeContent}</ReactMarkdown>
       </div>
-      <img className="hero-image" src={Cricketbanner}></img>
+      <img className="hero-image" src={Cricketbanner} alt="Cricket Fever Hub banner" />
     </div>
   );
 };

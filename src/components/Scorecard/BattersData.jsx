@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Card, Button, Modal } from "react-bootstrap";
 import getPlayerProfile from "../../utils/getPlayerProfile";
 import PlayerProfileCard from "./MatchPlayerData";
 import "../../assets/styles/components.css";
 
 const BatsmenDataComponent = ({ batsmenData }) => {
-  const [selectedPlayerId, setSelectedPlayerId] = useState(null);
   const [selectedPlayerInfo, setSelectedPlayerInfo] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
-  const handleClickPlayerProfile = (batId) => {
-    getPlayerProfile(batId)
+  const batsmen = Array.isArray(batsmenData)
+    ? batsmenData
+    : Object.values(batsmenData);
+
+  const handleViewPlayerProfile = (playerId) => {
+    getPlayerProfile(playerId)
       .then((playerData) => {
-        setSelectedPlayerId(playerData.id); // Use the correct id
-        console.log(playerData);
-        setSelectedPlayerInfo(playerData); // Set the entire playerData object
+        setSelectedPlayerInfo(playerData);
         setShowModal(true);
       })
       .catch((error) => {
@@ -23,43 +24,43 @@ const BatsmenDataComponent = ({ batsmenData }) => {
   };
 
   useEffect(() => {
-    setShowModal(false); // Close modal when batsmen data is updated
+    setShowModal(false);
   }, [batsmenData]);
 
-  useEffect(() => {
-    setShowModal(false); // Close modal when batsmen data is updated
-  }, [batsmenData]);
-
-  
   return (
     <div>
       <Card className="scorecard-card">
         <Card.Header>Batsmen Data</Card.Header>
         <Card.Body>
           <div className="batsmen-data-container">
-            <table className="batsmen-table">
+            <table className="batsmen-table" aria-label="Batsmen statistics">
               <thead>
                 <tr>
                   <th>Batsman Name</th>
                   <th>Balls Faced</th>
                   <th>Runs</th>
+                  <th>Fours</th>
+                  <th>Sixes</th>
                   <th>Strike Rate</th>
-                  <th>Out</th>
+                  <th>Dismissal</th>
                   <th>Player Info</th>
                 </tr>
               </thead>
               <tbody>
-                {Object.values(batsmenData).map((batsman, index) => (
-                  <tr key={index}>
-                    <td>{batsman.batName}</td>
+                {batsmen.map((batsman) => (
+                  <tr key={batsman.id || batsman.batId}>
+                    <td>{batsman.name || batsman.batName}</td>
                     <td>{batsman.balls}</td>
                     <td>{batsman.runs}</td>
-                    <td>{batsman.strikeRate}</td>
-                    <td>{batsman.outDesc}</td>
+                    <td>{batsman.fours}</td>
+                    <td>{batsman.sixes}</td>
+                    <td>{batsman.strikerate || batsman.strikeRate}</td>
+                    <td>{batsman.dismissal || batsman.outDesc || "-"}</td>
                     <td>
                       <Button
                         className="profile-button"
-                        onClick={() => handleClickPlayerProfile(batsman.batId)}
+                        onClick={() => handleViewPlayerProfile(batsman.id || batsman.batId)}
+                        aria-label={`View profile for ${batsman.name || batsman.batName}`}
                       >
                         View Profile
                       </Button>
@@ -72,9 +73,13 @@ const BatsmenDataComponent = ({ batsmenData }) => {
         </Card.Body>
       </Card>
 
-      <Modal show={showModal} onHide={() => setShowModal(false)}>
+      <Modal
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        aria-labelledby="player-profile-modal-title"
+      >
         <Modal.Header closeButton>
-          <Modal.Title>Player Profile</Modal.Title>
+          <Modal.Title id="player-profile-modal-title">Player Profile</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {selectedPlayerInfo && (

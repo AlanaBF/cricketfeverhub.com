@@ -1,8 +1,6 @@
-# cricketfeverhub
+# Cricket Fever Hub
 
-An app for users to share their love of cricket
-
-## Website under construction
+A modern React application for cricket fans, providing live scores, match commentary, player profiles, ICC rankings, and the latest cricket news.
 
 ![Cricket Fever Hub](./public/apple-touch-icon.png)
 
@@ -10,242 +8,134 @@ An app for users to share their love of cricket
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Introduction
+## Features
 
-CricketFeverHub is a comprehensive cricket app that provides live match updates, upcoming matches, cricket news, weather forecasts, detailed scorecards, interactive maps, and match commentary. It leverages the RapidAPI Cricbuzz Cricket API and is built using Vite and React, deployed on Vercel. The app is released under the MIT license.
+- **Live Matches** - Real-time updates with series filtering (including Women's Cricket)
+- **Upcoming Matches** - Schedule of fixtures with venue maps and weather forecasts
+- **ICC Rankings** - Test, ODI, and T20I rankings for batsmen, bowlers, and all-rounders with team filtering
+- **Player Profiles** - Detailed career stats, batting and bowling records across formats
+- **Trending Players** - See who's making headlines right now
+- **Cricket News** - Latest stories with full article detail modals
+- **Scorecards** - Ball-by-ball scoring data with batsmen, bowlers, partnerships, and extras
+- **Match Commentary** - Live ball-by-ball commentary with match summary
+- **Weather Integration** - Forecasts for match venues with interactive maps
+- **Discover** - Curated links to ECB, BBC Cricket, podcasts, and more
 
-## Technologies
+## Tech Stack
 
-- ![HTML Badge](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-- ![CSS Badge](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-- ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+- ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) React 18
+- ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) Vite 8
+- ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white) Bootstrap 5 + React Bootstrap
+- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) JavaScript (ES6+)
 
-## Installation
+## Getting Started
 
 ### Prerequisites
 
-- Node.js
+- Node.js (v18+)
 - npm
 
-### Steps
+### Installation
 
-1. Clone the repository:
+```sh
+git clone https://github.com/AlanaBF/cricketfeverhub.com.git
+cd cricketfeverhub.com
+npm install
+```
 
-   ```sh
-   git clone https://github.com/AlanaBF/cricketfeverhub.com.git
-   ```
+### Environment Variables
 
-2. Navigate to the project directory:
+Create a `.env` file in the root directory:
 
-    ```sh
-    cd cricketfeverhub
-    ```
+```env
+VITE_RapidAPI_Key1=your_rapidapi_key
+VITE_RapidAPI_Key2=your_rapidapi_key
+VITE_RapidAPI_Key3=your_rapidapi_key
+VITE_RapidAPI_Key4=your_rapidapi_key
+VITE_RapidAPI_Key5=your_rapidapi_key
+VITE_RapidAPI_Key_Weather=your_openweathermap_key
+```
 
-3. Install dependencies:
+Multiple RapidAPI keys are used to distribute requests across rate limits.
 
-    ```sh
-    npm install
-    ```
-
-4. Create a .env file in the root directory and add your API keys:
-
-    ```env
-    VITE_RapidAPI_Key=your_rapidapi_key
-    VITE_RapidAPI_Key_Weather=you_openweatherapi_key
-    ```
-
-### Usage
-
-#### Screenshots
-
-<!-- ![Home Page](./src/assets/Screenshots/homepage.png) -->
-
-#### Development
-
-To start the development server:
+### Development
 
 ```sh
 npm run dev
 ```
 
-#### Build
-
-To build the app for production:
+### Production Build
 
 ```sh
 npm run build
 ```
 
-#### Deployment
+### Deployment
 
-To deploy the app to Vercel:
+Deployed on Vercel. Push to the repository and Vercel builds automatically. Environment variables are configured in the Vercel dashboard.
 
-- Push your code to a Git repository.
-- Link the repository to Vercel.
-- Set up environment variables in the Vercel dashboard.
+## Project Structure
 
-#### Dependencies
-
-@vercel/analytics: Vercel Analytics for performance tracking.
-
-axios: For making API calls.
-
-axios-rate-limit: To handle rate limiting in API requests.
-
-bootstrap: For responsive design.
-
-dotenv: For managing environment variables.
-
-leaflet: For interactive maps.
-
-react: React library for building the user interface.
-
-react-bootstrap: Bootstrap components for React.
-
-react-dom: React library for DOM manipulations.
-
-react-leaflet: React components for Leaflet maps.
-
-react-router-bootstrap: Integration of React Router with React-Bootstrap.
-
-react-router-dom: For client-side routing.
-
-#### API Integration
-
-##### RapidAPI Cricbuzz Cricket API
-
-- Website: [https://rapidapi.com/cricketapilive/api/cricbuzz-cricket](https://rapidapi.com/cricketapilive/api/cricbuzz-cricket)
-- Authentication: Requires an API key from RapidAPI.
-
-##### Open Weather Map
-
-- Website: [https://openweathermap.org/](https://openweathermap.org/)
-- Authentication: Requires an API key from openweathermap.
-
-#### Project Structure
-
-```css
-cricketfeverhub/
-├── public/
-│   ├── banner.jpeg
-│   └── apple-touch-icon.png
+```
+cricketfeverhub.com/
+├── public/                  Static assets
 ├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── pages/
-│   ├── utils/
-│   ├── App.jsx
-│   └── index.jsx
-│   └── main.jsx
-├── .env
-├── index.html
+│   ├── assets/             Images and CSS
+│   │   └── styles/         Global stylesheets
+│   ├── components/         Reusable UI components
+│   │   ├── Commentary/     Match commentary display
+│   │   ├── ErrorState/     Error UI with retry
+│   │   ├── Footer/         Site footer
+│   │   ├── Header/         Navigation bar
+│   │   ├── LiveMatches/    Live match list with filters
+│   │   ├── LoadingSpinner/ Loading indicator
+│   │   ├── MatchMap/       Venue map with weather
+│   │   ├── News/           News cards and modal
+│   │   ├── PlayerData/     Player search
+│   │   ├── PlayerProfile/  Full player stats page
+│   │   ├── Podcast/        Discover page content
+│   │   ├── Rankings/       ICC rankings with filters
+│   │   ├── Scorecard/      Match scorecard components
+│   │   ├── TrendingPlayers/ Trending widget
+│   │   └── UpComingMatches/ Upcoming fixtures
+│   ├── pages/              Route-level page components
+│   ├── utils/              API service functions
+│   ├── App.jsx             Router configuration
+│   └── main.jsx            Entry point
+├── .env                    Environment variables (not committed)
+├── vite.config.js          Vite configuration with dev proxy
 ├── package.json
 └── README.md
 ```
 
-#### Features
+## API Integration
 
-- **Live Matches**: Real-time updates of ongoing matches.
-- **Upcoming Matches**: Schedule of upcoming matches.
-- **Cricket News**: Latest news in the cricket world.
-- **Weather Integration**: Weather forecasts for match locations.
-- **Scorecards**: Detailed scorecards for matches.
-- **Maps**: Interactive maps showing match locations.
-- **Match Commentary**: Live commentary of matches.
+### Cricbuzz Cricket API (via RapidAPI)
 
-#### To Do
+Provides live matches, scorecards, commentary, player data, rankings, and news.
 
-1. Home Page
+- [RapidAPI Cricbuzz](https://rapidapi.com/cricketapilive/api/cricbuzz-cricket)
 
-   - [ ] Display International Matches:
-     - [ ] List of matches for the current week.
-     - [ ] Information to include: Day, Date, Time, Match Details (Teams, Venue), Weather forecast.
-     - [ ] Data source integration for live match schedules and weather updates.
-     - [ ] Add weather and map integration
+### OpenWeatherMap API
 
-2. For Fun Page
+Provides weather forecasts and precipitation maps for match venues.
 
-   - [ ] Podcasts:
-     - [ ] Embed or link to popular cricket podcasts.
-     - [ ] Regularly update with new episodes.
-   - [ ] Additional Interest Links:
-     - [ ] Links to other cricket-related apps.
-     - [ ] Links to England Cricket, ECB, The Hundred.
-     - [ ] Ensure all links are regularly checked and updated.
+- [OpenWeatherMap](https://openweathermap.org/)
 
-3. Map Integration
+## Accessibility
 
-   - [x] Weather Information:
-     - [x] Integrate weather information into all maps.
-     - [x] Ensure real-time updates and accuracy.
-     - [x] Test for different locations and conditions.
-     - [ ] Add weather map to upcoming fixtures
-     - [ ] Add weather map and forecast with search to Homepage
-
-4. Scorecard and Commentary
-
-   - [ ] Scorecard and Commentary Buttons:
-     - [ ] Ensure Scorecard and Commentary sections are accessible from each other.
-     - [ ] Add a toggle button to switch between Scorecard and Commentary within the same section.
-     - [ ] Ensure seamless transition and minimal load times.
-
-5. General Tasks
-
-   - [ ] User Interface Design:
-     - [ ] Ensure the design is user-friendly and intuitive.
-     - [ ] Consistent theme and branding across all pages.
-     - [ ] Regularly update design elements based on user feedback.
-
-6. Performance Optimization
-
-   - [ ] Ensure fast loading times for all pages.
-   - [ ] Optimize images and other media for quick load times.
-   - [ ] Regularly monitor and improve app performance.
-
-7. Testing and Bug Fixes
-
-   - [ ] Conduct thorough testing for all new features.
-   - [ ] Regularly check for and fix bugs.
-   - [ ] User testing sessions to gather feedback and make improvements.
-
-8. Regular Updates
-
-   - [ ] Plan for regular updates and new features.
-   - [ ] Keep the content fresh and engaging.
-   - [ ] Monitor trends and user preferences to keep the app relevant.
-
-9. Optional Enhancements
-
-   - [ ] User Profiles:
-     - [ ] Allow users to create profiles to save preferences.
-     - [ ] Personalized match notifications and updates.
-
-10. Social Media Integration
-
-    - [ ] Integrate social media sharing options.
-    - [ ] Allow users to share match updates and scores on their social profiles.
-
-11. Push Notifications
-
-    - [ ] Implement push notifications for match updates, scores, and weather alerts.
+- Semantic HTML (`main`, `nav`, `section`, `article`)
+- ARIA labels on all interactive elements
+- Keyboard navigation support on clickable elements
+- Alt text on all images
+- Loading and error states for screen readers
 
 ## License
 
-*This project is licensed under* [MIT](https://choosealicense.com/licenses/mit/) see the [LICENSE](LICENSE) file for details.
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
 
-## Credits
+## Contact
 
-- RapidAPI Cricbuzz Cricket API
-- React
-- Vite
-- Vercel
-- Open Weather Map API
-
-## Questions
-
-Thank you for visiting my Cricket Site. I look forward to hearing from you. If you have any questions or need further assistance, please contact me:
-
-- Email: [alanabarrettfrew@gmail.com](mailto:alanabarrett-frew@hotmail.com)
-- Website: [www.alanabarrettfrew.com](https://www.alanabarrettfrew.com)
-- Github: [AlanaBF](https://github.com/AlanaBF)
+- Website: [alanabarrettfrew.com](https://www.alanabarrettfrew.com)
+- GitHub: [AlanaBF](https://github.com/AlanaBF)
+- LinkedIn: [alanabarrettfrew](https://www.linkedin.com/in/alanabarrettfrew/)

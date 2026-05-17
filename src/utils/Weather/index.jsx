@@ -6,7 +6,7 @@ const fetchWeatherData = async (city) => {
     try {
         const response = await axios.get(queryURL);
         const weatherData = response.data.list[0];
-        const iconURL = `http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
+        const iconURL = `https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
         const tempC = Math.floor(weatherData.main.temp - 273.15);
         const wind = weatherData.wind.speed;
         const humidity = weatherData.main.humidity;

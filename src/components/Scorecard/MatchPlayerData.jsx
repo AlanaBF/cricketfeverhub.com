@@ -1,8 +1,7 @@
-import React from "react";
+import getCricbuzzImageUrl from "../../utils/getCricbuzzImageUrl";
 import "../../assets/styles/components.css";
 
 const PlayerProfileCard = ({ playerInfo }) => {
-  
   if (!playerInfo) {
     return <div>No player information available</div>;
   }
@@ -17,12 +16,12 @@ const PlayerProfileCard = ({ playerInfo }) => {
     birthPlace,
     intlTeam,
     teams,
-    image,
     bio,
+    image,
     faceImageId,
   } = playerInfo;
 
-  const imageURL = `https://cricbuzz-cricket.p.rapidapi.com/img/v1/i1/c${faceImageId}/i.jpg?p=de`;
+  const imageURL = faceImageId ? getCricbuzzImageUrl(faceImageId) : image;
 
   const safeBio =
     bio &&
@@ -37,41 +36,41 @@ const PlayerProfileCard = ({ playerInfo }) => {
       <div className="profile-header">
         <img
           src={imageURL || "/CricketImage.jpeg"}
-          alt={`${name} Image`}
-          onError={(e) => (e.target.src = "/CricketImage.jpeg")}
+          alt={`${name} profile photo`}
+          onError={(event) => (event.target.src = "/CricketImage.jpeg")}
         />
         <h2>{name}</h2>
-        <div>Nickname: {nickName}</div>
+        {nickName && <div>Nickname: {nickName}</div>}
       </div>
       <div className="profile-details">
-        <div>
-          <strong>Role:</strong> {role}
-        </div>
-        <div>
-          <strong>Batting Style:</strong> {bat}
-        </div>
-        <div>
-          <strong>Bowling Style:</strong> {bowl}
-        </div>
-        <div>
-          <strong>Date of Birth:</strong> {DoB}
-        </div>
-        <div>
-          <strong>Birth Place:</strong> {birthPlace}
-        </div>
-        <div>
-          <strong>International Team:</strong> {intlTeam}
-        </div>
-        <div>
-          <strong>Teams:</strong> {teams}
-        </div>
+        {role && (
+          <div><strong>Role:</strong> {role}</div>
+        )}
+        {bat && (
+          <div><strong>Batting Style:</strong> {bat}</div>
+        )}
+        {bowl && (
+          <div><strong>Bowling Style:</strong> {bowl}</div>
+        )}
+        {DoB && (
+          <div><strong>Date of Birth:</strong> {DoB}</div>
+        )}
+        {birthPlace && (
+          <div><strong>Birth Place:</strong> {birthPlace}</div>
+        )}
+        {intlTeam && (
+          <div><strong>International Team:</strong> {intlTeam}</div>
+        )}
+        {teams && (
+          <div><strong>Teams:</strong> {teams}</div>
+        )}
       </div>
       <div
         className="profile-bio"
         style={{ maxHeight: "200px", overflowY: "auto" }}
       >
         {safeBio
-          ? safeBio.map((paragraph, index) => <p key={index}>{paragraph}</p>)
+          ? safeBio.map((paragraph, paragraphIndex) => <p key={paragraphIndex}>{paragraph}</p>)
           : "No biography available"}
       </div>
     </div>
@@ -79,5 +78,3 @@ const PlayerProfileCard = ({ playerInfo }) => {
 };
 
 export default PlayerProfileCard;
-
-

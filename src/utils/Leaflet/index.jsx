@@ -1,4 +1,3 @@
-import React from "react";
 import "../../assets/styles/components.css";
 
 function VenueCard({ venue }) {
@@ -21,7 +20,7 @@ function VenueCard({ venue }) {
             <h4>{about}</h4>
           </div>
         </ul>
-        <a href={url}></a>
+        {url && <a href={url} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${name} website`}>More info</a>}
       </div>
     </div>
   );

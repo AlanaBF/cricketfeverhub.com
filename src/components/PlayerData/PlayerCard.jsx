@@ -1,4 +1,3 @@
-import React from "react";
 import { Button, Card } from "react-bootstrap";
 import "../../assets/styles/components.css";
 import "../../assets/styles/pages.css";
@@ -10,18 +9,18 @@ const PlayerCard = ({ id, name, teamName, image }) => {
         className="playerCardImage"
         variant="top"
         src={image}
-        alt="Player"
-        onError={(e) => {
-          e.target.onerror = null;
-          e.target.src = "/public/CricketImage.jpeg"; // Fallback image
+        alt={`${name} profile photo`}
+        onError={(event) => {
+          event.target.onerror = null;
+          event.target.src = "/CricketImage.jpeg";
         }}
       />
       <Card.Body className="playerCardBody">
         <Card.Title className="playerCardTitle">Player Name: {name}</Card.Title>
         <Card.Text className="playerCardText">Team Name: {teamName}</Card.Text>
       </Card.Body>
-      <Button className="playerCardButton" variant="primary">
-        Go somewhere
+      <Button className="playerCardButton" variant="primary" aria-label={`View profile for ${name}`}>
+        View Player Profile
       </Button>
     </Card>
   );

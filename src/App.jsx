@@ -1,4 +1,3 @@
-import React from "react";
 import { createHashRouter, createRoutesFromElements, RouterProvider, Outlet, Route } from "react-router-dom";
 
 import Header from "./components/Header/Header";
@@ -9,44 +8,41 @@ import NotFound from "./pages/NotFound/NotFound";
 import LiveMatchesPage from "./pages/LiveMatches/LiveMatchesPage";
 import ScoreCardPage from "./pages/ScorecardPage/ScoreCardPage";
 import Commentary from './components/Commentary';
-import ReadmePage from "./pages/Readme";
 import Fun from "./pages/Fun";
+import RankingsPage from "./pages/Rankings/RankingsPage";
+import PlayerProfilePage from "./pages/PlayerProfile/PlayerProfilePage";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
 const App = () => {
-    const router = createHashRouter(
-      createRoutesFromElements(
-        <Route path="/" element={<Root />}>
+  const router = createHashRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<Root />}>
         <Route path="/" element={<Home />} />
         <Route path="/LiveMatchesPage" element={<LiveMatchesPage />} />
-        <Route path="/Fun" element={<Fun />} />
+        <Route path="/UpcomingMatchesPage" element={<UpcomingMatchesPage />} />
+        <Route path="/rankings" element={<RankingsPage />} />
+        <Route path="/player/:playerId" element={<PlayerProfilePage />} />
         <Route path="/scorecard/:matchId" element={<ScoreCardPage />} />
         <Route path="/commentary/:matchId" element={<Commentary />} />
-        <Route path="/UpcomingMatchesPage" element={<UpcomingMatchesPage />} />
-        <Route path="/readme" element={<ReadmePage />} />
+        <Route path="/discover" element={<Fun />} />
         <Route path="*" element={<NotFound />} />
-        </Route>
-  )
-  )
-  return <RouterProvider router={router} />
-}
+      </Route>
+    )
+  );
+
+  return <RouterProvider router={router} />;
+};
 
 const Root = () => {
   return (
     <>
-      <div>
-        <Header />
-      </div>
-      <div>
+      <Header />
+      <main>
         <Outlet />
-      </div>
-      <div>
-        <Footer />
-      </div>
+      </main>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-
-export default App
+export default App;

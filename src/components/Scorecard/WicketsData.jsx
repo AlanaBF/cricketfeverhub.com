@@ -1,24 +1,22 @@
-import React from "react";
 import { Card } from "react-bootstrap";
 import "../../assets/styles/components.css";
 
 const WicketsDataComponent = ({ wicketsData }) => {
-  const sortedWickets = Object.values(wicketsData).sort(
-    (a, b) => a.wktNbr - b.wktNbr
-  );
+  const wickets = Array.isArray(wicketsData)
+    ? wicketsData
+    : Object.values(wicketsData);
 
   return (
     <Card className="scorecard-card">
-      <Card.Header>Wickets Data</Card.Header>
+      <Card.Header>Fall of Wickets</Card.Header>
       <Card.Body>
         <div className="wickets-container">
-          {sortedWickets.map((wicket, index) => (
-            <div key={index} className="wicket-card">
-              <h4>Wicket {wicket.wktNbr}</h4>
-              <p>Ball Number: {wicket.ballNbr}</p>
-              <p>Batsman Name: {wicket.batName}</p>
-              <p>Wicket Over: {wicket.wktOver}</p>
-              <p>Wicket Runs: {wicket.wktRuns}</p>
+          {wickets.map((wicket, wicketIndex) => (
+            <div key={wicket.wktNbr || wicketIndex} className="wicket-card">
+              <h4>Wicket {wicket.wktNbr || wicketIndex + 1}</h4>
+              <p>Batsman: {wicket.batName || wicket.name || "-"}</p>
+              <p>Score at wicket: {wicket.wktRuns || wicket.runs || "-"}</p>
+              <p>Over: {wicket.wktOver || wicket.overs || "-"}</p>
             </div>
           ))}
         </div>

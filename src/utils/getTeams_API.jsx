@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const GetTeamsData = async () => {
+const getTeamsData = async () => {
   const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key2;
 
   const options = {
@@ -14,12 +14,11 @@ const GetTeamsData = async () => {
 
   try {
     const response = await axios.request(options);
-    console.log(response.data);
     return response.data;
   } catch (error) {
-    console.error(error);
+    console.error("Error fetching teams data:", error);
     throw error;
   }
 };
 
-export default GetTeamsData;
+export default getTeamsData;

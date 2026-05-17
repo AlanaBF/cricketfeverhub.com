@@ -1,13 +1,10 @@
-import React from "react";
 import { Card } from "react-bootstrap";
 import "../../assets/styles/components.css";
 
 const PartnershipDataComponent = ({ partnershipsData }) => {
-  const partnerships = Object.values(partnershipsData);
-
-  const sortedPartnerships = partnerships.sort(
-    (a, b) => b.totalRuns - a.totalRuns
-  );
+  const partnerships = Array.isArray(partnershipsData)
+    ? partnershipsData
+    : Object.values(partnershipsData);
 
   return (
     <div>
@@ -16,7 +13,7 @@ const PartnershipDataComponent = ({ partnershipsData }) => {
           <h2>Partnerships Data</h2>
         </Card.Header>
         <Card.Body>
-          <table className="table mt-3">
+          <table className="table mt-3" aria-label="Partnership statistics">
             <thead>
               <tr>
                 <th>Batsman 1</th>
@@ -26,12 +23,12 @@ const PartnershipDataComponent = ({ partnershipsData }) => {
               </tr>
             </thead>
             <tbody>
-              {sortedPartnerships.map((partnership, index) => (
-                <tr key={index}>
-                  <td>{partnership.bat1Name}</td>
-                  <td>{partnership.bat2Name}</td>
-                  <td>{partnership.totalRuns}</td>
-                  <td>{partnership.totalBalls}</td>
+              {partnerships.map((partnership, partnershipIndex) => (
+                <tr key={partnershipIndex}>
+                  <td>{partnership.bat1Name || partnership.bat1name || "-"}</td>
+                  <td>{partnership.bat2Name || partnership.bat2name || "-"}</td>
+                  <td>{partnership.totalRuns || partnership.runs || "-"}</td>
+                  <td>{partnership.totalBalls || partnership.balls || "-"}</td>
                 </tr>
               ))}
             </tbody>

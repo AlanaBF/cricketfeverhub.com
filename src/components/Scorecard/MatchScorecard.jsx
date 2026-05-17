@@ -1,4 +1,3 @@
-import React from "react";
 import "../../assets/styles/components.css";
 import "../../assets/styles/pages.css";
 
@@ -7,106 +6,86 @@ import WicketsDataComponent from "./WicketsData";
 import ExtrasDataComponent from "./ExtrasData";
 import BatsmenDataComponent from "./BattersData";
 import BowlersDataComponent from "./BowlersData";
-import { useLocation } from "react-router-dom";
-
 import SummaryInningsDataComponent from "./SummaryInningsCard";
-
 import MatchMap from "../MatchMap";
 
-const LiveMatchScoreCard = ({ scoreCard, venueInfo, matchHeader, matchId }) => {
-  const Team1 = scoreCard[0]?.batTeamDetails?.batTeamName || "";
-  const Team2 = scoreCard[1]?.batTeamDetails?.batTeamName || "";
+const LiveMatchScoreCard = ({ scoreCard, venueInfo, matchHeader, matchId, matchStatus }) => {
+  if (!scoreCard || !Array.isArray(scoreCard) || scoreCard.length === 0) {
+    return <div className="pageDescription">Scorecard data is not yet available for this match.</div>;
+  }
 
-  const location = useLocation();
-  const { matchData } = location.state || {};
-
-  const convertTimestampToDate = (timestamp) => {
-    const date = new Date(parseInt(timestamp));
-    return date.toLocaleDateString();
-  };
- 
   return (
     <div className="live-matches">
-      <div className="scorecard-container">
-        <h1 className="intro-description">{matchHeader.seriesDesc}</h1>
-        <h2 className="intro-description">
-          {matchHeader.team1.name} vs {matchHeader.team2.name}
-        </h2>
-        <div className="intro-description">
-          {matchHeader.matchType} {matchHeader.matchDescription}
-        </div>
-        <div className="intro-description">
-          Start Date: {convertTimestampToDate(matchHeader.matchStartTimestamp)}
-        </div>
-        <div className="intro-description">
-          {matchHeader.tossResults.tossWinnerName} have won the toss and have
-          elected {matchHeader.tossResults.decision} first
-        </div>
-        <div className="intro-description">
-          Winning Team: {matchHeader.result.winningTeam}
-        </div>
-      </div>
+      {matchHeader && (
+        <section className="scorecard-container">
+          <h1 className="intro-description">{matchHeader.seriesDesc}</h1>
+          <h2 className="intro-description">
+            {matchHeader.team1?.name} vs {matchHeader.team2?.name}
+          </h2>
+        </section>
+      )}
 
-      {matchData && (
-        <div>
-          <MatchMap venueInfo={venueInfo} matchId={matchId} />
-          {scoreCard.map((innings, index) => (
-            <div
-              key={index}
-              className={index % 2 === 0 ? "section-dark" : "section-light"}
-            >
-              <div className="teams-container">
-                <div className="team-container">
-                  <h2 className={index % 2 === 0 ? "dark-heading" : ""}>
-                    {index % 2 === 0 ? Team1 : Team2} {index + 1}
-                    {index === 0 ? "st" : "nd"} Innings
-                  </h2>
-                  <div className="scorecard-column">
-                    {scoreCard[index] ? (
-                      <SummaryInningsDataComponent
-                        scoreDetails={scoreCard[index]?.scoreDetails}
-                      />
-                    ) : (
-                      <div>No data yet</div>
-                    )}
-                  </div>
-                  <div className="scorecard-section">
+      {matchStatus && (
+        <div className="intro-description">
+          <strong>Status:</strong> {matchStatus}
+        </div>
+      )}
+
+      <div>
+        {venueInfo && <MatchMap venueInfo={venueInfo} matchId={matchId} />}
+        {scoreCard.map((innings, inningsIndex) => (
+          <section
+            key={innings.inningsid || inningsIndex}
+            className={inningsIndex % 2 === 0 ? "section-dark" : "section-light"}
+            aria-label={`${innings.batteamname || `Team ${inningsIndex + 1}`} innings`}
+          >
+            <div className="teams-container">
+              <div className="team-container">
+                <h2 className={inningsIndex % 2 === 0 ? "dark-heading" : ""}>
+                  {innings.batteamname || `Team ${inningsIndex + 1}`} - Innings {inningsIndex + 1}
+                  {innings.isdeclared ? " (declared)" : ""}
+                </h2>
+                <SummaryInningsDataComponent
+                  scoreDetails={{
+                    runs: innings.score,
+                    wickets: innings.wickets,
+                    overs: innings.overs,
+                    runRate: innings.runrate,
+                    runsPerBall: innings.rpb,
+                  }}
+                />
+                <div className="scorecard-section">
+                  {innings.batsman && innings.batsman.length > 0 && (
                     <div className="scorecard-column">
-                      <BatsmenDataComponent
-                        batsmenData={
-                          scoreCard[index].batTeamDetails?.batsmenData
-                        }
-                      />
+                      <BatsmenDataComponent batsmenData={innings.batsman} />
                     </div>
+                  )}
+                  {innings.bowler && innings.bowler.length > 0 && (
                     <div className="scorecard-column">
-                      <BowlersDataComponent
-                        bowlersData={
-                          scoreCard[index].bowlTeamDetails?.bowlersData
-                        }
-                      />
+                      <BowlersDataComponent bowlersData={innings.bowler} />
                     </div>
+                  )}
+                  {innings.extras && (
                     <div className="scorecard-column">
-                      <ExtrasDataComponent
-                        extrasData={scoreCard[index].extrasData}
-                      />
+                      <ExtrasDataComponent extrasData={innings.extras} />
                     </div>
+                  )}
+                  {innings.partnership?.partnership && (
                     <div className="scorecard-column">
-                      <PartnershipDataComponent
-                        partnershipsData={scoreCard[index].partnershipsData}
-                      />
+                      <PartnershipDataComponent partnershipsData={innings.partnership.partnership} />
                     </div>
+                  )}
+                  {innings.fow?.fow && (
                     <div className="scorecard-column">
-                      <WicketsDataComponent
-                        wicketsData={scoreCard[index].wicketsData}
-                      />
+                      <WicketsDataComponent wicketsData={innings.fow.fow} />
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-      )}
+          </section>
+        ))}
+      </div>
     </div>
   );
 };

@@ -14,10 +14,9 @@ const getUpcomingMatchesData = async () => {
 
   try {
     const response = await axios.request(options);
-    console.log(response.data);
     return response.data;
   } catch (error) {
-    console.error(error);
+    console.error('Error fetching upcoming matches data:', error);
     throw error;
   }
 };

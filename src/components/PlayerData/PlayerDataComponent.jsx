@@ -1,24 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import getPlayersData from "../../utils/getPlayers_API";
-import getPlayerImages from "../../utils/getImage_API";
+import getCricbuzzImageUrl from "../../utils/getCricbuzzImageUrl";
 import { Button, Card } from "react-bootstrap";
+import LoadingSpinner from "../LoadingSpinner";
 import "../../assets/styles/components.css";
 import "../../assets/styles/pages.css";
 
-const PlayerCard = ({ id, name, teamName, faceImageId, fetchData }) => {
-  const imageURL = `https://cricbuzz-cricket.p.rapidapi.com/img/v1/i1/c${faceImageId}/i.jpg?p=de`;
-
-  useEffect(() => {
-    const fetchPlayerImage = async () => {
-      try {
-        const data = await getPlayerImages(faceImageId);
-        console.log(data);
-      } catch (error) {
-        console.error("Error:", error);
-      }
-    };
-    fetchPlayerImage();
-  }, [faceImageId]);
+const PlayerCard = ({ id, name, teamName, faceImageId }) => {
+  const imageURL = getCricbuzzImageUrl(faceImageId);
 
   return (
     <Card key={id} className="playerCard">
@@ -26,14 +15,15 @@ const PlayerCard = ({ id, name, teamName, faceImageId, fetchData }) => {
         className="playerCardImage"
         variant="top"
         src={imageURL}
-        alt="Player"
+        alt={`${name} profile photo`}
+        onError={(event) => { event.target.onerror = null; event.target.src = "/CricketImage.jpeg"; }}
       />
       <Card.Body className="playerCardBody">
         <Card.Title className="playerCardTitle">Player Name: {name}</Card.Title>
         <Card.Text className="playerCardText">Team Name: {teamName}</Card.Text>
       </Card.Body>
-      <Button className="playerCardButton" variant="primary">
-        Go somewhere
+      <Button className="playerCardButton" variant="primary" aria-label={`View profile for ${name}`}>
+        View Player Profile
       </Button>
     </Card>
   );
@@ -42,30 +32,53 @@ const PlayerCard = ({ id, name, teamName, faceImageId, fetchData }) => {
 const PlayerDataComponent = () => {
   const [playerName, setPlayerName] = useState("");
   const [playerData, setPlayerData] = useState(null);
+  const [isSearching, setIsSearching] = useState(false);
+  const [hasSearched, setHasSearched] = useState(false);
+  const debounceTimer = useRef(null);
 
-  const fetchData = async () => {
+  const fetchPlayerData = async (searchTerm) => {
+    if (!searchTerm.trim()) return;
+    setIsSearching(true);
+    setHasSearched(true);
     try {
-      const data = await getPlayersData(playerName);
+      const data = await getPlayersData(searchTerm);
       setPlayerData(data);
     } catch (error) {
-      console.error("Error:", error);
-    }
-
-    if (playerData) {
-      playerData.player.forEach(async (player) => {
-        try {
-          const data = await getPlayerImages(player.faceImageId);
-          console.log(data);
-        } catch (error) {
-          console.error("Error:", error);
-        }
-      });
+      console.error("Error fetching player data:", error);
+      setPlayerData(null);
+    } finally {
+      setIsSearching(false);
     }
   };
 
-  const handleSearch = () => {
-    if (playerName) {
-      fetchData();
+  useEffect(() => {
+    if (!playerName.trim()) {
+      setPlayerData(null);
+      setHasSearched(false);
+      return;
+    }
+
+    if (debounceTimer.current) {
+      clearTimeout(debounceTimer.current);
+    }
+
+    debounceTimer.current = setTimeout(() => {
+      fetchPlayerData(playerName);
+    }, 500);
+
+    return () => {
+      if (debounceTimer.current) {
+        clearTimeout(debounceTimer.current);
+      }
+    };
+  }, [playerName]);
+
+  const handleSearchKeyDown = (event) => {
+    if (event.key === "Enter") {
+      if (debounceTimer.current) {
+        clearTimeout(debounceTimer.current);
+      }
+      fetchPlayerData(playerName);
     }
   };
 
@@ -74,12 +87,15 @@ const PlayerDataComponent = () => {
       <input
         type="text"
         value={playerName}
-        onChange={(e) => setPlayerName(e.target.value)}
-        placeholder="Enter player name"
+        onChange={(event) => setPlayerName(event.target.value)}
+        onKeyDown={handleSearchKeyDown}
+        placeholder="Search for a player..."
+        aria-label="Search for cricket player by name"
       />
-      <button onClick={handleSearch}>Search</button>
 
-      {playerData ? (
+      {isSearching && <LoadingSpinner message="Searching players..." />}
+
+      {!isSearching && playerData && playerData.player && playerData.player.length > 0 && (
         <div>
           {playerData.player.map((player) => (
             <PlayerCard
@@ -88,12 +104,13 @@ const PlayerDataComponent = () => {
               faceImageId={player.faceImageId}
               name={player.name}
               teamName={player.teamName}
-              fetchData={fetchData}
             />
           ))}
         </div>
-      ) : (
-        <p>No player data available</p>
+      )}
+
+      {!isSearching && hasSearched && (!playerData || !playerData.player || playerData.player.length === 0) && (
+        <p className="pageDescription">No players found. Try a different name.</p>
       )}
     </div>
   );
