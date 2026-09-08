@@ -6,6 +6,39 @@ import Map from "../../utils/Leaflet/Leaflet_API";
 import LoadingSpinner from "../LoadingSpinner";
 import ErrorState from "../ErrorState";
 
+const formatDate = (dateString) => {
+  const date = new Date(parseInt(dateString));
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  return date.toLocaleDateString(undefined, options);
+};
+
+const MatchModal = ({ match, onClose }) => {
+  const { team1, team2, startDate, venueInfo, matchFormat } = match.matchInfo;
+
+  return (
+    <Modal show={true} onHide={onClose} aria-labelledby="match-modal-title">
+      <Modal.Header closeButton>
+        <Modal.Title id="match-modal-title">
+          {team1.teamName} vs {team2.teamName}
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <p>Start Date: {formatDate(startDate)}</p>
+        <p>{matchFormat}</p>
+        <p>
+          Venue: {venueInfo.ground}, {venueInfo.city}
+        </p>
+        <Map venue={venueInfo} />
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={onClose}>
+          Close
+        </Button>
+      </Modal.Footer>
+    </Modal>
+  );
+};
+
 const UpcomingMatches = () => {
   const [matches, setMatches] = useState([]);
   const [filteredMatches, setFilteredMatches] = useState([]);
@@ -44,7 +77,7 @@ const UpcomingMatches = () => {
   }, []);
 
   useEffect(() => {
-    let filteredData = [];
+    let filteredData;
 
     if (selectedSeries === "All") {
       filteredData = matches.reduce((accumulated, typeMatch) => {
@@ -91,12 +124,6 @@ const UpcomingMatches = () => {
     setFilteredMatches(sortedData);
   }, [matches, selectedSeries]);
 
-  const formatDate = (dateString) => {
-    const date = new Date(parseInt(dateString));
-    const options = { year: "numeric", month: "long", day: "numeric" };
-    return date.toLocaleDateString(undefined, options);
-  };
-
   const extractSeriesNames = () => {
     const names = new Set();
     matches.forEach((typeMatch) => {
@@ -129,37 +156,6 @@ const UpcomingMatches = () => {
       event.preventDefault();
       setSelectedMatch(match);
     }
-  };
-
-  const MatchModal = ({ match, onClose }) => {
-    const { team1, team2, startDate, venueInfo, matchFormat } = match.matchInfo;
-
-    return (
-      <Modal
-        show={true}
-        onHide={onClose}
-        aria-labelledby="match-modal-title"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="match-modal-title">
-            {team1.teamName} vs {team2.teamName}
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p>Start Date: {formatDate(startDate)}</p>
-          <p>{matchFormat}</p>
-          <p>
-            Venue: {venueInfo.ground}, {venueInfo.city}
-          </p>
-          <Map venue={venueInfo} />
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={onClose}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    );
   };
 
   if (isLoading) {

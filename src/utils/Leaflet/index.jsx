@@ -1,7 +1,7 @@
 import "../../assets/styles/components.css";
 
 function VenueCard({ venue }) {
-  const { name, image, city, url, about } = venue;
+  const { name, city, url, about } = venue;
 
   return (
     <div className="card">

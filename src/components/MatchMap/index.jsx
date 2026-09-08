@@ -5,7 +5,7 @@ import getLiveMatchesData from "../../utils/getLiveMatches_API";
 import fetchWeatherData from "../../utils/Weather/index";
 import "./matchMap.css";
 
-const generateFunForecast = (description, temp, wind, humidity) => {
+const generateFunForecast = (description, temp, wind) => {
     let funForecast = "It's a ";
 
     // Add temperature-related description
@@ -90,7 +90,7 @@ const MatchMap = ({ matchId, venueInfo }) => {
       <p style={{ color: "white" }}>Temp: {weatherData.tempC}°C</p>
       <p style={{ color: "white" }}>Wind Speed: {weatherData.wind} MPH</p>
       <p style={{ color: "white" }}>Humidity: {weatherData.humidity}%</p>
-      <p style={{ color: "white" }}>{generateFunForecast(weatherData.description, weatherData.tempC, weatherData.wind, weatherData.humidity)}</p>
+      <p style={{ color: "white" }}>{generateFunForecast(weatherData.description, weatherData.tempC, weatherData.wind)}</p>
     </div>
   ) : (
     <p>Loading weather data...</p>

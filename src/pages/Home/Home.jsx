@@ -19,7 +19,7 @@ function Home() {
       </section>
 
       <p className="pageDescription" style={{ fontSize: "1.5rem" }}>
-        Here you can find information about Men's and Women's cricket matches,
+        Here you can find information about Men&apos;s and Women&apos;s cricket matches,
         including live updates and upcoming fixtures. Explore the latest news.
       </p>
 

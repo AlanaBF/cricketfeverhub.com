@@ -65,7 +65,7 @@ function Podcast() {
           </div>
           <div className="podcast-container">
             <div className="podcast-text-container">
-              <h3 className="page-sub-title">Sport's Strangest Crimes</h3>
+              <h3 className="page-sub-title">Sport&apos;s Strangest Crimes</h3>
               <p className="pageDescription">
                 Allen Stanford: The Man Who Bought Cricket
               </p>

@@ -51,7 +51,7 @@ const LiveMatches = () => {
   }, []);
 
   useEffect(() => {
-    let filteredData = [];
+    let filteredData;
 
     if (selectedSeries === "All") {
       filteredData = matches.reduce((accumulated, typeMatch) => {
