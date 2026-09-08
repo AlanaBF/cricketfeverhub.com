@@ -7,7 +7,6 @@ import Button from "react-bootstrap/Button";
 import LoadingSpinner from "../LoadingSpinner";
 import ErrorState from "../ErrorState";
 import "../../assets/styles/components.css";
-import axios from "axios";
 import "../../assets/styles/pages.css";
 import CricketImage from "../../assets/CricketImage.jpeg";
 
@@ -47,18 +46,10 @@ const CricketCardLayout = () => {
     setSelectedArticle(article);
     setShowModal(true);
 
-    const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key4;
     try {
-      const response = await axios.get(
-        `https://cricbuzz-cricket.p.rapidapi.com/news/v1/detail/${article.id}`,
-        {
-          headers: {
-            "x-rapidapi-host": "cricbuzz-cricket.p.rapidapi.com",
-            "x-rapidapi-key": VITE_RapidAPI_Key,
-          },
-        }
-      );
-      const data = response.data;
+      const params = new URLSearchParams({ id: article.id });
+      const res = await fetch(`/api/news-detail?${params}`);
+      const data = await res.json();
 
       const formattedContent = data.content.map((contentBlock) => {
         if (

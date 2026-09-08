@@ -14,7 +14,7 @@ const ScorecardPage = () => {
   const fetchScorecardData = async () => {
     try {
       const response = await getScorecard(matchId);
-      setScorecardData(response.data);
+      setScorecardData(response);
     } catch (error) {
       console.error("Error fetching scorecard data:", error);
     }

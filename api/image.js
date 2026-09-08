@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     `https://cricbuzz-cricket.p.rapidapi.com/img/v1/i1/c${id}/i.jpg?p=de`,
     {
       headers: {
-        "X-RapidAPI-Key": process.env.VITE_RapidAPI_Key2,
+        "X-RapidAPI-Key": process.env.RapidAPI_Key2,
         "X-RapidAPI-Host": "cricbuzz-cricket.p.rapidapi.com",
       },
     }

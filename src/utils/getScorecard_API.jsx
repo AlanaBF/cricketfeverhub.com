@@ -1,23 +1,8 @@
-import axios from 'axios';
-
 const getScorecard = async (matchId) => {
-  const VITE_RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key5;
-  const options = {
-    method: 'GET',
-    url: `https://cricbuzz-cricket.p.rapidapi.com/mcenter/v1/${matchId}/hscard`,
-    headers: {
-      'X-RapidAPI-Key': VITE_RapidAPI_Key,
-      'X-RapidAPI-Host': 'cricbuzz-cricket.p.rapidapi.com'
-    }
-  };
-
-  try {
-    const response = await axios.request(options);
-    return response;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
+  const params = new URLSearchParams({ matchId });
+  const response = await fetch(`/api/scorecard?${params}`);
+  if (!response.ok) throw new Error(`Scorecard API error: ${response.status}`);
+  return response.json();
 };
 
 export default getScorecard;
