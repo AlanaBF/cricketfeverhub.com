@@ -1,7 +1,7 @@
 const BASE = 'https://cricbuzz-cricket.p.rapidapi.com';
 const HOST = 'cricbuzz-cricket.p.rapidapi.com';
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   const response = await fetch(`${BASE}/series/v1/international`, {
     headers: {
       'X-RapidAPI-Key': process.env.RapidAPI_Key2,

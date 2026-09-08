@@ -1,7 +1,7 @@
 const BASE = 'https://cricbuzz-cricket.p.rapidapi.com';
 const HOST = 'cricbuzz-cricket.p.rapidapi.com';
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   const { id } = req.query;
   if (!id || !/^\d{1,15}$/.test(id)) return res.status(400).json({ error: 'Invalid id' });
 

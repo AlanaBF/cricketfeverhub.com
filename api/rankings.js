@@ -4,7 +4,7 @@ const HOST = 'cricbuzz-cricket.p.rapidapi.com';
 const VALID_CATEGORIES = new Set(['batsmen', 'bowlers', 'allrounders', 'teams']);
 const VALID_FORMATS = new Set(['test', 'odi', 'odi-w', 't20', 't20-w']);
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   const { category = 'batsmen', formatType = 'test' } = req.query;
 
   if (!VALID_CATEGORIES.has(category)) return res.status(400).json({ error: 'Invalid category' });

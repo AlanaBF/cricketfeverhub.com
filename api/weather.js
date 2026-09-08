@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   const { city } = req.query;
   if (!city || typeof city !== 'string' || city.length > 100) return res.status(400).json({ error: 'Invalid city' });
 
