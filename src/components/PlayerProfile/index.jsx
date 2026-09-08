@@ -49,7 +49,9 @@ const PlayerProfile = () => {
   if (error) return <ErrorState message={error} onRetry={fetchPlayerData} />;
   if (!playerInfo) return <ErrorState message="Player not found." />;
 
-  const imageURL = playerInfo.image || getCricbuzzImageUrl(playerInfo.faceImageId);
+  const imageURL = playerInfo.faceImageId
+    ? getCricbuzzImageUrl(playerInfo.faceImageId)
+    : playerInfo.image?.replace("http://", "https://");
 
   return (
     <div className="player-full-profile">

@@ -14,6 +14,7 @@ const LiveMatches = () => {
   const [selectedSeries, setSelectedSeries] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [lastUpdated, setLastUpdated] = useState(null);
 
   const isDesiredSeriesMatch = (seriesMatch) => {
     const seriesName = seriesMatch.seriesAdWrapper?.seriesName;
@@ -33,6 +34,7 @@ const LiveMatches = () => {
       const data = await getLiveMatchesData();
       if (data && data.typeMatches) {
         setMatches(data.typeMatches);
+        setLastUpdated(new Date());
       }
     } catch (fetchError) {
       console.error("Error fetching live matches data:", fetchError);
@@ -44,6 +46,8 @@ const LiveMatches = () => {
 
   useEffect(() => {
     fetchLiveMatches();
+    const interval = setInterval(fetchLiveMatches, 30000);
+    return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
@@ -152,6 +156,9 @@ const LiveMatches = () => {
       <img className="hero-image" src={CricketHero} alt="Cricket players in action" />
 
       <h1 className="pageTitle">Live Matches</h1>
+      {lastUpdated && (
+        <p className="last-updated-text">Updated: {lastUpdated.toLocaleTimeString()}</p>
+      )}
       <div className="quick-filters" role="tablist" aria-label="Filter by series">
         {seriesFilters.map((filter) => (
           <button

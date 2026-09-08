@@ -25,7 +25,7 @@ const App = () => {
         <Route path="/scorecard/:matchId" element={<ScoreCardPage />} />
         <Route path="/commentary/:matchId" element={<Commentary />} />
         <Route path="/discover" element={<Fun />} />
-        <Route path="*" element={<NotFound />} />
+<Route path="*" element={<NotFound />} />
       </Route>
     )
   );

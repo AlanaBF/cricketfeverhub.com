@@ -80,6 +80,98 @@
   text-align: center !important;
 }
 
+/* Player Search */
+
+.search-wrapper {
+  position: relative;
+  margin-left: 12px;
+}
+
+.search-input {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  color: var(--cream);
+  font-size: 0.9rem;
+  padding: 6px 14px;
+  outline: none;
+  width: 180px;
+  transition: width 0.3s, border-color 0.2s;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-input:focus {
+  border-color: var(--pink);
+  width: 220px;
+}
+
+.search-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: var(--purple);
+  border: 2px solid var(--pink);
+  border-radius: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  width: 260px;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.search-dropdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: none;
+  border: none;
+  color: var(--cream);
+  cursor: pointer;
+  padding: 8px 14px;
+  width: 100%;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.search-dropdown-item:hover {
+  background: rgba(251, 4, 131, 0.2);
+}
+
+.search-player-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.search-player-team {
+  font-size: 0.75rem;
+  opacity: 0.65;
+}
+
+@media (max-width: 768px) {
+  .search-wrapper {
+    margin: 8px 0 0;
+    width: 100%;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .search-input:focus {
+    width: 100%;
+  }
+
+  .search-dropdown {
+    width: 100%;
+    right: auto;
+    left: 0;
+  }
+}
+
 /* Podcast Component */
 
 .page-sub-title {
@@ -239,6 +331,16 @@ border: solid 10px var(--pink) !important;
     width: 100%;
     margin: 0 auto 20px;
   }
+}
+
+/* Last updated indicator */
+
+.last-updated-text {
+  text-align: center;
+  color: var(--cream);
+  opacity: 0.6;
+  font-size: 0.85rem;
+  margin: 4px 0 0;
 }
 
 /* Quick Filters */
@@ -743,12 +845,34 @@ font-size: 2rem;
   transform: translateY(-4px);
 }
 
+.trending-card-image-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
 .trending-card-image {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 8px;
+}
+
+.trending-rank-badge {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  background: var(--pink);
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
 
 .trending-card-name {

@@ -2,7 +2,8 @@ import axios from 'axios';
 
 const fetchWeatherData = async (city) => {
     const APIKey = import.meta.env.VITE_RapidAPI_Key_Weather;
-    const queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey}`;
+    const params = new URLSearchParams({ q: city.trim(), appid: APIKey });
+    const queryURL = `https://api.openweathermap.org/data/2.5/forecast?${params.toString()}`;
     try {
         const response = await axios.get(queryURL);
         const weatherData = response.data.list[0];

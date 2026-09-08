@@ -37,19 +37,22 @@ const TrendingPlayers = () => {
     <section className="trending-section">
       <h2 className="trending-title">Trending Players</h2>
       <div className="trending-scroll">
-        {players.map((player) => (
+        {players.map((player, index) => (
           <Link
             key={player.id}
             to={`/player/${player.id}`}
             className="trending-card"
             aria-label={`View profile for ${player.name}`}
           >
-            <img
-              className="trending-card-image"
-              src={getCricbuzzImageUrl(player.faceImageId || player.id)}
-              alt={`${player.name}`}
-              onError={(event) => { event.target.onerror = null; event.target.src = "/CricketImage.jpeg"; }}
-            />
+            <div className="trending-card-image-wrapper">
+              <img
+                className="trending-card-image"
+                src={getCricbuzzImageUrl(player.faceImageId || player.id)}
+                alt={`${player.name}`}
+                onError={(event) => { event.target.onerror = null; event.target.src = "/CricketImage.jpeg"; }}
+              />
+              <span className="trending-rank-badge">#{index + 1}</span>
+            </div>
             <div className="trending-card-info">
               <p className="trending-card-name">{player.name}</p>
               <p className="trending-card-team">{player.teamName || player.team || ""}</p>
